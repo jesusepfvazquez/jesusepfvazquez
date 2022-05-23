@@ -19,7 +19,7 @@ interests:
 - Causal Inferebce
 organizations:
 - name: The University of North Carolina - Chapel Hill
-  url: https://www.stanford.edu/
+  url: https://www.unc.edu
 role: Ph.D. Candidate in Biostatistics
 social:
 # - icon: envelope
