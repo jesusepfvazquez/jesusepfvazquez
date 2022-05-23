@@ -1,4 +1,5 @@
 .Rproj.user
+.hugo_build.lock
 .Rhistory
 .RData
 .Ruserdata
