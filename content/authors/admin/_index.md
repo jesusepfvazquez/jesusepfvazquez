@@ -4,7 +4,7 @@ education:
   courses:
   - course: Ph.D. in Biostatistics
     institution: University of North Carolina - Chapel Hill, NC
-    year: 2024
+    year: (Expected 2024)
   - course: B.S. in Statistics minor in Mathematics
     institution: University of New Mexico - Albuquerque, NM
     year: 2015
