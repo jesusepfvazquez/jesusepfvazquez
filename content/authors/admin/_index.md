@@ -7,10 +7,10 @@ education:
     year: (Expected 2024)
   - course: B.S. in Statistics minor in Mathematics
     institution: University of New Mexico - Albuquerque, NM
-    year: 2015
+    year: 2019
   - course: B.A. in Economics minor in Statistics
     institution: University of New Mexico - Albuquerque, NM
-    year: 2015
+    year: 2019
 email: "jesusvaz[at]ad[dot]unc[dot]edu"
 highlight_name: true
 interests:
@@ -42,6 +42,6 @@ superuser: true
 title: Jesus E. Vazquez
 ---
 
-Jesus is currently a Ph.D. candidate in Biostatistics at the University of North Carolina. Jesus' dissertation will focus on the formulation of longitudinal models aimed to accurately measure the progression of mentally degenerative diseases such as Huntington's Disease. Together, with Dr. Garcia's Lab, we aim to explore this area of study so that treatment of these mentally degenerative diseases can be developed by providing the necessary mathematical tools.
+I'm a Ph.D. candidate in Biostatistics at the University of North Carolina - Chapel Hill. My dissertation will propose new longitudinal models aimed to accurately measure the progression of mentally degenerative diseases such as Huntington's Disease.
 
 {{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/test.png" "newtab" >}}CV{{< /staticref >}}.
