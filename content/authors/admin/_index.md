@@ -39,9 +39,9 @@ social:
   icon_pack: fab
   link: https://www.linkedin.com/in/jesusepfvazquez/
 superuser: true
-title: Jesus Epifanio Vazquez
+title: Jesus E. Vazquez
 ---
 
-Jesus Vazquez is currently a Ph.D. candidate in Biostatistics at the University of North Carolina. Jesus' dissertation will focus on the formulation of longitudinal models aimed to accurately measure the progression of mentally degenerative diseases such as Huntington's Disease. Together, with Dr. Garcia's Lab, we aim to explore this area of study so that treatment of these mentally degenerative diseases can be developed by providing the necessary mathematical tools.
+Jesus is currently a Ph.D. candidate in Biostatistics at the University of North Carolina. Jesus' dissertation will focus on the formulation of longitudinal models aimed to accurately measure the progression of mentally degenerative diseases such as Huntington's Disease. Together, with Dr. Garcia's Lab, we aim to explore this area of study so that treatment of these mentally degenerative diseases can be developed by providing the necessary mathematical tools.
 
 {{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/test.png" "newtab" >}}CV{{< /staticref >}}.
