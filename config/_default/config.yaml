@@ -4,7 +4,7 @@ theme: "starter-hugo-academic"
 # Hugo Documentation: https://gohugo.io/getting-started/configuration/#all-configuration-settings
 # This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
 
-title: Jesus E. Vazquez # Website name
+title: 'Jesus E. Vazquez' # Website name
 baseURL: 'https://thevazquezlab.com/' # Website URL
 
 ############################

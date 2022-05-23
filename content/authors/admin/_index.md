@@ -1,49 +1,46 @@
 ---
-bio: My research interests include distributed robotics, mobile computing and programmable
-  matter.
+bio: My interests include Longitudinal Models, Precision Medicine, Causal Inference
 education:
   courses:
-  - course: PhD in Artificial Intelligence
-    institution: Stanford University
-    year: 2012
-  - course: MEng in Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    year: 2009
-  - course: BSc in Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    year: 2008
-email: ""
+  - course: Ph.D. in Biostatistics
+    institution: University of North Carolina - Chapel Hill, NC
+    year: 2024
+  - course: B.S. in Statistics minor in Mathematics
+    institution: University of New Mexico - Albuquerque, NM
+    year: 2015
+  - course: B.A. in Economics minor in Statistics
+    institution: University of New Mexico - Albuquerque, NM
+    year: 2015
+email: "jesusvaz[at]ad[dot]unc[dot]edu"
 highlight_name: true
 interests:
-- Artificial Intelligence
-- Computational Linguistics
-- Information Retrieval
+- Longitudinal Modeling
+- Precision Medicine
+- Causal Inferebce
 organizations:
-- name: Stanford University
+- name: The University of North Carolina - Chapel Hill
   url: https://www.stanford.edu/
-role: Professor of Artificial Intelligence
+role: Ph.D. Candidate in Biostatistics
 social:
-- icon: envelope
-  icon_pack: fas
-  link: /#contact
+# - icon: envelope
+#   icon_pack: fas
+#   link: /#contact
 - icon: twitter
   icon_pack: fab
-  link: https://twitter.com/GeorgeCushen
-- icon: graduation-cap
-  icon_pack: fas
-  link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
+  link: https://twitter.com/biostat_jesus
+# - icon: graduation-cap
+#   icon_pack: fas
+#   link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
 - icon: github
   icon_pack: fab
-  link: https://github.com/gcushen
+  link: https://github.com/jesusepfvazquez
 - icon: linkedin
   icon_pack: fab
-  link: https://www.linkedin.com/
+  link: https://www.linkedin.com/in/jesusepfvazquez/
 superuser: true
-title: Nelson Bighetti
+title: Jesus Epifanio Vazquez
 ---
 
-Nelson Bighetti is a professor of artificial intelligence at the Stanford AI Lab. His research interests include distributed robotics, mobile computing and programmable matter. He leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
+Jesus Vazquez is currently a Ph.D. candidate in Biostatistics. Jesus' dissertation will focus on the creation of longitudinal models aimed to accurately measure the progression of mentally degenerative diseases such as Huntington's Disease. Together, with Dr. Garcia's Lab, we aim to explore this area of study so that treatment of these mentally degenerative diseases can be developed by providing the necessary mathematical tools.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate.
-
-{{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/demo_resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
+{{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/demo_resume.pdf" "newtab" >}}CV{{< /staticref >}}.
