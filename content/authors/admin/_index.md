@@ -44,4 +44,4 @@ title: Jesus E. Vazquez
 
 I'm a Ph.D. candidate in Biostatistics at the University of North Carolina - Chapel Hill. My dissertation will propose new longitudinal models aimed to accurately measure the progression of mentally degenerative diseases such as Huntington's Disease.
 
-{{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/cv.pdf" "newtab" >}}CV{{< /staticref >}}.
+# {{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/cv.pdf" "newtab" >}}CV{{< /staticref >}}.
