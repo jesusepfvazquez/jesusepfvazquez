@@ -1,5 +1,5 @@
 ---
 summary: More about my work experience
-title: "Resume"
+title: "CV"
 type: widget_page
 ---
