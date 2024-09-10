@@ -19,9 +19,9 @@ main:
   - name: Research
     url: '#featured'
     weight: 50
-  - name: Contact
-    url: '#contact'
-    weight: 60
+  # - name: Contact
+  #   url: '#contact'
+  #   weight: 60
   - name: CV
     url: uploads/VAZQUEZ-CV.pdf
     weight: 10
