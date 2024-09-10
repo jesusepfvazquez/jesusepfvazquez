@@ -35,5 +35,5 @@ design:
 ---
 
 {{% callout note %}}
-Quickly discover relevant content by [filtering publications](./publications/).
+Quickly discover relevant content by [clicking visiting the publications tab](./publications/).
 {{% /callout %}}
