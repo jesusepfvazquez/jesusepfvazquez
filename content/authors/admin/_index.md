@@ -2,9 +2,9 @@
 bio: My interests include Longitudinal modeling, Causal inference, 
 education:
   courses:
-  - course: Ph.D. in Biostatistics
+  - course: Ph.D. in Biostatistics (Expected 2025)
     institution: University of North Carolina at Chapel Hill
-    year (Expected 2025)
+    year:
   - course: M.S. in Biostatistics (2023)
     institution: University of North Carolina at Chapel Hill
   - course: B.S. in Statistics minor in Mathematics (2019)
@@ -18,8 +18,9 @@ interests:
 - Longitudinal Modeling
 - Causal Inference
 organizations:
-- name: The University of North Carolina at Chapel Hill
-  url: https://www.unc.edu
+- name: University of North Carolina at Chapel Hill
+- name: Methods for INcomplete Data (MIND) Lab
+  url: https://tpgarcia.github.io
 role: Ph.D. Candidate in Biostatistics
 social:
 # - icon: envelope
@@ -41,4 +42,6 @@ superuser: true
 title: Jesus E. Vazquez
 ---
 
-I'm a Ph.D. candidate in Biostatistics at the University of North Carolina - Chapel Hill. My dissertation focuses on methods to estimate model parameters that characterize the symptom trajectory of mentally degenerative diseases such as Huntington disease.
+Hola! My name is Jesus, and I’m a Ph.D. candidate in Biostatistics at the University of North Carolina at Chapel Hill working under the direction of Dr. Tanya P. Garcia. As a member of the [MIND Lab](https://tpgarcia.github.io), my research explores estimators from the missing data literature and how these must be adapted for other types of incomplete data --- such as right-censored covariates. 
+
+My dissertation, “Advancing Huntington Disease Modeling: Robust and Efficient Solutions for Right‐Censored Covariates,” tackles the challenge of censored covariates by adapting existing missing data methods and developing new techniques. My work aims to improve the understanding of the symptom progression of neurodegenerative diseases like Huntington. 
