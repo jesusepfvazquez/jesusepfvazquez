@@ -18,12 +18,11 @@ title: Biography
 # This should be the username (folder name) of a profile in your `content/authors/` folder.
 # See https://wowchemy.com/docs/get-started/#introduce-yourself
 author: admin
-
+---
 
 title: "Title of the Publication"
 authors: ["Author One", "Author Two"]
 date: "2024-09-06"
 publication: "Journal Name or Conference"
 link: "https://doi.org/10.12345/example"
----
 
