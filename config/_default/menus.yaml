@@ -5,7 +5,7 @@
 
 main:
   - name: CV
-    url: uploads/VAZQUEZ-CV.pdf
+    url: resume/VAZQUEZ-CV.pdf
     weight: 10
   - name: Home
     url: '#about'
