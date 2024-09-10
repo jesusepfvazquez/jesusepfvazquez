@@ -18,4 +18,6 @@ The overall Lin's concordance and Pearson correlations between the Global Physic
 
 Conclusions
 The concurrent validity of the Global Physical Activity Questionnaire in measuring moderate-to-vigorous physical activity and sedentary behavior when compared to accelerometry was poor among Hispanic/Latino adults."
+
+featured: true
 ---
