@@ -3,14 +3,14 @@ bio: My interests include Longitudinal modeling, Causal inference,
 education:
   courses:
   - course: Ph.D. in Biostatistics
-    institution: University of North Carolina - Chapel Hill, NC
+    institution: University of North Carolina at Chapel Hill
     year: (Expected 2025)
   - course: M.S. in Biostatistics (2023)
-    institution: University of North Carolina - Chapel Hill, NC
+    institution: University of North Carolina at Chapel Hill
   - course: B.S. in Statistics minor in Mathematics (2019)
-    institution: University of New Mexico - Albuquerque, NM
+    institution: University of New Mexico 
   - course: B.A. in Economics minor in Statistics (2019)
-    institution: University of New Mexico - Albuquerque, NM
+    institution: University of New Mexico 
 email: "jesusvaz[at]ad[dot]unc[dot]edu"
 highlight_name: true
 interests:
