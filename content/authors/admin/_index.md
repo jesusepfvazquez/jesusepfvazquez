@@ -18,7 +18,7 @@ interests:
 - Longitudinal Modeling
 - Causal Inference
 organizations:
-- name: The University of North Carolina - Chapel Hill
+- name: The University of North Carolina at Chapel Hill
   url: https://www.unc.edu
 role: Ph.D. Candidate in Biostatistics
 social:
