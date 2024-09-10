@@ -1,6 +1,5 @@
 ---
 # An instance of the Pages widget.
-# Documentation: https://wowchemy.com/docs/page-builder/
 widget: pages
 
 # Activate this widget? true/false
@@ -19,7 +18,7 @@ content:
   # Filter on criteria
   filters:
     folders:
-      - publication
+      - publications/
     tag: ''
     category: ''
     publication_type: ''
@@ -40,5 +39,5 @@ design:
 ---
 
 {{% callout note %}}
-Quickly discover relevant content by [filtering publications](./publication/).
+Quickly discover relevant content by [filtering publications](/publications/).
 {{% /callout %}}

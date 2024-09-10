@@ -7,9 +7,9 @@ education:
     year:
   - course: M.S. in Biostatistics (2023)
     institution: University of North Carolina at Chapel Hill
-  - course: B.S. in Statistics minor in Mathematics (2019)
+  - course: B.S. in Statistics, minor in Mathematics (2019)
     institution: University of New Mexico 
-  - course: B.A. in Economics minor in Statistics (2019)
+  - course: B.A. in Economics, minor in Statistics (2019)
     institution: University of New Mexico 
 email: "jesusvaz[at]ad[dot]unc[dot]edu"
 highlight_name: true
@@ -46,4 +46,4 @@ Hola! My name is Jesus and my pronouns are he/him/his [(learn why is this import
 
 My dissertation, “Advancing Huntington Disease Modeling: Robust and Efficient Solutions for Right‐Censored Covariates,” tackles the challenge of linear regression with a right-censored covariate by adapting existing missing data estimators and developing new techniques. My work aims to improve the understanding of the symptom progression of neurodegenerative diseases like Huntington. I will be submitting my dissertation chapters for publication over the next few months, and I encourage you to stay tuned for updates.  
 
-I’m always eager to connect, especially with students! Below are fields related to my dissertation, but I'm generally a curious person --- I would love to learn more about what you do. As a first-generation college student, I understand the challenges of navigating graduate school, and I’m happy to share my experiences and advice for making the most of your academic journey while building a career in biostatistics.  
+I’m always eager to connect --- especially with students! Below are fields related to my dissertation, but I'm generally a curious person. I would love to learn more about what you do. As a first-generation student, I understand the challenges of navigating graduate school, and I’m happy to share my experience and advice for making the most of your academic journey while building a career in biostatistics.  
