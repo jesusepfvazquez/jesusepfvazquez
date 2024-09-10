@@ -4,7 +4,7 @@ education:
   courses:
   - course: Ph.D. in Biostatistics
     institution: University of North Carolina at Chapel Hill
-    year: (Expected 2025)
+    year (Expected 2025)
   - course: M.S. in Biostatistics (2023)
     institution: University of North Carolina at Chapel Hill
   - course: B.S. in Statistics minor in Mathematics (2019)
