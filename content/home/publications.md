@@ -4,13 +4,13 @@
 widget: pages
 
 # Activate this widget? true/false
-active: false
+active: true
 
 # This file represents a page section.
 headless: true
 
 # Order that this section appears on the page.
-weight: 20
+weight: 90
 
 title: Recent Publications
 subtitle: ''
@@ -42,5 +42,3 @@ design:
 {{% callout note %}}
 Quickly discover relevant content by [filtering publications](./publication/).
 {{% /callout %}}
-
-

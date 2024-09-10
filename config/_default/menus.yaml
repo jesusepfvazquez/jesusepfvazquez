@@ -18,10 +18,10 @@ main:
   #   weight: 40
   - name: Research
     url: '#featured'
-    weight: 20
-  # - name: Contact
-  #   url: '#contact'
-  #   weight: 60
+    weight: 50
+  - name: Contact
+    url: '#contact'
+    weight: 60
   - name: CV
-    url: uploads/VAZQUEZ-CV.pdf
-    weight: 30
+    url: uploads/vazquez_cv.pdf
+    weight: 10
