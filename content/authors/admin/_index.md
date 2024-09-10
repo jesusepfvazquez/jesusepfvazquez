@@ -1,5 +1,5 @@
 ---
-bio: I am a biostatistics with an interest in coarsened data, longitudinal modeling, and causal inference.:
+bio: I am a biostatistics with an interest in coarsened data, longitudinal modeling, and causal inference:
   courses:
   - course: Ph.D. in Biostatistics (Expected 2025)
     institution: University of North Carolina at Chapel Hill 
