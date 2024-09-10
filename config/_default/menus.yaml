@@ -4,6 +4,9 @@
 #   The weight parameter defines the order that the links will appear in.
 
 main:
+  - name: CV
+    url: uploads/VAZQUEZ-CV.pdf
+    weight: 10
   - name: Home
     url: '#about'
     weight: 10
@@ -22,6 +25,4 @@ main:
   # - name: Contact
   #   url: '#contact'
   #   weight: 60
-  - name: CV
-    url: uploads/VAZQUEZ-CV.pdf
-    weight: 10
+
