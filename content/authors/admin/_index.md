@@ -42,7 +42,7 @@ superuser: true
 title: Jesus E. Vazquez
 ---
 
-Hola! My name is Jesus and my pronouns are he/him/his [(learn why is this important)](https://www.edi.nih.gov/blog/communities/what-are-gender-pronouns-why-do-they-matter#:~:text=Using%20appropriate%20pronouns%20is%20a,pronouns%20respected%20in%20the%20workplace). I’m a Ph.D. candidate in Biostatistics at the University of North Carolina at Chapel Hill and I work under the direction of Dr. Tanya P. Garcia. I'm currently the [MIND Lab](https://tpgarcia.github.io) facilitator, where we explore estimators from the missing data literature and define ways in which these must be adapted for other types of incomplete data --- such as right-censored covariates. 
+¡Hola! My name is Jesus and my pronouns are he/him/his [(learn why is this important)](https://www.edi.nih.gov/blog/communities/what-are-gender-pronouns-why-do-they-matter#:~:text=Using%20appropriate%20pronouns%20is%20a,pronouns%20respected%20in%20the%20workplace). I’m a Ph.D. candidate in Biostatistics at the University of North Carolina at Chapel Hill and I work under the direction of Dr. Tanya P. Garcia. I'm currently the [MIND Lab](https://tpgarcia.github.io) facilitator, where we explore estimators from the missing data literature and define ways in which these must be adapted for other types of incomplete data --- such as right-censored covariates. 
 
 ## Research
 
