@@ -42,12 +42,16 @@ superuser: true
 title: Jesus E. Vazquez
 ---
 
-Hola! My name is Jesus and my pronouns are he/him/his [(learn why is this important)](https://www.edi.nih.gov/blog/communities/what-are-gender-pronouns-why-do-they-matter#:~:text=Using%20appropriate%20pronouns%20is%20a,pronouns%20respected%20in%20the%20workplace). I’m a Ph.D. candidate in Biostatistics at the University of North Carolina at Chapel Hill and I work under the direction of Dr. Tanya P. Garcia. As a member of the [MIND Lab](https://tpgarcia.github.io), my research explores estimators from the missing data literature and how these must be adapted for other types of incomplete data --- such as right-censored covariates. 
+Hola! My name is Jesus and my pronouns are he/him/his [(learn why is this important)](https://www.edi.nih.gov/blog/communities/what-are-gender-pronouns-why-do-they-matter#:~:text=Using%20appropriate%20pronouns%20is%20a,pronouns%20respected%20in%20the%20workplace). I’m a Ph.D. candidate in Biostatistics at the University of North Carolina at Chapel Hill and I work under the direction of Dr. Tanya P. Garcia. I'm currently the [MIND Lab](https://tpgarcia.github.io) facilitator, where we explore estimators from the missing data literature and define ways in which these must be adapted for other types of incomplete data --- such as right-censored covariates. 
 
-My dissertation, “Advancing Huntington Disease Modeling: Robust and Efficient Solutions for Right‐Censored Covariates,” tackles the challenge of linear regression with a right-censored covariate by adapting existing missing data estimators and developing new techniques. My work aims to improve the understanding of the symptom progression of neurodegenerative diseases like Huntington. I will be submitting my dissertation chapters for publication over the next few months, and I encourage you to stay tuned for updates.  
+## Research
 
-I’m always eager to connect --- especially with students! Below are fields related to my dissertation, but I'm generally a curious person. I would love to learn more about what you do. As a first-generation student, I understand the challenges of navigating graduate school, and I’m happy to share my experience and advice for making the most of your academic journey while building a career in biostatistics.  
+My dissertation, **“Advancing Huntington Disease Modeling: Robust and Efficient Solutions for Right‐Censored Covariates”**, tackles the challenge of linear regression with a right-censored covariate by adapting existing missing data estimators and developing new techniques. My work aims to improve the understanding of the symptom progression of neurodegenerative diseases like Huntington.  
 
-# New work
+The first paper of my disseration is called "**[Establishing the Parallels and Differences Between Right-Censored and Missing Covariates](https://arxiv.org/abs/2409.04684)**". In this paper we adapt various missing covariate estimators for the right-censored covariate problem in the unexplored area of informative covariate right-censoring. For an R-code tutorial, please visit **[link](https://jesusepfvazquez.github.io/right-censored-covariates/#1_Introduction)**. I will be submitting my dissertation chapters for publication over the next few months, so I encourage you to stay tuned for updates! 
 
-The first paper of my disseration is called [Establishing the Parallels and Differences Between Right-Censored and Missing Covariates"](https://arxiv.org/abs/2409.04684). In this paper we adapt various missing covariate estimators for the right-censored covariate problem in the unexplored area of informative censoring. For an R-code tutorial, please visit [link](https://jesusepfvazquez.github.io/right-censored-covariates/#1_Introduction).
+## Stay in touch
+
+I’m always eager to connect --- especially with students! Below are fields related to my dissertation, but I'm generally a curious person. I would love to learn more about what you do. As a first-generation student, I understand the challenges of navigating undergraduate and graduate school. I’m happy to share my experience and advice for making the most of your academic journey while building a career in biostatistics.  
+
+

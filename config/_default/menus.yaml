@@ -5,14 +5,14 @@
 
 main:
   - name: CV
-    url: resume/VAZQUEZ-CV.pdf
-    weight: 10
+    url: cv/VAZQUEZ-CV.pdf
+    weight: 30
   - name: Home
     url: '#about'
-    weight: 10
+    weight: 20
   - name: "Publications"
     url: "/publications/"
-    weight: 20
+    weight: 30
   # - name: Projects
   #   url: '#projects'
   #   weight: 30
@@ -25,4 +25,5 @@ main:
   # - name: Contact
   #   url: '#contact'
   #   weight: 60
+
 
