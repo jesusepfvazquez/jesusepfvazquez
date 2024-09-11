@@ -50,8 +50,4 @@ My dissertation, **“Advancing Huntington Disease Modeling: Robust and Efficien
 
 The first paper of my disseration is called "**[Establishing the Parallels and Differences Between Right-Censored and Missing Covariates](https://arxiv.org/abs/2409.04684)**". In this paper we adapt various missing covariate estimators for the right-censored covariate problem in the unexplored area of informative covariate right-censoring. For an R-code tutorial, please visit **[link](https://jesusepfvazquez.github.io/right-censored-covariates/#1_Introduction)**. I will be submitting my dissertation chapters for publication over the next few months, so I encourage you to stay tuned for updates! 
 
-## Stay in touch
-
-I’m always eager to connect --- especially with students! Below are fields related to my dissertation, but I'm generally a curious person. I would love to learn more about what you do. As a first-generation student, I understand the challenges of navigating undergraduate and graduate school. I’m happy to share my experience and advice for making the most of your academic journey while building a career in biostatistics.  
-
 
