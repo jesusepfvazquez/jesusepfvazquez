@@ -28,7 +28,7 @@ organizations:
 - name: Department of Biostatistics
   url: https://publichealth.jhu.edu/departments/biostatistics
 
-role: Johns Hopkins Provost Postdoctoral Fellow
+role: Provost Postdoctoral Fellow
 
 social:
 - icon: orcid
