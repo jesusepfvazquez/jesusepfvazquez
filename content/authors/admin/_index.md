@@ -1,34 +1,39 @@
 ---
-bio: My interests include Longitudinal modeling, Causal inference, 
+bio: I develop statistical methods for incomplete and distributed data, with applications across neurological, pulmonary, and cardiovascular health.
+
 education:
   courses:
-  - course: Ph.D. in Biostatistics (Expected 2025)
+  - course: Ph.D. in Biostatistics (2025)
     institution: University of North Carolina at Chapel Hill
-    year:
   - course: M.S. in Biostatistics (2023)
     institution: University of North Carolina at Chapel Hill
   - course: B.S. in Statistics, minor in Mathematics (2019)
-    institution: University of New Mexico 
+    institution: University of New Mexico
   - course: B.A. in Economics, minor in Statistics (2019)
-    institution: University of New Mexico 
-email: "jesusvaz[at]ad[dot]unc[dot]edu"
+    institution: University of New Mexico
+
+email: "jvazque8[at]jhu[dot]edu"
 highlight_name: true
+
 interests:
-- Coarsened Data
+- Incomplete & Coarsened Data
+- Federated Learning
 - Longitudinal Modeling
 - Causal Inference
+- Collaborative Applied Biostatistics
+
 organizations:
-- name: University of North Carolina at Chapel Hill
-- name: Methods for INcomplete Data (MIND) Lab
-  url: https://tpgarcia.github.io
-role: Ph.D. Candidate in Biostatistics
+- name: Johns Hopkins Bloomberg School of Public Health
+  url: https://publichealth.jhu.edu
+- name: Department of Biostatistics
+  url: https://publichealth.jhu.edu/departments/biostatistics
+
+role: Johns Hopkins Provost Postdoctoral Fellow
+
 social:
-# - icon: envelope
-#   icon_pack: fas
-#   link: /#contact
-- icon: twitter
-  icon_pack: fab
-  link: https://twitter.com/biostat_vazquez
+- icon: orcid
+  icon_pack: ai
+  link: https://orcid.org/0000-0002-3166-1632
 - icon: graduation-cap
   icon_pack: fas
   link: https://scholar.google.com/citations?hl=en&user=QywOz04AAAAJ&view_op=list_works&authuser=1&gmla=AP6z3Ob4AVPsgpBWBmwxHaDs-gK3OhmUJ0-qzKXTtnxWFwQb8YAgk7Hy_K7-RCsDiYfNszErETFfWHRLIeH7VpX2
@@ -38,16 +43,18 @@ social:
 - icon: linkedin
   icon_pack: fab
   link: https://www.linkedin.com/in/jesusepfvazquez/
+
 superuser: true
 title: Jesus E. Vazquez
 ---
 
-¡Hola! My name is Jesus and my pronouns are he/him/his [(learn why is this important)](https://www.edi.nih.gov/blog/communities/what-are-gender-pronouns-why-do-they-matter#:~:text=Using%20appropriate%20pronouns%20is%20a,pronouns%20respected%20in%20the%20workplace). I’m a Ph.D. candidate in Biostatistics at the University of North Carolina at Chapel Hill and I work under the direction of Dr. Tanya P. Garcia. I'm currently the [MIND Lab](https://tpgarcia.github.io) facilitator, where we explore estimators from the missing data literature and define ways in which these must be adapted for other types of incomplete data --- such as right-censored covariates. 
+I am a Postdoctoral Fellow at the [Johns Hopkins Bloomberg School of Public Health](https://publichealth.jhu.edu), where I hold the [Johns Hopkins Provost Postdoctoral Fellowship](https://facultyaffairs.jhu.edu/initiatives/deia/ppdf/). I work with [Dr. Elizabeth A. Stuart](https://www.elizabethstuart.org) in the Departments of Biostatistics.
+
+I completed my Ph.D. in Biostatistics at the University of North Carolina at Chapel Hill under [Dr. Tanya P. Garcia](https://sph.unc.edu/adv_profile/tanya-garcia/), where my dissertation developed robust and efficient estimators for regression models with right-censored covariates, with applications to Huntington disease progression.
 
 ## Research
 
-My dissertation, **“Advancing Huntington Disease Modeling: Robust and Efficient Solutions for Right‐Censored Covariates”**, tackles the challenge of linear regression with a right-censored covariate by adapting existing missing data estimators and developing new techniques. My work aims to improve the understanding of the symptom progression of neurodegenerative diseases like Huntington.  
+My research focuses on statistical methodology for settings where data are incomplete or distributed — whether due to censoring, missingness, or the practical reality that data often cannot leave the institutions that collect it. I develop estimators that are robust and efficient in these settings, and I am currently working on federated learning frameworks that allow multiple clinical sites to draw joint inferences without sharing individual-level data.
+I collaborate broadly across health domains. My work has touched on neurological disease, pulmonary health, preterm kidney health, cardiovascular outcomes, and physical activity — and I find that moving across applied areas consistently sharpens the methods.
 
-The first paper of my disseration is called "**[Establishing the Parallels and Differences Between Right-Censored and Missing Covariates](https://arxiv.org/abs/2409.04684)**". In this paper we adapt various missing covariate estimators for the right-censored covariate problem in the unexplored area of informative covariate right-censoring. For an R-code tutorial, please visit **[link](https://jesusepfvazquez.github.io/right-censored-covariates/#1_Introduction)**. I will be submitting my dissertation chapters for publication over the next few months, so I encourage you to stay tuned for updates! 
-
-
+I am always happy to connect with researchers working on related problems. Feel free to reach out at jvazqu18[at]jh[dot]edu.
