@@ -1,22 +1,22 @@
 /* Personal site: pale blue surface, medium blue actions, soft navy headings, amber lines.
    No external fonts or scripts. */
 :root {
-  --bg: #f4f9fe;          /* light blue */
+  --bg: #f3f9ff;          /* light blue */
   --paper: #ffffff;
-  --sky: #e2effb;
-  --sky-strong: #cde3f6;
-  --sky-line: #b4d2ee;
-  --heading: #1e3a5f;     /* soft navy for headings and footer */
-  --fill: #2f6da3;        /* medium blue for buttons and active items */
-  --fill-hover: #245a8a;
+  --sky: #d6e9fb;
+  --sky-strong: #bcd9f5;
+  --sky-line: #a9cbee;
+  --heading: #0c2242;     /* soft navy for headings and footer */
+  --fill: #0f2f5c;        /* medium blue for buttons and active items */
+  --fill-hover: #1c4a86;
   --amber: #f2a65a;       /* thin lines only */
   --peach: #fde7d6;
   --peach-ink: #7a3412;
-  --ink: #1f2a37;
-  --muted: #55647a;
-  --line: #d9e6f2;
-  --link: #24629f;
-  --chip: #e6f0f9;
+  --ink: #121c2b;
+  --muted: #4d5d74;
+  --line: #d3e2f1;
+  --link: #1a5aa0;
+  --chip: #e1eefa;
   --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
   --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, "Helvetica Neue", Arial, sans-serif;
 }
@@ -42,7 +42,7 @@ ul, ol { margin: 0; padding: 0; }
 /* header */
 .site-header {
   position: sticky; top: 0; z-index: 10;
-  background: rgba(244, 249, 254, 0.95);
+  background: rgba(243, 249, 255, 0.95);
   backdrop-filter: blur(6px);
   border-top: 4px solid var(--fill);
   border-bottom: 1px solid var(--line);
@@ -103,7 +103,7 @@ ul, ol { margin: 0; padding: 0; }
   display: grid; grid-template-columns: 64px minmax(0, 1fr) minmax(0, 1.6fr); gap: 24px; align-items: baseline;
   padding: 20px 0; border-top: 1px solid var(--line); text-decoration: none; color: var(--ink);
 }
-.area-row:hover { background: rgba(47, 109, 163, 0.07); color: var(--ink); }
+.area-row:hover { background: rgba(15, 47, 92, 0.06); color: var(--ink); }
 .area-row:hover .area-title { color: var(--fill); }
 .num { font-family: var(--serif); font-size: 1.6rem; color: var(--fill); }
 .area-title { font-family: var(--serif); font-size: 1.2rem; font-weight: 600; color: var(--heading); }
@@ -156,7 +156,7 @@ ul, ol { margin: 0; padding: 0; }
 .pill span { color: var(--muted); margin-left: 4px; font-size: 0.85em; }
 .pill:hover { border-color: var(--fill); }
 .pill.active { background: var(--fill); color: #fff; border-color: var(--fill); }
-.pill.active span { color: #dbe8f5; }
+.pill.active span { color: #c9dcf2; }
 .search {
   font: inherit; font-size: 0.92rem; padding: 7px 14px; border-radius: 999px; border: 1px solid var(--sky-line);
   background: var(--paper); min-width: 240px; margin-left: auto;
