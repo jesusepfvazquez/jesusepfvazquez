@@ -1,0 +1,1835 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%% Simple LaTeX CV Template %%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% NOTE: If you find that it says                                     %%
+%%                                                                    %%
+%%                           1 of ??                                  %%
+%%                                                                    %%
+%% at the bottom of your first page, this means that the AUX file     %%
+%% was not available when you ran LaTeX on this source. Simply RERUN  %%
+%% LaTeX to get the ``??'' replaced with the number of the last page  %%
+%% of the document. The AUX file will be generated on the first run   %%
+%% of LaTeX and used on the second run to fill in all of the          %%
+%% references.                                                        %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% Document Setup %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Don't like 10pt? Try 11pt or 12pt
+\documentclass[12pt]{article}
+
+% This is a helpful package that puts math inside length specifications
+\usepackage{calc, comment}
+ \usepackage{xcolor}
+\usepackage[draft]{todonotes}   % notes showed
+\usepackage{scrextend}
+\usepackage{hanging,array,longtable}
+\usepackage{zref-lastpage}
+\newcounter{myCounter}
+\newcounter{myCounterTwo}
+\newcounter{myCounterThree}
+\newcounter{myCounterFour}
+
+% Counter 1
+\makeatletter
+\zref@newprop{myCounter}{\the\value{myCounter}}
+\zref@addprop{LastPage}{myCounter}
+\newcommand*{\myCounterLast}{%
+  \zref@extractdefault{LastPage}{myCounter}{0}%
+}
+\renewcommand*{\themyCounter}{%
+  \@arabic{\numexpr\myCounterLast+1-\value{myCounter}\relax}%
+}
+
+
+% Counter 2
+\zref@newprop{myCounterTwo}{\the\value{myCounterTwo}}
+\zref@addprop{LastPage}{myCounterTwo}
+\newcommand*{\myCounterTwoLast}{%
+  \zref@extractdefault{LastPage}{myCounterTwo}{0}%
+}
+\renewcommand*{\themyCounterTwo}{%
+  \@arabic{\numexpr\myCounterTwoLast+1-\value{myCounterTwo}\relax}%
+}
+
+% Counter 3
+\zref@newprop{myCounterThree}{\the\value{myCounterThree}}
+\zref@addprop{LastPage}{myCounterThree}
+\newcommand*{\myCounterThreeLast}{%
+  \zref@extractdefault{LastPage}{myCounterThree}{0}%
+}
+\renewcommand*{\themyCounterThree}{%
+  \@arabic{\numexpr\myCounterThreeLast+1-\value{myCounterThree}\relax}%
+}
+
+% Counter 4
+\zref@newprop{myCounterFour}{\the\value{myCounterFour}}
+\zref@addprop{LastPage}{myCounterFour}
+\newcommand*{\myCounterFourLast}{%
+  \zref@extractdefault{LastPage}{myCounterFour}{0}%
+}
+\renewcommand*{\themyCounterFour}{%
+  \@arabic{\numexpr\myCounterFourLast+1-\value{myCounterFour}\relax}%
+}
+\makeatother
+
+% Simpler bibsection for CV sections
+% (thanks to natbib for inspiration)
+\makeatletter
+\newlength{\bibhang}
+\setlength{\bibhang}{1em}
+\newlength{\bibsep}
+ {\@listi \global\bibsep\itemsep \global\advance\bibsep by\parsep}
+\newenvironment{bibsection}
+    {\minipage[t]{\linewidth}\list{}{%
+        \setlength{\leftmargin}{\bibhang}%
+        \setlength{\itemindent}{-\leftmargin}%
+        \setlength{\itemsep}{\bibsep}%
+        \setlength{\parsep}{\z@}%
+        }}
+    {\endlist\endminipage}
+\makeatother
+
+% Layout: Puts the section titles on left side of page
+\reversemarginpar
+
+%
+%         PAPER SIZE, PAGE NUMBER, AND DOCUMENT LAYOUT NOTES:
+%
+% The next \usepackage line changes the layout for CV style section
+% headings as marginal notes. It also sets up the paper size as either
+% letter or A4. By default, letter was used. If A4 paper is desired,
+% comment out the letterpaper lines and uncomment the a4paper lines.
+%
+% As you can see, the margin widths and section title widths can be
+% easily adjusted.
+%
+% ALSO: Notice that the includefoot option can be commented OUT in order
+% to put the PAGE NUMBER *IN* the bottom margin. This will make the
+% effective text area larger.
+%
+% IF YOU WISH TO REMOVE THE ``of LASTPAGE'' next to each page number,
+% see the note about the +LP and -LP lines below. Comment out the +LP
+% and uncomment the -LP.
+%
+% IF YOU WISH TO REMOVE PAGE NUMBERS, be sure that the includefoot line
+% is uncommented and ALSO uncomment the \pagestyle{empty} a few lines
+% below.
+%
+
+%% Use these lines for letter-sized paper
+\usepackage[paper=letterpaper,
+            %includefoot, % Uncomment to put page number above margin
+            marginparwidth=1.2in,     % Length of section titles
+            marginparsep=.05in,       % Space between titles and text
+            margin=0.5in,               % 1 inch margins
+            includemp]{geometry}
+
+%% Use these lines for A4-sized paper
+%\usepackage[paper=a4paper,
+%            %includefoot, % Uncomment to put page number above margin
+%            marginparwidth=30.5mm,    % Length of section titles
+%            marginparsep=1.5mm,       % Space between titles and text
+%            margin=25mm,              % 25mm margins
+%            includemp]{geometry}
+
+%% More layout: Get rid of indenting throughout entire document
+\setlength{\parindent}{0in}
+
+%% This gives us fun enumeration environments. compactitem will be nice.
+\usepackage{paralist}
+
+%% Reference the last page in the page number
+%
+% NOTE: comment the +LP line and uncomment the -LP line to have page
+%       numbers without the ``of ##'' last page reference)
+%
+% NOTE: uncomment the \pagestyle{empty} line to get rid of all page
+%       numbers (make sure includefoot is commented out above)
+%
+\usepackage{fancyhdr,lastpage}
+\pagestyle{fancy}
+%\pagestyle{empty}      % Uncomment this to get rid of page numbers
+\fancyhf{}\renewcommand{\headrulewidth}{0pt}
+\fancyfootoffset{\marginparsep+\marginparwidth}
+\newlength{\footpageshift}
+\setlength{\footpageshift}
+          {0.5\textwidth+0.5\marginparsep+0.5\marginparwidth-2in}
+\lfoot{\hspace{\footpageshift}%
+       \parbox{4in}{\, \hfill %
+                    \arabic{page} of \protect\pageref*{LastPage} % +LP
+%                    \arabic{page}                               % -LP
+                    \hfill \,}}
+
+% Finally, give us PDF bookmarks
+\usepackage{color,hyperref}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.3}
+\hypersetup{colorlinks,breaklinks,
+            linkcolor=black,urlcolor=black,
+            anchorcolor=darkblue,citecolor=darkblue}
+
+%%%%%%%%%%%%%%%%%%%%%%%% End Document Setup %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%
+% Begin Raymond Definitions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\ANNALS{{\it Annals of Statistics}}
+\def\BIOK{{\it Biometrika}}
+\def\whT{\widehat{\Theta}}
+\def\STATMED{{\it Statistics in Medicine}}
+\def\STATSCI{{\it Statistical Science}}
+\def\JSPI{{\it Journal of Statistical Planning \& Inference}}
+\def\JRSSB{{\it Journal of the Royal Statistical Society, Series B}}
+\def\BMCS{{\it Biometrics}}
+\def\COMMS{{\it Communications in Statistics, Theory \& Methods}}
+\def\JQT{{\it Journal of Quality Technology}}
+\def\STIM{{\it Statistics in Medicine}}
+\def\TECH{{\it Technometrics}}
+\def\AJE{{\it American Journal of Epidemiology}}
+\def\JASA{{\it Journal of the American Statistical Association}}
+\def\CDA{{\it Computational Statistics \& Data Analysis}}
+\def\JCGS{{\it Journal of Computational and Graphical Statistics}}
+\def\JCB{{\it Journal of Computational Biology}}
+\def\BIOINF{{\it Bioinformatics}}
+\def\JAMA{{\it Journal of the American Medical Association}}
+\def\JNUTR{{\it Journal of Nutrition}}
+\def\JCGS{{\it Journal of Computational and Graphical Statistics}}
+\def\LETTERS{{\it Letters in Probability and Statistics}}
+\def\JABES{{\it Journal of Agricultural, Biological and
+                      Environmental Statistics}}
+\def\JASA{{\it Journal of the American Statistical Association}}
+\def\ANNALS{{\it Annals of Statistics}}
+\def\JSPI{{\it Journal of Statistical Planning \& Inference}}
+\def\TECH{{\it Technometrics}}
+\def\BIOK{{\it Bio\-me\-tri\-ka}}
+\def\JRSSB{{\it Journal of the Royal Statistical Society, Series B}}
+\def\BMCS{{\it Biometrics}}
+\def\COMMS{{\it Communications in Statistics, Series A}}
+\def\JQT{{\it Journal of Quality Technology}}
+\def\SCAN{{\it Scandinavian Journal of Statistics}}
+\def\AJE{{\it American Journal of Epidemiology}}
+\def\STIM{{\it Statistics in Medicine}}
+\def\SAGMB{{\it Statistical Applications in Genetics and Molecular Biology}}
+\def\ANNALS{{\it Annals of Statistics}}
+\def\whT{\widehat{\Theta}}
+\def\STATMED{{\it Statistics in Medicine}}
+\def\STATSCI{{\it Statistical Science}}
+\def\JSPI{{\it Journal of Statistical Planning \& Inference}}
+\def\JRSSB{{\it Journal of the Royal Statistical Society, Series B}}
+\def\BMCS{{\it Biometrics}}
+\def\COMMS{{\it Communications in Statistics, Theory \& Methods}}
+
+\def\JQT{{\it Journal of Quality Technology}}
+\def\STIM{{\it Statistics in Medicine}}
+\def\TECH{{\it Technometrics}}
+\def\AJE{{\it American Journal of Epidemiology}}
+\def\JASA{{\it Journal of the American Statistical Association}}
+\def\CDA{{\it Computational Statistics \& Data Analysis}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% End Raymond Definitions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Helper Commands %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% The title (name) with a horizontal rule under it
+%
+% Usage: \makeheading{name}
+%
+% Place at top of document. It should be the first thing.
+\newcommand{\makeheading}[1]%
+        {\hspace*{-\marginparsep minus \marginparwidth}%
+         \begin{minipage}[t]{\textwidth+\marginparwidth+\marginparsep}%
+                {\large \bfseries #1}\\[-0.15\baselineskip]%
+                 \rule{\columnwidth}{1pt}%
+         \end{minipage}}
+
+% The section headings
+%
+% Usage: \section{section name}
+%
+% Follow this section IMMEDIATELY with the first line of the section
+% text. Do not put whitespace in between. That is, do this:
+%
+%       \section{My Information}
+%       Here is my information.
+%
+% and NOT this:
+%
+%       \section{My Information}
+%
+%       Here is my information.
+%
+% Otherwise the top of the section header will not line up with the top
+% of the section. Of course, using a single comment character (%) on
+% empty lines allows for the function of the first example with the
+% readability of the second example.
+\renewcommand{\section}[2]%
+        {\pagebreak[2]\vspace{1.3\baselineskip}%
+         \phantomsection\addcontentsline{toc}{section}{#1}%
+         \hspace{0in}%
+         \marginpar{
+         \raggedright \scshape #1}#2}
+
+% An itemize-style list with lots of space between items
+\newenvironment{outerlist}[1][\enskip\textbullet]%
+        {\begin{itemize}[#1]}{\end{itemize}%
+         \vspace{-.6\baselineskip}}
+
+% An environment IDENTICAL to outerlist that has better pre-list spacing
+% when used as the first thing in a \section
+\newenvironment{lonelist}[1][\enskip\textbullet]%
+        {\vspace{-\baselineskip}\begin{list}{#1}{%
+        \setlength{\partopsep}{0pt}%
+        \setlength{\topsep}{0pt}}}
+        {\end{list}\vspace{-.6\baselineskip}}
+
+% An itemize-style list with little space between items
+\newenvironment{innerlist}[1][\enskip\textbullet]%
+        {\begin{compactitem}[#1]}{\end{compactitem}}
+
+% An environment IDENTICAL to innerlist that has better pre-list spacing
+% when used as the first thing in a \section
+\newenvironment{loneinnerlist}[1][\enskip\textbullet]%
+        {\vspace{-\baselineskip}\begin{compactitem}[#1]}
+        {\end{compactitem}\vspace{-.6\baselineskip}}
+
+% To add some paragraph space between lines.
+% This also tells LaTeX to preferably break a page on one of these gaps
+% if there is a needed pagebreak nearby.
+\newcommand{\blankline}{\quad\pagebreak[2]}
+
+% Uses hyperref to link DOI
+\newcommand\doilink[1]{\href{http://dx.doi.org/#1}{#1}}
+\newcommand\doi[1]{doi:\doilink{#1}}
+
+% Select what to do with command \comment:  
+
+
+%%%%%%%%%%%%%%%%
+% Begin NEW definitions
+%%%%%%%%%%%%%%%%
+
+% Comment command
+%\newcommand{\noshow}[1]{{#1}} %for showing comments
+\newcommand{\noshow}[1]{} % for not showing
+
+% Spacing comment
+\newcommand{\removespace}{\vspace{-2.5ex}}
+
+%margins
+\def\bam{\begin{addmargin}[1em]{1.25em}}
+\def\eam{\end{addmargin}}
+
+%bolding
+\newcommand{\mybold}[1]{{\bf#1}}
+\newcommand{\labels}[1]{\color{darkblue}{{\bf#1}}}
+
+%entries
+\def\ben{\newline\bam\removespace}
+\def\een{\removespace\eam}
+\def\myhang{\hangindent=1em
+\hangafter=1}
+\def\myhangn{\hangindent=1em
+\hangafter=0}
+
+% counting in a table
+\newcommand{\mytablerow}{\stepcounter{tablerowcounter}\theenumi.\arabic{tablerowcounter}}
+
+%\longtable adjust
+\setlength{\LTleft}{0pt}
+%\setlength{\textfloatsep}{-1cm}
+%\addtolength{\parskip}{-1mm}
+\setlength{\LTpre}{0pt}
+\setlength{\LTpost}{0pt}
+\newcounter{rowcount}
+%%%%%%%%%%%%%%%%%%%%%%%% End Helper Commands %%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%% Begin CV Document %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\makeheading{\bf{Jesus E. Vazquez}}
+
+\section{\bf{Contact Information}}
+%
+% NOTE: Mind where the & separators and \\ breaks are in the following
+%       table.
+%
+% ALSO: \rcollength is the width of the right column of the table
+%       (adjust it to your liking; default is 1.85in).
+%
+%
+\renewcommand{\arraystretch}{1.1}% Tighter
+\begin{longtable}{p{9cm} p{9cm}}
+University of North Carolina at Chapel Hill
+\newline  Department of Biostatistics 
+\newline 225 Administration Building
+\newline College Station, TX 77843-1266
+%
+%
+& Phone: (979)  436-9396 
+\newline Email: \href{mailto:tpgarcia@srph.tamhsc.edu }{tpgarcia@sph.tamhsc.edu}
+\newline  Web: \href{http://srph.tamhsc.edu/~tpgarcia}{http://stat.tamu.edu/$\sim$tpgarcia}
+\\
+\end{longtable}
+
+%\section{Objective}
+%
+%Placement in a post-doctoral or academic faculty research position
+%%%%%%%%%%%%%%%%%%%%%%
+\section{\bf{Research Interests}}
+%%%%%%%%%%%%%%%%%%%%
+%
+
+%\renewcommand{\arraystretch}{1.1}% Tighter
+%\begin{longtable}{p{12cm} p{0cm} l}
+%Biostatistics,
+%Genetic Mixture Models, 
+High-Dimensional Variable Selection,
+Longitudinal Data Analysis,
+Neurodegenerative Diseases,
+Nonparametric Models,
+Prediction Models,
+Semiparametric Models, 
+Survival Analysis
+%\\
+%Variable Selection\\
+%\end{longtable}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%
+\section{\bf{Employment}}
+%%%%%%%%%%%%%%%%%%%
+
+
+\renewcommand{\arraystretch}{1.1}% Tighter
+\begin{longtable}{p{12cm} p{0cm} l}
+
+\myhang{\mybold{Assistant Professor of Statistics}}, Department of Statistics, \href{http://www.stat.tamu.edu/}{{Texas A\&M  University}} && From 08/2018\\
+%
+%
+\myhang{\mybold{Assistant Professor of Biostatistics}}, Department of Epidemiology and Biostatistics, \href{http://www.sph.tamhsc.edu/}{{Texas A\&M  School of Public Health}} && 01/2013- 07/2018\\
+%
+%
+\myhang{\mybold{Research Assistant Professor of Statistics}}, Department of Statistics, \href{http://www.stat.tamu.edu/train}{{Texas A\&M University}}& & 07/2011-12/2012\\
+%
+%
+\myhang{\mybold{Visiting Scholar}}, \href{http://www.maths.usyd.edu.au/}{{The University of Sydney}},
+Australia 
+%\noshow{
+\emph{
+\ben
+\myhangn Fully funded (\$7,200 AUS) four-week invitation by Prof. Samuel M\"uller and Prof. Alan Welsh.
+\een
+}
+&& 11/2012\\
+%
+%
+%
+{\mybold{Research Assistant}}, \href{http://www.ornl.gov}{{Oak Ridge National Lab}},
+Oak Ridge, TN 
+\noshow{\ben 
+\textit{Adviser: Dr. Patricia Hu}. % 
+Compared and re-fined evidential reasoning methods to rationally determine instances of fuel tax evasion.  Method will ultimately aggregate information from fuel markers, sensor devices and vehicle tracking which
+indicates fuel loading/unloading, and compare this information with historical data  to detect illegal activities in real-time.
+\een}
+ & &06/2010-08/2010\\
+%
+%
+%
+{\mybold{Research Assistant}}, \href{http://www.mdanderson.org}{{MD Anderson Cancer Center}},
+Houston, TX
+\noshow{
+\ben
+\textit{Adviser: Prof. Guosheng Yin}.  Improved a flexible two-sample comparison method for crossing survival curves in randomized clinical trials by appropriately incorporating auxiliary covariates.  Derived an unbiased estimator with significant efficiency gains over current methods using semiparametric principles.
+\een
+}
+&&07/2008-08/2008\\
+%
+%
+%
+
+\myhang
+{\mybold{Teaching Assistant}},
+\href{http://www2.unine.ch/statistics}{{University of Neuch\^{a}tel}},
+Neuch\^{a}tel, Switzerland  
+\noshow{
+
+} && 09/2006-06/2008\\
+%
+%
+
+\myhang
+{\mybold{Teaching Assistant}}, 
+\href{http://www.stats.uwo.ca}{{University of Western Ontario}},
+London, ON, Canada    
+\noshow{
+} && 09/2005-06/2006\\
+%
+\myhang
+{\mybold{Research Assistant}}, \href{http://www.rwth-aachen.de/}{{RWTH Institute of Operations Research and Logistics}},
+Aachen, Germany
+\noshow{
+\ben
+ \textit{Adviser: Prof. H.-J. Sebastian.} Organized, analyzed and modeled data for Ford Company which contributed to improving its car assembly organization. Investigated stochastic processes present in Spare Parts Management.
+\een}
+   && 06/2004-08/2004\\
+%
+%
+{\mybold{Research Assistant}},
+\href{http://www.math.uci.edu/}{{University of California, Irvine}},
+Irvine, CA   
+\noshow{
+\ben
+\textit{Adviser: Prof. Frederic Y.M. Wan}. % 
+ Actively learned the necessary skills in partial differential equations to successfully solve a nonlinear perturbation problem. Independently designed a MATLAB program whose results agreed with earlier numerical solutions.%, but was computationally simpler.
+\een}
+  && 09/2002-06/2003\\
+
+%
+%
+%
+%
+\mybold{Teaching Assistant}, \href{http://www.math.uci.edu/}{{University of California, Irvine}},
+Irvine, CA   
+\noshow{
+} && 09/2001-06/2003\\
+%
+
+\end{longtable}
+
+%\href{http://www.stats.uwo.ca}{\textbf{University of Western Ontario}}, London, ON, Canada     \hfill 06/2006-08/2006
+%\begin{outerlist}
+%\item[] \textit{Adviser: Prof. John Braun}%
+%    \begin{innerlist}
+%        \item Implemented PROMETHEUS, a fire simulating algorithm, in statistical software R, which made the algorithm accessible to collaborators throughout Canada.
+%        \item Alleviated computational difficulties and increased model accuracy through parameter smoothing.
+%        \item Contributed to an unprecedented stochasticity in the model using a residual-based block bootstrap, which could be used to simulate an actual wildfire.
+%    \end{innerlist}
+%\end{outerlist}
+
+
+
+%%%%%%%%%%%%%%%%%%
+\section{\bf{Education}}
+%%%%%%%%%%%%%%%%%%%
+
+\renewcommand{\arraystretch}{1.1}% Tighter
+\begin{longtable}{p{12cm} p{0cm} r}
+{\mybold{Ph.D., Statistics}},  
+\href{http://www.stat.tamu.edu/}{{Texas A\&M University}},
+College Station, TX
+\ben
+  \textit{Adviser: Prof. Yanyuan Ma}. GPA: 4.00/4.00.
+\noshow{\newline Dissertation: Efficient semiparametric estimators for biological, genetic, and measurement error applications.}
+\een
+ &&08/2011\\
+%
+%
+\myhang{\mybold{M.Sc., Statistics}},  \href{http://www.stats.uwo.ca/}{{University of Western Ontario}},
+London, ON, Canada 
+\ben
+  \textit{Adviser: Prof. John Braun}. GPA: 4.00/4.00. 
+\noshow{\newline Thesis: Improving the PROMETHEUS model through parameter smoothing.}
+\een
+&& 08/2006\\
+%
+%
+\myhang {\mybold{M.S.,  Industrial Engineering and Operations Research}}, \href{http://www.ieor.berkeley.edu/}{{University of California, Berkeley}},
+Berkeley, CA 
+\ben
+GPA: 3.67/4.00.
+\een
+&& 05/2005\\
+%
+%
+\myhang{\mybold{B.S., Mathematics}}, \href{http://www.math.uci.edu/}{{University of California, Irvine}},
+Irvine, CA
+\ben
+GPA: 3.939/4.00
+\een &&06/2003\\
+\end{longtable}
+
+\clearpage\newpage
+%%%%%%%%%%%%%%%%
+\section{\bf{Grants and Fellowships\\ (Total: \$938,406)}}
+%%%%%%%%%%%%%%%%
+%\themyCounter
+%\setcounter{myCounter}{-\value{myCounter}-\themyCounter+29}
+%\themyCounter
+\renewcommand{\arraystretch}{1.1}% Tighter
+\begin{longtable}{@{
+\stepcounter{myCounterTwo}
+\themyCounterTwo.\hspace*{\tabcolsep}}p{12cm} p{0cm} l}
+
+%
+\myhang
+{\bf Principal Investigator}, ``Innovative statistical models for development of first Huntington's disease progression risk assessment tool.'' K01, NIH NINDS, K01NS099343, \$557,406. 
+&& 12/2016-11/2019\\
+
+%
+\myhang
+{\bf Statistics Mentor}, ``Nutrition, Biostatistics and Bioinformatics.'' T32 DHHS-NIH-National Cancer Institute. PI: Raymond J. Carroll. && 08/2017-08/2021\\
+
+%
+\myhang
+{\bf Co-Investigator}, ``Leveraging motor vehicle crash data for injury surveillance and research in AFF.'' Centers for Agricultural Safety and Health, U54 OH007541-16.  PI: Eva Shipp.
+&& 12/2016-11/2019\\
+
+
+%
+\myhang
+{\bf Principal Investigator}, ``Identifying high-dimensional neuroimaging biomarkers associated with Huntington's disease motor onset.'' %\href{http://sph.tamhsc.edu/research/redigrants.html}
+{Texas A\&M School of Public Health Research Enhancement and Development Initiative (REDI) Grant}, \$25,000. 
+%\ben
+%Grant used to develop a new statistical method to identify and estimate the effects of %high-dimensional, 
+%baseline neuroimaging measures in relation to age at onset for Huntington's disease.
+%\een
+&& 06/2015-08/2016\\
+%
+%
+%
+%
+\myhang
+{\bf Principal Investigator}, ``Improved definition and prediction of Huntington's disease motor-onset using advanced statistical models.''
+\href{http://www.hdsa.org/research/grant-applications/hd-human-biology-project-hdsa-research-fellowship.html}{Huntington's Disease Society of America (HDSA) %Human Biology Project
+ Research Fellowship}, \$150,000. 
+%\ben
+% Research grant launched to investigate Huntington's disease  beyond animal  models into human data. Grant was award to 4 applicants among competition from 12 different countries.
+%\een
+&& 11/2013-11/2015\\
+%
+%
+%
+\myhang
+ \href{http://www.gemfellowship.org/}{National Consortium for Graduate Degrees for Minorities in Engineering and Science (GEM) PhD Fellowship}, \$30,000. 
+%\ben
+%  Awarded to 100 out of 1200 applicants from throughout the US.
+%\een
+&& 2010-2011\\
+
+%
+%
+%
+\myhang
+ \href{http://www.peointernational.org/}{Philanthropic Educational Organization (P.E.O.) Scholar Award}, \$15,000.
+%\ben
+%Awarded to 85 out of the 6,000 nominated female graduate students throughout the US and Canada.
+%\een
+&&2010-2011\\
+%
+%
+%
+\myhang
+\href{http://www.fordfoundation.org/}{Ford Foundation Predoctoral Fellowship Honorable Mention}
+%\ben
+%Awarded to 100 out of 1000 applicants from throughout the US.
+%\een
+ && 2010\\
+%
+%
+%
+\myhang
+ \href{http://www.nsf.gov}{National Science Foundation's Texas A\&M University System Louis Stokes Alliance  for Minority Participation Bridge to the Doctorate Fellowship}, \$94,000. 
+&& 2008-2010\\
+% Per year: 30,000 + 2*8500, so total for two year is 2 * (30,000+ 2*8500)
+%
+%
+%
+\myhang
+ \href{http://www.berkeley.edu}{Chancellor's Opportunity Predoctoral Fellowship}, University of California, Berkeley, \$67,000. && 2003-2005
+% Total for 2 years:  17000*2 (stipend)+3000 (summer) +7492.25*4 (tuition and fees)
+\end{longtable}
+
+
+%\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{\bf{Publications}} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+($^*$ denotes equal contribution; $^{\dagger}$ denotes student author)
+
+\vskip 0.1in
+
+%%%%%%%%%%%%%%%%%%%%%%%
+\underline{{\bf Under Review}}
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\vskip 0.1in
+
+
+\renewcommand{\arraystretch}{1.1}% Tighter
+\begin{longtable}{@{\stepcounter{myCounterThree}
+\themyCounterThree.\hspace*{\tabcolsep}}p{15cm} p{0cm} l}
+
+%
+%
+\myhang
+{\bf Garcia, T.P.}, Wang, Y., Shoulson, I., Paulsen, J.S., and Marder, K. (2018+). Disease progression in Huntington Disease: an analysis of multiple longitudinal outcomes.\\
+%
+%
+\myhang
+{\bf Garcia, T.P.} and Parast, L. (2018+). Dynamic landmark prediction for genetic mixture models.\\
+
+%
+
+
+\myhang
+Wei, Y.$^{\dagger}$, Ma, Y., {\bf Garcia, T.P.} and Sinha, S. (2018+).  Double blind review.  %Consistent estimator for logistic random effect model.
+\\
+
+\end{longtable}
+%\end{comment}
+
+\vskip 0.2in
+\underline{{\bf Refereed Papers}}
+\vskip 0.1in
+%\renewcommand{\arraystretch}{1.1}% Tighter
+
+
+\begin{longtable}{@{\stepcounter{myCounterThree}
+\themyCounterThree.\hspace*{\tabcolsep}}p{15cm} p{0cm} l}
+
+
+
+%
+\myhang
+{\bf Garcia, T.P.}, Marder, K. and Wang, Y. (2018). Time-varying Proportional Odds Model for Mega-analysis of Clustered Event Times,  doi: 10.1093/biostatistics/kxx065.\\
+
+\myhang
+Dutra, J.R.$^*$,  {\bf Garcia, T.P.}$^*$, Marder, K. (2018). Huntington's Disease. In Oxford Textbook of Neurological and Neuropsychiatric Epidemiology, editors Carol Brayne, Valery Feigin, Lenore Launer, and Giancarlo Logroscino.\\
+
+\myhang
+{\bf Garcia, T.P.} and Ma, Y. (2017).   Simultaneous treatment of unspecified heteroskedastic model error distribution and mismeasured covariates for restricted moment models. \emph{The Journal of Econometrics}, {\bf 200}, 194-206. \\
+
+\myhang
+{\bf Garcia, T.P.}, Ma, Y., Marder, K. and Wang, Y. (2017). Robust mixed-effects model for clustered failure time data: application to Huntington's disease event measures. \emph{Annals  of Applied Statistics}, {\bf 11}, 1085-1116.\\
+
+
+\myhang
+{\bf Garcia, T.P.} and Marder, K. (2017). Statistical Approaches to longitudinal data analysis in neurodegenerative diseases: Huntington's Disease as a model. \emph{Current Neurology and Neuroscience Reports}, {\bf 17}:14, doi:10.1007/s11910-017-0723-4.\\
+
+
+
+
+\myhang
+{\bf Garcia, T.P.}, Marder, K. and Wang, Y. (2017). Statistical modeling of Huntington disease onset.
+In Handbook of Clinical Neurology, vol 144, 3rd Series, editors Andrew Feigin and Karen E.~Anderson. \\
+
+%
+\myhang
+{\bf Garcia, T.P.}$^*$ and M\"uller, S.$^*$ (2016). Cox regression with exclusion frequency-based weights to identify neuroimaging markers relevant to Huntington's disease onset. \emph{Annals of Applied Statistics}, {\bf 10}, 2130-2156.
+%\ben
+ %$^*$\emph{Authors contributed equally to this work.}
+%\een
+\\
+
+%
+%
+\myhang
+Kohli, P., {\bf Garcia, T.P.} and Pourahmadi, M. (2016). Linear models for cholesky factors of covariance matrices of multivariate longitudinal data. \emph{Journal of Multivariate Analysis}, {\bf 145}, 87-100.\\
+%
+%
+\myhang
+{\bf Garcia, T.P.} and Ma, Y. (2015). Optimal estimator for logistic model with
+distribution-free random intercept. \emph{Scandinavian Journal of Statistics}, {\bf 43}, 156-171.\\
+%
+\myhang
+Qin, J.$^*$,  {\bf Garcia, T.P.}$^*$, Ma, Y., Tang, M.X., Marder, K. and Wang, Y. (2014). Combining isotonic regression and EM algorithm to predict genetic risk under monotonicity constraint and unknown genotypes. \emph{Annals of Applied Statistics}, {\bf 8}, 1182-1208.
+%\ben
+% $^*$\emph{Authors contributed equally to this work.}
+%\een
+\\
+%
+%
+\myhang
+{\bf Garcia, T.P.} and M\"uller, S. (2014).  Influence of measures of significance-based weights in the weighted Lasso. \emph{Journal of the Indian Society of Agricultural Statistics} (Invited paper), {\bf 68}, 131-144.\\
+%
+%
+\myhang
+{\bf Garcia, T.P.}, M\"uller, S., Carroll, R.J., and Walzem, R.L. (2014). Identification of important regressor groups, subgroups, and individuals via regularization methods: application to gut microbiome data. \emph{Bioinformatics}, doi: 10.1093/bioinformatics/btt608.\\
+%
+%
+\myhang
+ {\bf Garcia, T.P.}, M\"uller, S., Carroll, R.J., Dunn, T.N., Thomas, A.P., Adams, S.H., Pillai, S.D.,  and Walzem, R.L. (2013). Structured variable selection with $q$-values.  \emph{Biostatistics}, DOI: 10.1093/biostatistics/kxt012.\\
+%
+%
+\myhang
+Wang, Y., {\bf Garcia, T.P.}, and Ma, Y. (2012).  Nonparametric estimation for censored mixture data with application to the Cooperative Huntington's Observational Research Trial. \JASA, {\bf 107}, 1324-1338.\\
+%
+%
+\myhang
+{\bf Garcia, T.P.}, Kohli, P., Pourahmadi, M. (2012).  Regressograms and mean-covariance models for incomplete longitudinal data. \emph{The American Statistician}, {\bf 66}, 85-91.\\
+%
+%
+\myhang
+Ye, F., {\bf Garcia, T.P.}, Pourahmadi, M., and Lord, D. (2012). Extension of a negative binomial GARCH model: analyzing the effects of gasoline price and VMT on DUI fatal crashes in Texas. \emph{Transportation Research Record: Journal of the Transportation Research Board}, {\bf 2279}, 31-39.\\
+%
+%
+\myhang
+{\bf Garcia, T.P.}, Ma, Y., and Yin, G. (2011). Efficiency improvement in a class of survival models through model-free covariate incorporation.  \emph{Lifetime Data Analysis}, {\bf 17}, 552-565.\\
+%
+%
+\myhang
+ Barber, J., Bose, C., Bourlioux, A., Braun, J., Brunelle, E., {\bf Garcia, T.}, Hillenk, T., and Ong, B. (2010). Burning issues with PROMETHEUS, the Canada's wildfire growth simulator. \emph{Canadian Applied Mathematics Quarterly}, {\bf 16}, 337-378. \\
+%
+%
+\myhang
+{\bf Garcia, T.}, Braun, J., Bryce, R., and Tymstra C. (2008). Smoothing and bootstrapping the PROMETHEUS fire growth model.  \emph{Environmetrics}, {\bf 19}, 1-13.\\
+\end{longtable}
+
+
+
+%\underline{Book Chapters}
+%\vskip 0.2in
+%%\end{comment}
+%%\renewcommand{\arraystretch}{1.1}% Tighter
+%\setcounter{rowcount}{0}
+%\begin{longtable}{@{\stepcounter{rowcount}\therowcount.\hspace*{\tabcolsep}}p{15cm} p{0cm} l}
+
+%
+%
+%\myhang
+%Dutra, J.R.$^*$,  {\bf Garcia, T.P.}$^*$, Marder, K. (2017). Huntington's Disease. In Oxford Textbook of Neurological and Neuropsychiatric Epidemiology, editors Carol Brayne, Valery Feigin, Lenore Launer, and Giancarlo Logroscino.
+%\ben
+% $^*$\emph{Authors contributed equally to this work.}
+%\een
+%\\
+
+%
+%
+%\myhang
+%{\bf Garcia, T.P.}, Marder, K. and Wang, Y. (2016). Natural history of Huntington's disease: evolution of modeling onset.  In Handbook of Clinical Neurology, 3rd Series, editors Andrew Feigin and Karen E.~Anderson. \\
+%\end{longtable}
+
+
+%\begin{comment}
+
+
+%\vskip 0.2in
+\begin{comment}
+%%%%%%%%%%%%%%%%%%%%%%
+\underline{{\bf In Preparation}}
+%%%%%%%%%%%%%%%%%%%%%%
+\vskip 0.2in
+
+
+%\setcounter{rowcount}{0}
+\renewcommand{\arraystretch}{1.1}% Tighter
+\begin{longtable}{@{\stepcounter{rowcount}\therowcount.\hspace*{\tabcolsep}}p{15cm} p{0cm} l}
+
+%
+%
+\myhang
+{\bf Garcia, T.P.}, Marder, K. and Wang, Y.  (2017+). Mega-analysis of cognitive, motor, and behavior events show similarities in multiple Huntington's disease studies.\\
+
+
+%
+\myhang
+{\bf Garcia, T.P.}, Morris, J., and Carroll, R. J.   (2017+). Bayesian functional predictor for survival data.\\
+
+
+%
+\myhang
+{\bf Garcia, T.P.}, Mueller, S., and Carroll, R. J.   (2017+). 
+Dynamic group lasso for modeling of multiple, time-varying clinical measures.\\
+
+ 
+%
+
+%
+%
+%
+
+\end{longtable}
+\end{comment}
+\vskip 0.2in
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{\bf{Presentations}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\renewcommand{\arraystretch}{1.1}% Tighter
+\begin{longtable}{@{\stepcounter{myCounterFour}
+\themyCounterFour.\hspace*{\tabcolsep}}p{12cm} p{0cm} l}
+\multicolumn{3}{l}{\underline{{\bf Invited}}}\\
+
+
+
+%
+\myhang
+\href{https://ww2.amstat.org/meetings/jsm/2018/}{{2018 Joint Statistical Meeting}}, Vancouver, Canada
+\noshow{\ben
+Bayesian functional predictors in survival models.
+\een}
+ && 08/2018\\
+%
+
+%
+\myhang
+\href{http://www.medunigraz.at/imi/isnps2015/index.php}{{International Society for Non-Parametric Statistics  (ISNPS) Meeting}}, Salerno, Italy
+\noshow{\ben
+Bayesian functional predictors in survival models.
+\een}
+ && 06/2018\\
+%
+
+
+
+%
+\myhang
+\href{https://ima.umn.edu/2017-2018.6/W2.21-23.18}{{Institute for Mathematics and its Applications ``Frontiers in Forecasting''}}, Minneapolis, MN
+\noshow{\ben
+Bayesian functional predictors in survival models.
+\een}
+ && 02/2018\\
+%
+
+
+
+
+
+\myhang 
+ \href{http://cmstatistics.org/CMStatistics2017/}{{10th International Conference of the ERCIM WG on Computational and Methodological Statistics}}, University of London, UK
+ \noshow{\ben
+Bayesian functional predictors in survival models.
+\een}
+ && 12/2017\\
+ 
+ 
+%
+\myhang
+\href{http://www.stat.tamu.edu}{{Texas A\&M University, Department of Statistics}}, College Station, TX
+\noshow{\ben
+XX.
+\een}
+ && 12/2017\\
+ 
+%
+%
+\myhang 
+ \href{https://ww2.amstat.org/meetings/jsm/2017/}{{2017 Joint Statistical Meeting}}, Baltimore, MD
+ \noshow{\ben
+Dynamic landmark prediction and model selection for genetic mixture models.
+\een}
+ && 08/2017\\
+ 
+ 
+ %
+%
+\myhang 
+ \href{http://hdsa.org/about-hdsa/annual-convention/}{{32nd Annual Huntington's Disease Society of America Annual Convention}}, Schaumberg, IL
+ \noshow{\ben
+Towards better understanding of Huntington's disease progression: how statistical models help
+\een}
+ && 06/2017\\
+ 
+%
+%
+\myhang 
+\href{http://cmstatistics.org/EcoSta2017/}{{International Conference on Econometrics and Statistics}}, Hong Kong University of Science and Technology, Hong Kong
+ \noshow{\ben
+Time-varying Proportional Odds Model for Mega-analysis of Clustered Event Times.
+\een}
+ && 06/2017\\
+ %
+%
+\myhang 
+ \href{http://merlot.stat.uconn.edu/lida/}{{2017 Conference on Lifetime Data Science}}, Storrs, CT
+ \noshow{\ben
+High-dimensional Cox regression with exclusion frequency-based weights: application to a neuroimaging study of Huntington's disease.
+\een}
+ && 05/2017\\
+
+%
+%
+\myhang 
+ \href{http://www.baylor.edu/Statistics/index.php?id=77407}{{Baylor University, Department of Statistical Science}}, Waco, TX
+ \noshow{\ben
+Robust estimation for clustered failure time data: application to Huntington's disease.
+\een}
+ && 02/2017\\
+
+%
+%
+\myhang
+\href{http://huntingtonstudygroup.org/hsg-2016-agenda-overview/}{{Huntington Study Group, 10th Annual HD Clinical Research Symposium}}, Nashville, TN && 11/2016\\
+%
+%
+\myhang 
+ \href{http://www.birs.ca/}{{Newest Developments and Urgent Issues in Measurement Error and Latent Variable Problems}}, Banff, Canada 
+ \noshow{\ben
+High-dimensional Cox regression with exclusion frequency-based weights: application to a neuroimaging study of Huntington's disease.
+\een}
+ && 08/2016\\
+%
+%
+\myhang 
+ \href{ww.ibc.org}{{2016 International Biometrics Conference}}, Victoria, Canada 
+ \noshow{\ben
+High-dimensional Cox regression with exclusion frequency-based weights: application to a neuroimaging study of Huntington's disease.
+\een}
+ && 07/2016\\
+%
+%
+%\myhang 
+%\href{www.RBras2016.org}{{61st Brazilian Regional Meeting}}, Salvador, Brazil
+% \noshow{\ben
+%Improved selection of high-dimensional neuroimaging biomarkers associated with Huntington's disease motor-onset.
+%\een} && 05/2016\\
+%
+%
+\myhang 
+ \href{http://www.enar.org}{{2016 Eastern North American Region (ENAR) Annual Meeting}}, Austin, TX 
+ \noshow{\ben
+High-dimensional Cox regression with exclusion frequency-based weights: application to a neuroimaging study of Huntington's disease.
+\een}
+ && 03/2016\\
+
+%
+\myhang
+\href{http://www.amstat.org/meetings/jsm/2015/}{{2015 Joint Statistical Meeting}}, Seattle, WA
+\noshow{\ben
+High-dimensional Cox regression with exclusion frequency-based weights: application to a neuroimaging study of Huntington's disease.
+\een}
+ && 08/2015\\
+%
+
+%
+\myhang
+\href{http://www.medunigraz.at/imi/isnps2015/index.php}{{International Society for Non-Parametric Statistics  (ISNPS) Meeting, Biosciences, Medicine, and Novel Non-Parametric Methods}}, Graz, Austria
+\noshow{\ben
+Robust estimation for clustered failure time data: application to Huntington's disease.
+\een}
+ && 07/2015\\
+%
+
+%
+\myhang
+\href{http://www.stat.colostate.edu/graybillconference/}{{ International Chinese Statistical Association Applied Symposium}}, Fort Collins, CO
+\noshow{\ben
+Robust estimation for clustered failure time data: application to Huntington's disease.
+\een}
+ && 06/2015\\
+%
+%
+\myhang
+\href{http://statistics.ucr.edu/}{{University of California, Riverside}}, Riverside, CA
+\noshow{\ben
+Robust estimation for clustered failure time data: application to Huntington's disease.
+\een}
+ && 06/2015\\
+ %
+%
+
+%
+%
+\myhang
+\href{http://sph.unc.edu/}{{University of North Carolina, Department of Biostatistics}}, Chapel Hill, NC
+\noshow{\ben
+Robust estimation for clustered failure time data: application to Huntington's disease.
+\een}
+ && 04/2015\\
+ %
+%
+\myhang
+\href{http://www.ucsd.edu/}{{University of California, San Diego, Department of Family Medicine and Public Health}}, San Diego, CA
+\noshow{\ben
+Robust estimation for clustered failure time data: application to Huntington's disease.
+\een}
+ && 04/2015\\
+%
+%
+\myhang
+\href{https://manhattan.edu/academics/science/math}{{Manhattan College, Department of Mathematics}}, New York, NY
+\noshow{\ben
+Overview of genetic mixture models with application to the Cooperative Huntington's Observational Research Trial.  
+\een}
+ && 03/2015\\
+%
+%
+%
+\myhang
+\href{http://sph.berkeley.edu/areas-study/biostatistics}{{University of California, Berkeley, Department of Biostatistics}}, Berkeley, CA
+\noshow{\ben
+Robust estimation for clustered failure time data: application to Huntington's disease.
+\een}
+ && 01/2015\\
+%
+%
+%
+\myhang
+\href{http://www.stat.ucdavis.edu/}{{University of California, Davis, Department of Statistics}}, Davis, CA
+\noshow{\ben
+Robust estimation for clustered failure time data: application to Huntington's disease.
+\een}
+ && 01/2015\\
+%
+%
+
+
+\myhang
+\href{http://www.rand.org/}{{RAND Corporation}}, Santa Monica, CA
+\noshow{\ben
+Robust mixed-effects model for clustered failure time data: application to Huntington's disease event measures.
+\een}
+ && 11/2014\\
+%
+%
+\myhang
+\href{http://www.stat.sc.edu/}{{University of South Carolina, Department of Statistics}}, Columbia, SC
+\noshow{\ben
+Robust mixed-effects model for clustered failure time data: application to Huntington's disease event measures.
+\een}
+ && 10/2014\\
+%
+%
+\myhang
+\href{http://www.amstat.org/meetings/jsm/2014/}{{2014 Joint Statistical Meeting}}, Boston, MA
+\noshow{\ben
+Improved understanding of Huntington's disease onset through a
+genetic mixture model with genetic biomarkers and distribution-free
+random effects.
+\een}
+ && 08/2014\\
+%
+%
+\myhang
+\href{www.asc-ims2014.com}{{Australian Statistical Conference/Institute of Mathematical Statistics Annual Meeting}}, Australian Technology Park Sydney, Australia
+\noshow{\ben
+Improved understanding of Huntington's disease onset through a
+genetic mixture model with genetic biomarkers and distribution-free
+random effects.
+\een}
+ && 07/2014\\
+%
+%
+\myhang
+\href{http://www.math.hkbu.edu.hk/ICSA2013/}{{The Ninth International Chinese Statistical Association (ICSA) International Conference:
+Challenges of Statistical Methods for Interdisciplinary Research and Big Data}}, Hong Kong Baptist University, Hong Kong
+\noshow{\ben
+Combining isotonic regression and EM algorithm to predict genetic risk under monotonicity constraint and unknown genotypes.
+\een
+}
+ && 12/2013\\
+%
+%
+\myhang
+\href{http://www.mailman.columbia.edu/academic-departments/biostatistics}{{Columbia University, Department of Biostatistics}}, New York, NY
+\noshow{\ben
+Combining isotonic regression and EM algorithm to predict genetic risk under monotonicity constraint and unknown genotypes.
+\een}
+ && 09/2013\\
+%
+%
+\myhang
+\href{http://www.amstat.org/meetings/jsm/2013/}{{2013 Joint Statistical Meeting}}, Montr{\'e}al, Qu{\'e}bec, Canada 
+\noshow{\ben
+Nonparametric estimation for genetic mixture models with random effects with application to the Cooperative Huntington's Observational Research Trial.
+\een}
+&& 08/2013\\
+%
+%
+\myhang
+\href{http://wnar.org}{{Western North American Region  (WNAR) Conference}}, Los Angeles, CA 
+\noshow{\ben
+Combining isotonic regression and EM algorithm to predict genetic risk under monotonicity constraint and unknown genotypes.
+\een}
+&& 06/2013\\
+%
+%
+\myhang
+\href{http://www.shsu.edu/}{{Sam Houston State University, Department of Mathematics and Statistics}}, Huntsville, TX  
+\noshow{\ben
+Nonparametric estimation for censored mixture data with application to the Cooperative Huntington's Observational Research Trial.  
+\een}
+&& 02/2013\\
+%
+%
+\myhang
+\href{http://www.anu.edu.au/}{{The Australian National University, Mathematical Sciences Institute}}, Canberra, New South Whales, Australia 
+\noshow{\ben
+Nonparametric estimation for censored mixture data with application to the Cooperative Huntington's Observational Research Trial.  
+\een}
+&& 11/2012\\
+%
+%
+\myhang
+\href{http://www.unimelb.edu.au/}{{The University of Melbourne, School of Mathematics and Statistics}}, Melbourne, Victoria, Australia 
+\noshow{\ben
+Nonparametric estimation for censored mixture data with application to the Cooperative Huntington's Observational Research Trial. 
+\een}
+&& 11/2012\\
+%
+%
+\myhang
+\href{http://www.maths.usyd.edu.au/}{{The University of Sydney, School of Mathematics and Statistics}}, Sydney, New South Whales, Australia
+\noshow{\ben
+Nonparametric estimation for censored mixture data with application to the Cooperative Huntington's Observational Research Trial.  
+\een}
+ && 11/2012\\
+%
+%
+\myhang
+\href{http://www.icsa.org/}{{ International Chinese Statistical Association (ICSA) Applied Symposium}}, Boston, MA
+\noshow{\ben
+Semiparametric estimators for restricted moment models with measurement error.
+\een}
+ &&06/2012\\
+%
+%
+\myhang
+\href{http://www.tamuslsamp.org/}{{8th Annual Texas A\&M University System (TAMUS) Louis Stokes Alliance for Minority Participation (LSAMP)  Symposium}}, Corpus Christi, TX 
+\noshow{\ben
+Overcoming challenges to succeed in graduate school.
+\een}
+&& 02/2012\\
+%
+%
+\myhang
+\href{http://www.stat.tamu.edu/}{{Statistical Inverse Problems Workshop}}, College Station, TX 
+\noshow{\ben
+Semiparametric estimators for restricted moment models with measurement error.
+\een}
+&& 05/2012\\[1em]
+%
+%
+%\myhang
+%\emph{Smoothing and bootstrapping PROMETHEUS}. \hfill November 2007\\Fields Workshop on Disturbances: Modeling Spread in Forests. London, Canada. 
+%
+%
+%
+%
+%
+%
+%
+%\newpage
+\multicolumn{3}{l}{\underline{{\bf Contributed}}}\\
+%\myhang
+%\href{http://experimentalbiology.org/}{{Experimental Biology}}, San Diego, CA
+%\ben
+%Suppression of early colon cancer lesions by apigenin and naringenin is in part due to their downregulation of p21, TLR-4 and MCT-1 expression. Joint work with Daniels, W.D,  Carroll, R.J., Patil, B.S. and Turner, N. 
+%\een
+%  &&04/2012\\
+
+
+%
+\myhang
+\href{http://www.huntington-study-group.org/Events/tabid/72/Default.aspx}{{Huntington Study Group, 9th Annual HD Clinical Research Symposium}}, Tampa Bay, Fl
+\noshow{\ben
+Mega-analysis of cognitive and motor events in
+COHORT, PHAROS, and PREDICT.
+\een}
+ && 10/2015 %October 21-24, 2015
+\\
+
+
+%
+\myhang
+\href{http://www.huntington-study-group.org/Events/tabid/72/Default.aspx}{{Huntington Study Group, 8th Annual HD Clinical Research Symposium}}, Minneapolis, MN
+\noshow{\ben
+Analysis of Huntington's Disease motor and cognitive 
+ measures using a robust mixed-effects model for clustered event times.
+\een}
+ && 11/2014 %November 7-9, 2013
+\\
+
+
+
+\myhang
+\href{http://wnar.org}{{Western North American Region Conference}}, Honolulu, HI 
+\noshow{\ben
+Improved understanding of Huntington's disease onset through a
+genetic mixture model with genetic biomarkers and distribution-free
+random effects.
+\een}
+&& 06/2014\\
+%
+%
+
+
+%
+%
+\myhang
+\href{http://www.stat.ufl.edu/symposium/2014/index.html}{{University of Florida Winter Workshop: Dimension Reduction
+and High Dimensional Inference}}, Gainesville, Fl
+\noshow{\ben
+ Identification of important regressor groups, subgroups, and individuals via regularization methods: application to gut microbiome data.
+\een}
+ && 01/2014\\
+% January 17-18, 2014
+%
+%
+\myhang
+\href{http://www.huntington-study-group.org/Events/tabid/72/Default.aspx}{{Huntington Study Group, 7th Annual HD Clinical Research Symposium}}, Charlotte, NC
+\noshow{\ben
+Efficient and 
+flexible statistical methods for estimating
+the risk of death for non-genotyped family member
+participants in the Cooperative Huntington's
+Observational Research Trial
+\een}
+ && 11/2013 %November 7-9, 2013
+\\
+
+\myhang
+\href{http://www.enar.org/}{{Eastern Northern American Region (ENAR) Annual Meeting}}, Miami, FL
+\noshow{\ben
+Semiparametric estimators for restricted moment models with measurement error.
+\een}
+ && 03/2011\\
+%
+%
+\myhang
+\href{http://www.enar.org/}{{Emerging Researchers National Conference in Science, Technology, Engineering and Mathematics}}, Washington, DC
+\noshow{\ben
+Semiparametric estimators for restricted moment models with measurement error.
+\een}
+ && 02/2011\\
+%
+%
+\myhang
+\href{http://www.enar.org/}{{The National GEM Consortium Annual Meeting}}, Vienna, VA
+\noshow{\ben
+Detecting fuel tax evasion through evidential reasoning.
+\een}
+ && 08/2010\\
+\end{longtable}
+
+%\emph{Smoothing and bootstrapping PROMETHEUS}.\hfill October 2007 \\University of Neuch\^{a}tel Statistics Department Seminar.  Neuch\^{a}tel, Switzerland. 
+
+
+%\emph{PROMETHEUS: fire growth model}.  \hfill June 2006\\Canadian Industrial Problem Solving Workshop at Simon Fraser University. \\British Columbia, Canada. 
+%%\end{outerlist}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%
+\section{\bf{Teaching}}
+%%%%%%%%%%%%%%%%%%%%%%
+
+\renewcommand{\arraystretch}{1.1}% Tighter
+\begin{longtable}{p{12cm} p{0cm} p{3.5cm}}
+\myhang
+\href{http://srph.tamhsc.edu/epidemiology-biostatistics/biostatistics.html}{\textbf{Texas A\&M Health Science Center}}, College Station, TX \\
+ \myhangn\textit{Instructor}, Biostatistics II Online (Spring Semester) %[]
+  && %Spring 2014-2017; Summer 2016
+  2014-2018\\
+ \myhangn\textit{Instructor}, Biostatistics II In-Person (Spring Semester) && 2013-2015\\
+\myhangn\textit{Instructor}, Statistics II, College of Medicine (one day course) && 01/2013\\
+%
+%
+\myhang
+\href{http://www2.unine.ch/statistics}{\textbf{University of Neuch\^{a}tel}},
+Neuch\^{a}tel, Switzerland    \\
+\myhangn \textit{Teaching Assistant}, Calculus and Linear Models (taught in French) %[3.92/6; 5.40/6]
+ &&Spring 2007, 2008\\
+\myhangn\textit{Teaching Assistant}, Linear Models (Graduate Level) %[5.44/6]
+ && Fall 2007\\
+\myhangn  \textit{Teaching Assistant}, Econometrics %[4.11/6]
+ && Fall 2006\\
+%
+%
+\myhang
+\href{http://www.stats.uwo.ca}{\textbf{University of Western Ontario}},
+London, ON, Canada    \\
+\myhangn \textit{Teaching Assistant}, Operations Research  &&Spring 2006\\
+\myhangn\textit{Teaching Assistant$^*$}, Applied Probability
+	\ben
+		$^*$Awarded Teaching Assistant of the Year in the Sciences
+	\een
+  && Fall 2005
+\\
+%
+%
+\myhang
+\href{http://www.uci.edu}{\textbf{University of California, Irvine}},
+Irvine, CA\\
+\myhangn \textit{Teaching Assistant}, Statistics, Summer Bridge && Summer 2002\\
+\myhangn \textit{Tutor}, Mathematics, Learning and Academic Resource Center    && 09/2001-06/2003\\
+\end{longtable}
+
+
+%%%%%%%%%%%%%%%%
+\section{\bf{Honors and Awards}}
+%%%%%%%%%%%%%%%%
+
+
+\renewcommand{\arraystretch}{1.1}% Tighter
+\begin{longtable}{@{\stepcounter{myCounter}
+\themyCounter.\hspace*{\tabcolsep}}p{12cm} p{0cm} l}
+
+
+%
+\myhang
+\mybold{Mentoring Institute for Neuroscience Diversity Scholars (MINDS) Fellow}
+\ben
+NIH NINDS funded program that promotes the advancement of underrepresented independent researchers in neuroscience.\een && 2017-2018
+\\
+%
+%
+\myhang 
+\mybold{Southeastern Conference (SEC) Travel Grant Program Award, Texas A\&M University}$^*$ 
+\ben
+ $^*$\emph{Awarded but then unable to be used due to collaborator moving to non-SEC university.}
+\een
+&& 2016-2017
+\\
+
+%
+%
+\myhang
+\mybold{Participant in  \href{http://math.ucsd.edu/~nrc2012/index.html}{14th Meeting of New Researchers 
+in Statistics and Probability}}, University of California, San Diego  
+\ben
+Travel award to attend  workshop which promotes interaction and networking among new researchers in statistics and probability.
+\een
+&&2012\\
+%
+%
+\myhang
+ \mybold{\href{http://math.ucsd.edu/~nrc2012/index.html}{SACNAS} National Conference Travel Award}, Seattle, WA && 2012\\
+
+%
+%
+\myhang
+\mybold{Participant in  \href{http://advance.tamu.edu/roadmap_candidate.html}{Roadmap for a Successful Academic Career Workshop}}, Texas A\&M University  
+\ben
+Designed for internal and external women postdoctoral researchers and assistant professors (2 years or less) in STEM fields.
+\een
+&& 2012\\
+%
+%
+\myhang
+ \mybold{\href{http://www.amstat.org/education/coxscholarship.cfm}{American Statistical Association Gertrude M. Cox Award}} (\$2,000)  
+\ben
+Awarded to 2 out of 1200 female applicants from throughout the US and Canada.
+\een
+&& 2011\\
+%
+%
+\myhang
+ \mybold{\href{http://www.phikappaphi.org/}{Phi Kappa Phi Member}}, Texas A\&M Chapter 
+\ben
+ Awarded to top 10\% of seniors and graduate students at Texas A\&M University.\een
+&& 2011\\
+%
+%
+\myhang
+\mybold{\href{http://www.emerging-researchers.org/}{Emerging Researchers National Conference in Science, Technology, Engineering and Mathematics Travel Award}} 
+\ben
+Awarded to 100 applicants.
+\een
+&& 2011\\
+%
+%
+\myhang 
+ \mybold{\href{http://www.stat.tamu.edu/}{William S. Connor Award}}, Texas A\&M University 
+\ben
+ Awarded to the student whom the faculty deems the most outstanding among those students passing the preliminary examinations during the 2008-2009 academic year.
+\een
+&& 2010\\
+%
+%
+\myhang
+ \mybold{Participant in \href{http://www.ncsu.edu/diversity/faculty_staff/BuildingFutureFacultyHome.php}{Building Future Faculty}},  North Carolina State University
+\ben
+Awarded to 12 out of 100 applicants from graduate programs throughout the US.
+\een
+ &&2010\\
+%
+%
+\myhang
+\mybold{Participant in \href{http://advance.rice.edu/negotiatingtheidealfacultyposition}{Negotiating the Ideal Faculty Position}}, Rice University
+\ben
+Awarded to 65 out of 1100 applicants from graduate programs throughout the US.
+\een
+ &&2010\\
+%
+%
+\myhang
+ \mybold{\href{http://www.uwo.ca}{Teaching Assistant of the Year in the Sciences}}, University of Western Ontario  \hfill&& 2006\\
+%
+%
+\myhang
+\mybold{Summa Cum Laude, School of Physical Sciences}, \href{http://www.uci.edu}{University of California, Irvine} && 2003\\
+%
+%
+\myhang
+\mybold{Ronald E. McNair Scholar}, \href{http://www.uci.edu}{University of California, Irvine} && 2002-2003\\
+%
+%
+\myhang
+\mybold{Mathematics Departmental Service/Undergraduate Service Award}, \href{http://www.uci.edu}{University of California, Irvine} && 2003\\
+%
+%
+\myhang
+\mybold{Outstanding Senior in Mathematics}, \href{http://www.uci.edu}{University of California, Irvine} && 2003\\
+%
+%
+\myhang
+\mybold{Leadership Scholarship}, \href{http://www.uci.edu}{University of California, Irvine} && 2000-2002\\
+%
+%
+\myhang
+\mybold{The National Dean's List}, \href{http://www.uci.edu}{University of California, Irvine} && 2000-2003\\
+
+%
+%
+\myhang
+\mybold{National Society of Collegiate Scholars Member}, \href{http://www.uci.edu}{University of California, Irvine}  && 2001\\
+%
+%
+\myhang
+\mybold{National Hispanic Scholar Finalist}, \href{http://www.uci.edu}{University of California, Irvine} && 2000\\
+\end{longtable}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%
+\section{\bf{Research Supervision}}
+%%%%%%%%%%%%%%%%%%%%%%
+
+
+\renewcommand{\arraystretch}{1.1}% Tighter
+\begin{longtable}{p{12cm} p{0cm} l}
+\myhang
+{\bf Weixi Zhu}, MS, \textit{Texas A\&M University, Department of Statistics} && Jan 2018-\\
+%
+
+\myhang
+{\bf Unkyung Lee}, Postdoctoral Trainee of DHHS-NIH National Cancer Institute T32, \textit{Texas A\&M University, Department of Statistics} && June 2017-\\
+%
+
+
+\myhang
+{\bf Timothy Gibson}, Honours (equivalent of Undergraduate Senior Diploma), \textit{The University of Sydney, Department of Statistics} && Feb-Oct 2017\\
+
+\myhang
+{\bf Satwik Acharyya}, PhD, \textit{Texas A\&M University, Department of Statistics} && Fall 2015\\
+%\myhangn 
+%\textit{Understanding inferences with Cox Regression.}\\
+
+\myhang
+{\bf Sage Lane}, MPH, \textit{Texas A\&M Health Science Center, Department of Epidemiology and Biostatistics} && Summer 2014\\
+%\myhangn 
+%\textit{Understanding inferences with Cox Regression.}\\
+\end{longtable}
+
+
+%%%%%%%%%%%%%%%%%%%%%%
+\section{\bf{PhD Committee Member}}
+%%%%%%%%%%%%%%%%%%%%%%
+
+
+\renewcommand{\arraystretch}{1.1}% Tighter
+\begin{longtable}{p{12cm} p{0cm} l}
+%
+%
+%
+\myhang {\bf Texas A\&M School of Public Health, Department of Epidemiology and Biostatistics}\\
+ (Students are DrPH Candidates in Epidemiology) %, College Station, TX
+\\
+\myhangn Ibraheem Karaye (Chair: Jennifer Horney) && 2017-\\
+\myhangn Shubhangi Vasudeo  (Chair: Eva Shipp)  && 2017-\\
+\myhangn Leigh Ellyn Preston  (Chair: Jennifer Horney)  && 2015-\\
+%
+\myhang {\bf Texas A\&M University, Statistics Department} %, College Station, TX
+\\
+\myhangn Lei Wang (Chair: Michael Longnecker) && 2017-\\
+\myhangn Mandal Soutrik (Chair: Samiran Sinha)  && 2015-\\
+\myhangn DongHyuk Lee (Chair: Samiran Sinha and Raymond J. Carroll)  && 2015-\\
+\myhangn Shuai Chen (Chair: Hongwei Zhao and Lan Zhou)&& 2014-2015\\
+%\myhangn Reviewed dissertation\\
+%
+%
+
+%\myhangn 
+%Reviewed dissertation
+%Examiner for dissertation
+%\textit{Maximum penalized likelihood estimation for semiparametric regression models with partly interval-censored failure time data.}\\
+\end{longtable}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%
+\section{\bf{MS Committee Member}}
+%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\renewcommand{\arraystretch}{1.1}% Tighter
+\begin{longtable}{p{12cm} p{0cm} l}
+%
+%
+{\bf Timothy Erickson}, Epidemiology and Biostatistics, Texas A\&M Health Science Center, College Station, TX&& 2014-2015\\
+%\myhangn Reviewed dissertation\\
+%
+%
+\end{longtable}
+
+
+
+%\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%
+\section{\bf{Service to the Profession}}
+%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%
+\underline{{\bf Program Committees}}
+%%%%%%%%%%%%%%%%%%%%%%
+
+\vskip 0.1in
+\renewcommand{\arraystretch}{1.1}% Tighter
+\begin{longtable}{p{12cm} p{0cm} l}
+%
+\myhang \href{http://www.bio.ri.ccf.org/Biometrics/officers.pdf}{Biometrics} Eastern Northern American Region/International Biometric Society (ENAR)  2018 Program Representative, Atlanta, GA  && 2017-2018\\
+%
+\myhang Co-Chair, American Statistical Association  Biometrics Section Strategic Initiative, "Developing the next Generation of Biostatisticians" && 2016-Present\\
+%
+\myhang Conference Co-Organizer, ``Measurement Error and Complex Data Workshop,'' \href{http://www.stat.tamu.edu/measurement-error-workshop/}{{Texas A\&M University}}, College Station, TX && 04/2016\\
+%
+\myhang Eastern Northern American Region/International Biometric Society (ENAR) Junior Researchers Workshop,  Miami, FL && 03/2015\\
+%
+
+\myhang Judge, Student Paper Competition,  \href{http://math.boisestate.edu/wnar2015/}{{Western Northern American Region/Institute of Mathematical Sciences}}, Boise, ID && 06/2015\\
+\end{longtable}
+
+\vskip 0.2in
+%%%%%%%%%%%%%%%%%%%%%%
+\underline{{\bf Invited Session Organizer}}
+%%%%%%%%%%%%%%%%%%%%%%
+
+\vskip 0.1in
+\renewcommand{\arraystretch}{1.1}% Tighter
+\begin{longtable}{p{12cm} p{0cm} l}
+
+%
+\myhang ``New directions for nonparametric methods in data science,'' \href{http://fields.dm.unipi.it/pipermail/random/2017/001434.html}{{International Society for Non-Parametric Statistics
+ (ISNPS)}}, Salerno, Italy
+  && 06/2018\\
+
+%
+\myhang ``Rich data visualizations for informative health care decisions,'' \href{ www.enar.org}{{Eastern Northern American Region/International Biometric Society (ENAR)}}, Atlanta, GA
+  && 03/2018\\
+ 
+ %
+ \myhang ``Dynamic modeling for timely health care decisions,'' \href{https://ww2.amstat.org/meetings/jsm/2017/}{Joint Statistical Meeting (JSM)}, Baltimore, MD & & 07/2017\\
+
+%
+\myhang  ``Innovative Techniques Towards More Precise Modeling,'' \href{ www.RBras2016.org}{{61st Brazilian Regional Meeting}}, Salvador, Brazil$^*$
+\ben
+ $^*$\emph{Cancelled due to Zika virus.}
+\een
+  && 05/2016\\
+
+%
+%
+\myhang ``Innovative Techniques Towards Solving the Complexities of Biomarker Discovery,'' \href{http://www.enar.org}{{2016 ENAR}}, Austin, TX && 03/2016\\
+%
+%
+\myhang ``Navigating Your
+Career for Success at the NSF Career Award,'' \href{http://www.2015sacnas.org }{{2015 SACNAS National Conference}}, National Harbor, MD && 10/2015\\
+%
+%
+\myhang ``Recent Advances in Spatial Statistics Techniques and their Applications to Public
+Health and Biological Sciences,'' \href{http://math.boisestate.edu/wnar2015/}{{Western Northern American Region/Institute of Mathematical Sciences}}, Boise, ID && 06/2015\\
+\end{longtable}
+%
+%
+\vskip 0.2in
+%%%%%%%%%%%%%%%%%%%%%%
+\underline{{\bf External Reviewer}}
+%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\arraystretch}{1.1}% Tighter
+\begin{longtable}{p{12cm} p{0cm} l}
+\myhangn Doctoral dissertation of Jinqing Li,  Macquarie University, Statistics Department, %Sydney, 
+Australia &&2014\\
+\end{longtable}
+%
+\vskip 0.2in
+%%%%%%%%%%%%%%%%%%%%%%
+\underline{{\bf Journal Referee}}
+%%%%%%%%%%%%%%%%%%%%%%
+
+\vskip 0.1in
+\renewcommand{\arraystretch}{1.1}% Tighter
+\begin{longtable}{p{12cm} p{0cm} l}
+
+%{Journal Referee} && 2011-Present \\
+\myhangn 
+Annals of Statistics, % (November 2014, Sep 2016
+Australia New Zealand Journal of Statistics, % (October 2014)
+Bioinformatics, % (July 2016, May 2017)
+Biometrics, % Nov 2017
+BMC Bioninformatics, %(September 2017)
+The Canadian Journal of Statistics, %(December 2016)
+Computational Statistics and Data Analysis, % (December 2014)
+Hacettepe Journal of Mathematics and Statistics, %(May 2015)
+Journal of the American Statistical Association, % (May 2016, December 2016)
+Journal of Multivariate Analysis, % Jan 2018
+PLOS One, %(November 2013)
+Science Reports, % Dec 2017
+Statistica Sinica, % Nov 2017
+Statistics,  %(September 2015)
+Statistics and Probability Letters, %(January 2013)
+Statistics in Medicine, %(June 2013)
+The American Statistician, %(January 2014)
+The Canadian Journal of Statistics, %(December 2016)
+Transportation Research Part A: Policy and Practice % (November 2014)
+\\
+
+\end{longtable}
+
+
+%%%%%%%%%%%%%%%%%%
+\section{\bf{ Service to the University}}
+%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\underline{{\bf Department of Epidemiology and Biostatistics}}
+\vskip 0.1in
+%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\arraystretch}{1.1}% Tighter
+\begin{longtable}{p{12cm} p{0cm} l}
+\myhang Seminar Organizer \\
+\myhangn Amanda Hering (Baylor University) && 03/2017\\
+\myhangn Rubin Wei (Eli Lilly and Company) && 10/2016\\
+\myhangn Amy Herring (University of North Carolina at Chapel Hill) && 04/2016\\
+\myhangn Layla Parast (RAND) && 04/2015\\
+\myhangn Samuel M\"uller (University of Sydney) && 11/2014\\
+\myhangn Guosheng Yin (University of Hong Kong) && 09/2013 \\
+%
+%
+\myhang Faculty Search Committee  && 2014-2015\\ 
+%
+\myhang Admissions Committee && 01/2013-Present\\
+	% 9 Applications in 2013
+	% 10 Applications in 2014
+%
+
+\end{longtable}
+
+\vskip 0.2in
+%%%%%%%%%%%%%%%%%%%%%%%%
+\underline{{\bf School of Public Health}}
+\vskip 0.1in
+%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\arraystretch}{1.1}% Tighter
+\begin{longtable}{p{12cm} p{0cm} l}
+%
+%
+\myhang Judge, Student Research Poster Competition at Public Health Week && 2014-2018\\ 
+% April 4-7, 2014}
+%
+\myhang Research Committee  && 09/2013-07/2018\\
+\end{longtable}
+
+\vskip 0.2in
+%%%%%%%%%%%%%%%%%%%%%%%%
+\underline{{\bf Texas A\&M University}}
+\vskip 0.1in
+%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\arraystretch}{1.1}% Tighter
+\begin{longtable}{p{12cm} p{0cm} l}
+%
+\myhang Panel Speaker, ``Why I Chose the Post-Doc Route,'' Alliance for Graduate Education and the Professoriate (TAMUS AGEP) Program && 11/2017\\
+%
+%
+%
+\myhang Association of Former Students' College-Level Teaching Awards Committee
+\noshow{\ben
+Reviewed applications for  the Association of Former Students' College-Level Teaching Awards.
+\een}
+&& 06/2010-05/2011\\
+%
+\myhang Panel Speaker, Advice on Graduate School Admittance, 5th Annual TAMUS LSAMP Symposium %, \href{http://www.stat.tamu.edu}{Texas A\&M University},College Station, TX  %
+&& 02/2009\\
+%
+
+%\myhang Treasurer, Statistical Graduate Student Association, \href{http://www.stat.tamu.edu}{Texas A\&M University},
+%College Station, TX  %
+%\noshow{
+%\ben
+%Organized monthly lunches between faculty and graduate students to foster interaction between the two. Actively helped first year graduate students integrate easily into the Statistics department. Ready, Set, Go! 5K Walk/Run: Helped setup the necessary stations day of the event to help raise money for science equipment in K-12 schools in Brazos County, TX.
+%\een
+%}%
+%    &&09/2008-05/2010\\
+%
+%\myhang Secretary, Latino Association for Graduate Students in Engineering and Sciences, 
+%\href{http://www.berkeley.edu}{\textbf{University of California, Berkeley}}, Berkeley, CA 
+%\noshow{\ben
+%Participated in national conferences to recruit Hispanics and African Americans to UC Berkeley.         Documented all club events, officers' responsibilities, and organization of activities.
+%\een}
+%&&09/2004-05/2005\\
+\end{longtable}
+
+
+
+
+%%%%%%%%%%%%%%%%
+\section{\bf{Memberships}}
+%%%%%%%%%%%%%%%%
+\renewcommand{\arraystretch}{1.1}% Tighter
+\begin{longtable}{p{12cm} p{0cm} l}
+American Statistical Association, 
+ENAR,
+ Institute of Mathematical Statistics,
+National Society of Collegiate Scholars,
+Phi Beta Kappa,
+ Phi Kappa Phi,
+ Society for Neuroscience
+ %
+%American Statistical Association \\
+%ENAR\\
+ %Institute of Mathematical Statistics\\
+%National Society of Collegiate Scholars\\
+%Phi Beta Kappa \\
+% Phi Kappa Phi
+\end{longtable}
+
+
+
+\section{\bf{Skills}}
+\renewcommand{\arraystretch}{1.1}% Tighter
+\begin{longtable}{p{12cm} p{0cm} l}
+C++, 
+Fortran 77/90,
+\LaTeX,
+Linux, 
+MATLAB, 
+R, 
+Ruby,
+Stata.
+\end{longtable}
+%Language: Fluent in Spanish, English; Conversational French.
+%\end{outerlist}
+
+
+
+
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% End CV Document %%%%%%%%%%%%%%%%%%%%%%%%%%%%%

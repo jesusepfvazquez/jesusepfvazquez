@@ -1,17 +1,5 @@
+# The site is plain HTML in the "site" folder, generated locally by tools/build_site.py.
+# Netlify only publishes that folder; there is no build step.
 [build]
-command = 'hugo'
-publish = 'public'
-[build.environment]
-HUGO_VERSION = '0.99.1'
-
-
-[context]
-[context.branch-deploy]
-command = 'hugo -F -b $DEPLOY_PRIME_URL'
-
-[context.deploy-preview]
-command = 'hugo -F -b $DEPLOY_PRIME_URL'
-
-[context.production]
-[context.production.environment]
-HUGO_ENV = 'production'
+  publish = "site"
+  command = ""

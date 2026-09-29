@@ -1,0 +1,153 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+% Awesome CV LaTeX Template for Cover Letter
+%
+% This template has been downloaded from:
+% https://github.com/posquit0/Awesome-CV
+%
+% Authors:
+% Claud D. Park <posquit0.bj@gmail.com>
+% Lars Richter <mail@ayeks.de>
+%
+% Template license:
+% CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
+%
+
+
+%-------------------------------------------------------------------------------
+% CONFIGURATIONS
+%-------------------------------------------------------------------------------
+% A4 paper size by default, use 'letterpaper' for US letter
+\documentclass[11pt, a4paper]{awesome-cv}
+
+% Configure page margins with geometry
+\geometry{left=1cm, top=1cm, right=1cm, bottom=1cm, footskip=.5cm}
+
+% Specify the location of the included fonts
+\fontdir[fonts/]
+
+% Color for highlights
+% Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
+%                 awesome-nephritis, awesome-concrete, awesome-darknight
+\colorlet{awesome}{awesome-red}
+% Uncomment if you would like to specify your own color
+% \definecolor{awesome}{HTML}{CA63A8}
+
+% Colors for text
+% Uncomment if you would like to specify your own color
+% \definecolor{darktext}{HTML}{414141}
+% \definecolor{text}{HTML}{333333}
+% \definecolor{graytext}{HTML}{5D5D5D}
+% \definecolor{lighttext}{HTML}{999999}
+
+% Set false if you don't want to highlight section with awesome color
+\setbool{acvSectionColorHighlight}{true}
+
+% If you would like to change the social information separator from a pipe (|) to something else
+\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
+
+
+%-------------------------------------------------------------------------------
+%	PERSONAL INFORMATION
+%	Comment any of the lines below if they are not required
+%-------------------------------------------------------------------------------
+% Available options: circle|rectangle,edge/noedge,left/right
+\photo[circle,noedge,left]{./examples/profile}
+\name{Jesus Epifanio}{Vazquez}
+\position{Aspiring Bio/Statistician {\enskip\cdotp\enskip} Data Scientist {\enskip\cdotp\enskip} Avid Learner}
+\address{1006 S Columbia St. 2, Chapel Hill, NC 27514}
+
+\mobile{505-629-7267}
+\email{jesusvaz@ad.unc.edu}
+\homepage{thevazquezlab.com}
+\linkedin{jesusepfvazquez}
+% \gitlab{gitlab-id}
+% \stackoverflow{SO-id}{SO-name}
+% \twitter{@twit}
+% \skype{skype-id}
+% \reddit{reddit-id}
+% \medium{madium-id}
+% \googlescholar{googlescholar-id}{name-to-display}
+%% \firstname and \lastname will be used
+% \googlescholar{googlescholar-id}{}
+% \extrainfo{extra informations}
+% \quote{``Be the change that you want to see in the world."}
+
+
+%-------------------------------------------------------------------------------
+%	LETTER INFORMATION
+%	All of the below lines must be filled out
+%-------------------------------------------------------------------------------
+% The company being applied to
+\recipient
+  {Computer, Computational and Statistical Sciences (CCS) Division}
+  {Los Alamos National Laboratory \\ P.O. Box 1663, Los Alamos, NM 87545}
+% The date on the letter, default is the date of compilation
+\letterdate{\today}
+% The title of the letter
+\lettertitle{Job Application for CCS Graduate Intern - Summer 2023}
+% How the letter is opened
+\letteropening{Dear Stephanie Yvonne Shiu,}
+% How the letter is closed
+\letterclosing{Sincerely,}
+% Any enclosures with the letter
+% \letterenclosure[Attached]{Curriculum Vitae}
+
+
+%-------------------------------------------------------------------------------
+\makeatletter
+\def\@sectioncolor{\color{awesome}}
+\makeatother
+
+\begin{document}
+
+% Print the header with above personal informations
+% Give optional argument to change alignment(C: center, L: left, R: right)
+\makecvheader[R]
+
+% Print the footer with 3 arguments(<left>, <center>, <right>)
+% Leave any of these blank if they are not needed
+\makecvfooter
+  {\today}
+  {Jesus Epifanio Vazquez~~~·~~~Cover Letter}
+
+% Print the title with above letter informations
+\makelettertitle
+
+%-------------------------------------------------------------------------------
+%	LETTER CONTENT
+%-------------------------------------------------------------------------------
+\begin{cvletter}
+
+\lettersection{Why LANL?}
+
+The first time I met a research scientist happened to be while working at my mother's tailoring shop in Santa Fe, NM back in 2013.
+
+
+
+It would be an honor to assist the {\bf Statistical Sciences group} in  providing statistical reasoning and rigor to multidisciplinary scientific investigation and the development, application, and communication of cutting-edge statistical sciences research. 
+
+LANL is well known for their researchers and I would be honored to learn from their expertise and knowledge as it will help me become a better statistician. 
+ 
+\lettersection{Why me?}
+
+As a 4th year Ph.D. Candidate in Biostatistics at the University of North Carolina I have aimed to engage in multidisciplinary research and adapt my current mathematical statistical research to reach bar beyond biostatistics. 
+
+For example, one of the applications of my dissertation is to provide a statistical framework to accurately model the progression of Huntington's Disease in clinical trials. 
+
+I'm also giving an oral presentation this November at the University of Alabama - Huntsville were I will be illustrating how we can use my proposed methods to analyze astronomical data.
+
+The beauty of statistics is that methods in one area, such drug development, can be transferred to areas such astrostratistics.
+
+This past year I've had the pleasure to work as a statistical consultant which has been beneficial in developing my multidisciplinary skills. Physicians have a great amount of knowledge about the biology and anatomy of their research questions; knowledge that a statistician doesn't typically have. The projects vary from identifying protective factors of developing skin cancer, to projects that are invested in creating new devices to measure hand tremors for Parkinson's Disease patients. In this position I've had to immerse myself in understanding the underlying structure, collection, and either physics or biology of the data. In addition to my statistical consultant and dissertation work I have also successfully completed an internship at Google (Summer 2020) where I was able to recommend a new statistical metric to measure the quality of data collected from YouTube Surveys. This project required a high level of time management as results had to be completed in a short period of 12 weeks.
+
+I've also developed my skills in programming languages such as Matlab, R (advanced), SAS (advanced) to name a few. Although my academic training is in statistics, my previous research and work experiences have also allowed me to train myself in machine learning methods and data science. As a fellow {\it "Santa Fean"} and aspiring statistician, I would love the opportunity to spend this summer conducting fantastic multidisciplinary research at LANL. Thank you for taking the time to read my application. Please find my references at the end of my CV.
+
+\end{cvletter}
+
+
+%-------------------------------------------------------------------------------
+% Print the signature and enclosures with above letter informations
+\makeletterclosing
+
+\end{document}
