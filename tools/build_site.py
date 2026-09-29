@@ -513,7 +513,8 @@ def venue_year(p):
     if p["status"] in ("published", "abstract"):
         return f'<em>{html.escape(p["venue"])}</em>, {p["year"]}' if p["venue"] else p["year"]
     if p["status"] == "review":
-        return f'<em>{html.escape(p["venue"])}</em>' if p["venue"] else ""
+        v = f'<em>{html.escape(p["venue"])}</em>, ' if p["venue"] else ""
+        return v + "expected 2026"
     return ""
 
 
