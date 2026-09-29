@@ -618,7 +618,7 @@ def page_home(papers, abstracts):
     </p>
     <p class="links">{link_row} <a class="mail" data-u="{EMAIL_USER}" data-d="{EMAIL_DOMAIN}" href="#">Email</a></p>
   </div>
-  <figure class="portrait"><img src="/assets/jesus_arch.jpg" alt="Portrait of {NAME}" width="960" height="1200"></figure>
+  <figure class="portrait"><img src="/assets/jesus_arch2.jpg" alt="Portrait of {NAME}" width="800" height="1200"></figure>
 </section>
 
 <section class="wrap section" id="about">
