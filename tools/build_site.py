@@ -258,7 +258,8 @@ def _conv(s, i, in_group):
 def conv(s):
     s = strip_comments(s)
     s = re.sub(r"\\vskip\s*-?[\d.]+\s*(?:em|ex|pt|cm|mm)", "", s)
-    return re.sub(r"\s+", " ", _conv(s, 0, False)[0]).strip()
+    out = re.sub(r"\s+", " ", _conv(s, 0, False)[0]).strip()
+    return re.sub(r"\s*\(GPA:[^)]*\)", "", out)  # GPA stays in the PDF but is left off the website
 
 
 def plain(h):
