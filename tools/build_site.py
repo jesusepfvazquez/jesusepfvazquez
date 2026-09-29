@@ -258,8 +258,7 @@ def _conv(s, i, in_group):
 def conv(s):
     s = strip_comments(s)
     s = re.sub(r"\\vskip\s*-?[\d.]+\s*(?:em|ex|pt|cm|mm)", "", s)
-    out = re.sub(r"\s+", " ", _conv(s, 0, False)[0]).strip()
-    return re.sub(r"\s*\(GPA:[^)]*\)", "", out)  # GPA stays in the PDF but is left off the website
+    return re.sub(r"\s+", " ", _conv(s, 0, False)[0]).strip()
 
 
 def plain(h):
@@ -619,7 +618,7 @@ def page_home(papers, abstracts):
     </p>
     <p class="links">{link_row} <a class="mail" data-u="{EMAIL_USER}" data-d="{EMAIL_DOMAIN}" href="#">Email</a></p>
   </div>
-  <figure class="portrait"><img src="/assets/avatar.jpg" alt="Portrait of {NAME}" width="900" height="1094"></figure>
+  <figure class="portrait"><img src="/assets/portrait.jpg" alt="Portrait of {NAME}" width="1200" height="1200"></figure>
 </section>
 
 <section class="wrap section" id="about">
@@ -748,21 +747,6 @@ def page_cv(sections):
         shutil.copy(PDF_SRC, OUT / "cv" / "VAZQUEZ-CV.pdf")
 
 
-def page_extras():
-    body = """
-<section class="wrap page-head">
-  <p class="overline">Page not found</p>
-  <h1>That page does not exist</h1>
-  <p class="lead">Try the <a href="/">home page</a>, the <a href="/research/">research page</a>, or the <a href="/publications/">publications</a>.</p>
-</section>
-"""
-    write("404.html", shell("Not found", "/404", body, "Page not found."))
-    # Old Hugo URLs that may still be linked somewhere.
-    write("_redirects", "/resume/VAZQUEZ-CV.pdf /cv/VAZQUEZ-CV.pdf 301\n"
-          "/publication/* /publications/ 301\n/publication-type/* /publications/ 301\n"
-          "/event/* / 301\n/talk/* / 301\n/authors/* / 301\n/tag/* / 301\n/category/* / 301\n")
-
-
 def main():
     abstracts = json.loads(ABSTRACTS.read_text(encoding="utf-8")) if ABSTRACTS.exists() else {}
     papers = parse_papers()
@@ -771,7 +755,6 @@ def main():
     page_research(papers, abstracts)
     page_publications(papers, abstracts)
     page_cv(sections)
-    page_extras()
     print(f"{len(papers)} papers, {len(sections)} CV sections written to {OUT}")
     if _unknown:
         print("Unhandled LaTeX commands (ignored):", ", ".join(sorted(_unknown)), file=sys.stderr)
