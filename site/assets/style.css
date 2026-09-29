@@ -1,4 +1,4 @@
-/* Personal site: navy structure, deep green links, mustard used sparingly.
+/* Personal site: navy throughout, mustard used sparingly.
    Fonts are self-hosted: Josefin Sans (headings), Source Sans 3 (text), JetBrains Mono (labels). */
 @font-face { font-family: "Josefin Sans"; font-weight: 600; font-style: normal; font-display: swap; src: url("/assets/fonts/josefin-sans-latin-600-normal.woff2") format("woff2"); }
 @font-face { font-family: "Josefin Sans"; font-weight: 700; font-style: normal; font-display: swap; src: url("/assets/fonts/josefin-sans-latin-700-normal.woff2") format("woff2"); }
@@ -18,16 +18,16 @@
   --heading: #0b2447;     /* navy: headings, header rule, footer */
   --fill: #12305c;        /* navy: buttons and active items */
   --fill-hover: #1d4a86;
-  --green: #1f5c48;       /* deep green: links and small labels */
-  --green-hover: #143f31;
-  --mint: #e6f0eb;
+  --green: #12305c;       /* navy: links and small labels */
+  --green-hover: #1d4a86;
+  --mint: #e8eff5;
   --amber: #d9a520;       /* mustard: thin lines and one highlight only */
   --peach: #f7ebc2;
   --peach-ink: #5b4308;
   --ink: #14202e;
   --muted: #4c5b6b;
   --line: #dde6ec;
-  --link: #1f5c48;
+  --link: #12305c;
   --chip: #ebf1f5;
   --display: "Josefin Sans", "Avenir Next", "Century Gothic", "Trebuchet MS", sans-serif;
   --serif: var(--display);
@@ -211,7 +211,7 @@ ul, ol { margin: 0; padding: 0; }
 
 /* contact call-out */
 .callout {
-  background: var(--mint); border: 1px solid #c8ddd2; border-left: 8px solid var(--amber);
+  background: var(--mint); border: 1px solid var(--sky-line); border-left: 8px solid var(--amber);
   border-radius: 16px; padding: 26px 30px; max-width: 42em; color: var(--ink);
 }
 .callout h3 { font-size: 1.35rem; margin-bottom: 10px; }
