@@ -58,7 +58,7 @@ AREAS = [
     {
         "title": "Causal Inference with Right-Censored Confounders",
         "blurb": "Identification and estimation when a confounder, or its proxy, is right-censored.",
-        "keywords": ["target trial", "right-censored confounder"],
+        "keywords": ["target trial", "right-censored confounder", "right-censored marker", "latent severity"],
         "text": (
             "Observational studies of treatment effects are limited when an important confounder, "
             "such as disease aggressiveness, is not measured, and in slowly progressive diseases the "
