@@ -559,7 +559,7 @@ def shell(title, path, body, description):
 </main>
 <footer class="site-footer"><div class="wrap foot">
   <div>
-    <div class="foot-name">{NAME}</div>
+    <div class="foot-name">{NAME}, Ph.D.</div>
     <div>Department of Biostatistics, Johns Hopkins Bloomberg School of Public Health</div>
     <div><a class="mail" data-u="{EMAIL_USER}" data-d="{EMAIL_DOMAIN}" href="#">{EMAIL_USER} [at] {EMAIL_DOMAIN}</a></div>
   </div>
