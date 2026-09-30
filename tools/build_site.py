@@ -37,7 +37,7 @@ LINKS = [
     ("GitHub", "https://github.com/jesusepfvazquez"),
     ("LinkedIn", "https://www.linkedin.com/in/jesusepfvazquez/"),
 ]
-SKIP_SECTIONS = {"references"}  # kept off the public page; the PDF still has them
+SKIP_SECTIONS = set()  # kept off the public page; the PDF still has them
 
 # ------------------------------------------------------------------ research areas
 AREAS = [
@@ -259,7 +259,8 @@ def conv(s):
     s = strip_comments(s)
     s = re.sub(r"\\vskip\s*-?[\d.]+\s*(?:em|ex|pt|cm|mm)", "", s)
     out = re.sub(r"\s+", " ", _conv(s, 0, False)[0]).strip()
-    return re.sub(r"\s*\(GPA:[^)]*\)", "", out)  # GPA stays in the PDF only
+    out = re.sub(r"\s*\(GPA:[^)]*\)", "", out)  # GPA stays in the PDF only
+    return re.sub(r"\s*\([^()]*@[^()]*\)", "", out)  # referee emails stay in the PDF only
 
 
 def plain(h):
