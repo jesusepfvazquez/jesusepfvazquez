@@ -693,11 +693,11 @@ def page_publications(papers, abstracts):
     rev = [p for p in pubs if p["status"] == "review"]
     if rev:
         groups.append(("Under review", rev))
-    years = sorted({p["year"] for p in pubs if p["status"] != "review"}, reverse=True)
-    for y in years:
-        items = [p for p in pubs if p["status"] != "review" and p["year"] == y]
-        items.sort(key=lambda p: (p["date"], p["status"] == "published"), reverse=True)
-        groups.append((y, items))
+    done = [p for p in pubs if p["status"] != "review"]
+    done.sort(key=lambda p: p["date"], reverse=True)
+    done.sort(key=lambda p: p["status"] != "published")  # journal articles first, then abstracts
+    if done:
+        groups.append(("Published", done))
     key = {"published": "journal", "review": "preprint", "abstract": "abstract"}
     html_groups = ""
     for label, items in groups:
