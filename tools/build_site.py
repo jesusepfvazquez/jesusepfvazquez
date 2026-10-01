@@ -657,7 +657,7 @@ def page_home(papers, abstracts):
 </section>
 
 <section class="wrap section" id="news">
-  <div class="section-head"><h2>News</h2><a class="more" href="/publications/">Full publication list</a></div>
+  <div class="section-head"><h2>Recent News</h2><a class="more" href="/publications/">Full publication list</a></div>
   <ul class="news">{news_html}</ul>
 </section>
 """
