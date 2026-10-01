@@ -608,6 +608,11 @@ def page_home(papers, abstracts):
     recent = sorted([p for p in papers if p["status"] in ("published", "review")],
                     key=lambda p: (p["date"], p["status"] == "published"), reverse=True)[:5]
     recent_html = "".join(paper_li(p) for p in recent)
+    news_items = json.loads((ROOT / "tools" / "news.json").read_text(encoding="utf-8"))
+    news_html = "".join(
+        f'<li><span class="news-date">{html.escape(n["date"])}</span>'
+        + (f'<a href="{html.escape(n["url"])}">{html.escape(n["text"])}</a>' if n.get("url") else html.escape(n["text"]))
+        + "</li>" for n in news_items)
     link_row = " ".join(f'<a href="{u}" target="_blank" rel="noopener">{t}</a>' for t, u in LINKS)
     body = f"""
 <section class="wrap hero">
@@ -651,9 +656,9 @@ def page_home(papers, abstracts):
   <div class="area-rows">{rows}</div>
 </section>
 
-<section class="wrap section" id="recent">
-  <div class="section-head"><h2>Recent papers</h2><a class="more" href="/publications/">Full publication list</a></div>
-  <ul class="papers">{recent_html}</ul>
+<section class="wrap section" id="news">
+  <div class="section-head"><h2>News</h2><a class="more" href="/publications/">Full publication list</a></div>
+  <ul class="news">{news_html}</ul>
 </section>
 """
     write("index.html", shell("Home", "/", body,
