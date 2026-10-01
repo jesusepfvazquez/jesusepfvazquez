@@ -1,5 +1,9 @@
 [
   {
+    "date": "April 2027",
+    "text": "Invited panelist for an ENAR Inclusion, Diversity, Equity, and Accessibility (IDEA) Committee webinar on helping students from non-traditional and underrepresented backgrounds navigate graduate school."
+  },
+  {
     "date": "September 2026",
     "text": "Paper published in Kidney International Reports: Perinatal predictors of abnormal adolescent cardiovascular-kidney health after extremely preterm birth: A machine learning analysis of the ELGAN-ECHO cohort.",
     "url": "/publications/"
@@ -24,11 +28,6 @@
   {
     "date": "April 2026",
     "text": "Paper published in Orphanet Journal of Rare Diseases: Higher educational attainment in Huntington disease families: evidence from the Enroll-HD study.",
-    "url": "/publications/"
-  },
-  {
-    "date": "2026",
-    "text": "Paper submitted to CHEST: Intrapleural Enzyme Therapy Failure in Pleural Infection.",
     "url": "/publications/"
   }
 ]
