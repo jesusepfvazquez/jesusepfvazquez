@@ -274,9 +274,10 @@ ul, ol { margin: 0; padding: 0; }
 .deck-thumb { display: block; border: 1px solid var(--sky-line); border-radius: 12px; overflow: hidden; background: var(--paper); }
 .deck-thumb img { display: block; width: 100%; height: auto; }
 .deck-thumb:hover { border-color: var(--fill); }
+.deck-slides { margin: 10px 0 0; font-weight: 600; text-align: center; }
 .deck-text h2 { font-size: 1.7rem; margin-bottom: 12px; }
 .deck-text p { max-width: 36em; }
 @media (max-width: 820px) {
   .deck { grid-template-columns: 1fr; gap: 20px; }
-  .deck-thumb { max-width: 320px; margin: 0 auto; }
+  .deck-side { max-width: 320px; margin: 0 auto; }
 }

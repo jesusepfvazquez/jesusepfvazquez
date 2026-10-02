@@ -699,6 +699,7 @@ PRESENTATIONS = [
         "kind": "Retreat presentation",
         "pdf": "retreat-vazquez.pdf",
         "preview": "retreat-vazquez-preview.jpg",
+        "slides": "retreat-vazquez-slides.pdf",
         "text": ("How to adjust for disease severity when it is not measured. A proxy built from the age at "
                  "disease onset and the current age carries similar information, but the age at onset is "
                  "right-censored. The page sets up the statistical problem and shows simulation results "
@@ -712,13 +713,16 @@ def page_presentations():
     (OUT / "presentations").mkdir(parents=True, exist_ok=True)
     cards = ""
     for d in PRESENTATIONS:
-        for f in (d["pdf"], d["preview"]):
+        for f in (d["pdf"], d["preview"], d["slides"]):
             shutil.copy(PRES_SRC / f, OUT / "presentations" / f)
         cards += f'''
 <article class="deck">
-  <a class="deck-thumb" href="/presentations/{d["pdf"]}" target="_blank" rel="noopener">
-    <img src="/presentations/{d["preview"]}" alt="Preview of the presentation: {html.escape(d["title"])}" loading="lazy">
-  </a>
+  <div class="deck-side">
+    <a class="deck-thumb" href="/presentations/{d["pdf"]}" target="_blank" rel="noopener">
+      <img src="/presentations/{d["preview"]}" alt="Preview of the presentation: {html.escape(d["title"])}" loading="lazy">
+    </a>
+    <p class="deck-slides"><a href="/presentations/{d["slides"]}" target="_blank" rel="noopener">PDF with slides</a></p>
+  </div>
   <div class="deck-text">
     <p class="overline">{html.escape(d["kind"])}</p>
     <h2>{html.escape(d["title"])}</h2>
