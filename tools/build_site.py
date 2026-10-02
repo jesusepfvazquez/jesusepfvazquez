@@ -695,8 +695,8 @@ def page_research(papers, abstracts):
 PRES_SRC = ROOT / "content" / "presentations"
 PRESENTATIONS = [
     {
-        "title": "JHU Biostatistics Retreat Presentation",
-        "kind": "Causal inference with a right-censored marker of disease progression",
+        "title": "Causal inference with a right-censored marker of disease progression",
+        "kind": "JHU Biostatistics Retreat Presentation",
         "pdf": "retreat-vazquez.pdf",
         "preview": "retreat-vazquez-preview.jpg",
         "slides": "retreat-vazquez-slides.pdf",
