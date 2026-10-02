@@ -715,7 +715,8 @@ PRESENTATIONS = [
         "text": ("Talk on Huntington disease data where the age at onset is right-censored and censoring depends on "
                  "the outcome. The talk compares estimators across censoring rates and shows that choosing the "
                  "estimator to match the censoring rate improves inference."),
-        "paper": "/research/#right-censored-covariate-regression",
+        "paper": "https://doi.org/10.48550/arXiv.2511.15929",
+        "paper_label": "Paper on arXiv",
     },
 ]
 
@@ -726,6 +727,7 @@ def page_presentations():
     for d in PRESENTATIONS:
         for f in filter(None, (d["pdf"], d["preview"], d["slides"])):
             shutil.copy(PRES_SRC / f, OUT / "presentations" / f)
+        ext = ' target="_blank" rel="noopener"' if d["paper"].startswith("http") else ""
         open_btn = (f'<a class="btn" href="/presentations/{d["pdf"]}" target="_blank" rel="noopener">Open PDF</a>\n    ' if d["pdf"] else "")
         cards += f'''
 <article class="deck">
@@ -739,7 +741,7 @@ def page_presentations():
     <p class="overline">{html.escape(d["kind"])}</p>
     <h2>{html.escape(d["title"])}</h2>
     <p>{html.escape(d["text"])}</p>
-    <p class="cta">{open_btn}<a class="btn ghost" href="{d["paper"]}">Related paper</a></p>
+    <p class="cta">{open_btn}<a class="btn ghost" href="{d["paper"]}"{ext}>{d.get("paper_label","Related paper")}</a></p>
   </div>
 </article>'''
     body = f"""
