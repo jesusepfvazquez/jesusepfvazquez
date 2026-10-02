@@ -696,7 +696,7 @@ PRES_SRC = ROOT / "content" / "presentations"
 PRESENTATIONS = [
     {
         "title": "Causal inference with a right-censored marker of disease progression",
-        "kind": "JHU Biostatistics Retreat Presentation",
+        "kind": "JHU Biostatistics Retreat Presentation, October 2, 2026",
         "pdf": "retreat-vazquez.pdf",
         "preview": "retreat-vazquez-preview.jpg",
         "slides": "retreat-vazquez-slides.pdf",
@@ -708,7 +708,7 @@ PRESENTATIONS = [
     },
     {
         "title": "Matching estimators to censoring rate improves inference with outcome-dependent right-censored covariates",
-        "kind": "COMPSTAT 2026, Athens, Greece (August 2026)",
+        "kind": "COMPSTAT 2026, Athens, Greece, August 27, 2026",
         "pdf": None,
         "preview": "compstat-preview.jpg",
         "slides": "compstat-2026-slides.pdf",
