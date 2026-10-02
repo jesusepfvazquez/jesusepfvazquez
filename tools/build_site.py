@@ -706,6 +706,17 @@ PRESENTATIONS = [
                  "for the complete case and IPW estimators across censoring rates."),
         "paper": "/research/#" + "causal-inference-with-right-censored-confounders",
     },
+    {
+        "title": "Matching estimators to censoring rate improves inference with outcome-dependent right-censored covariates",
+        "kind": "COMPSTAT 2026, Athens, Greece (August 2026)",
+        "pdf": None,
+        "preview": "compstat-preview.jpg",
+        "slides": "compstat-2026-slides.pdf",
+        "text": ("Talk on Huntington disease data where the age at onset is right-censored and censoring depends on "
+                 "the outcome. The talk compares estimators across censoring rates and shows that choosing the "
+                 "estimator to match the censoring rate improves inference."),
+        "paper": "/research/#right-censored-covariate-regression",
+    },
 ]
 
 
@@ -713,12 +724,13 @@ def page_presentations():
     (OUT / "presentations").mkdir(parents=True, exist_ok=True)
     cards = ""
     for d in PRESENTATIONS:
-        for f in (d["pdf"], d["preview"], d["slides"]):
+        for f in filter(None, (d["pdf"], d["preview"], d["slides"])):
             shutil.copy(PRES_SRC / f, OUT / "presentations" / f)
+        open_btn = (f'<a class="btn" href="/presentations/{d["pdf"]}" target="_blank" rel="noopener">Open PDF</a>\n    ' if d["pdf"] else "")
         cards += f'''
 <article class="deck">
   <div class="deck-side">
-    <a class="deck-thumb" href="/presentations/{d["pdf"]}" target="_blank" rel="noopener">
+    <a class="deck-thumb" href="/presentations/{d["pdf"] or d["slides"]}" target="_blank" rel="noopener">
       <img src="/presentations/{d["preview"]}" alt="Preview of the presentation: {html.escape(d["title"])}" loading="lazy">
     </a>
     <p class="deck-slides"><a href="/presentations/{d["slides"]}" target="_blank" rel="noopener">PDF with slides</a></p>
@@ -727,8 +739,7 @@ def page_presentations():
     <p class="overline">{html.escape(d["kind"])}</p>
     <h2>{html.escape(d["title"])}</h2>
     <p>{html.escape(d["text"])}</p>
-    <p class="cta"><a class="btn" href="/presentations/{d["pdf"]}" target="_blank" rel="noopener">Open PDF</a>
-    <a class="btn ghost" href="{d["paper"]}">Related paper</a></p>
+    <p class="cta">{open_btn}<a class="btn ghost" href="{d["paper"]}">Related paper</a></p>
   </div>
 </article>'''
     body = f"""
