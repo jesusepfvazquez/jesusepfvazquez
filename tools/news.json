@@ -5,6 +5,11 @@
   },
   {
     "date": "September 2026",
+    "text": "Presented at the JHU Biostatistics Retreat: causal inference with a right-censored marker of disease progression.",
+    "url": "/presentations/"
+  },
+  {
+    "date": "September 2026",
     "text": "Paper published in Kidney International Reports: Perinatal predictors of abnormal adolescent cardiovascular-kidney health after extremely preterm birth: A machine learning analysis of the ELGAN-ECHO cohort.",
     "url": "/publications/"
   },
