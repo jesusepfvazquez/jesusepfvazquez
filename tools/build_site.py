@@ -534,7 +534,7 @@ def paper_li(p, abstracts=None, with_type=False):
 # ================================================================== page shell
 def shell(title, path, body, description):
     nav = [("Home", "/"), ("Research", "/research/"), ("Publications", "/publications/"),
-           ("CV", "/cv/")]
+           ("Presentations", "/presentations/"), ("CV", "/cv/")]
     cur = ' class="active" aria-current="page"'
     links = "".join(f'<a href="{u}"{cur if u == path else ""}>{t}</a>' for t, u in nav)
     today = datetime.date.today().strftime("%B %d, %Y").replace(" 0", " ")
@@ -691,6 +691,54 @@ def page_research(papers, abstracts):
           "Research areas and papers: right-censored covariates, causal inference, federated learning, and Huntington disease applications."))
 
 
+
+PRES_SRC = ROOT / "content" / "presentations"
+PRESENTATIONS = [
+    {
+        "title": "Causal inference with a right-censored marker of disease progression",
+        "kind": "Retreat presentation",
+        "pdf": "retreat-vazquez.pdf",
+        "preview": "retreat-vazquez-preview.jpg",
+        "text": ("How to adjust for disease severity when it is not measured. A proxy built from the age at "
+                 "disease onset and the current age carries similar information, but the age at onset is "
+                 "right-censored. The page sets up the statistical problem and shows simulation results "
+                 "for the complete case and IPW estimators across censoring rates."),
+        "paper": "/research/#" + "causal-inference-with-right-censored-confounders",
+    },
+]
+
+
+def page_presentations():
+    (OUT / "presentations").mkdir(parents=True, exist_ok=True)
+    cards = ""
+    for d in PRESENTATIONS:
+        for f in (d["pdf"], d["preview"]):
+            shutil.copy(PRES_SRC / f, OUT / "presentations" / f)
+        cards += f'''
+<article class="deck">
+  <a class="deck-thumb" href="/presentations/{d["pdf"]}" target="_blank" rel="noopener">
+    <img src="/presentations/{d["preview"]}" alt="Preview of the presentation: {html.escape(d["title"])}" loading="lazy">
+  </a>
+  <div class="deck-text">
+    <p class="overline">{html.escape(d["kind"])}</p>
+    <h2>{html.escape(d["title"])}</h2>
+    <p>{html.escape(d["text"])}</p>
+    <p class="cta"><a class="btn" href="/presentations/{d["pdf"]}" target="_blank" rel="noopener">Open PDF</a>
+    <a class="btn ghost" href="{d["paper"]}">Related paper</a></p>
+  </div>
+</article>'''
+    body = f"""
+<section class="wrap page-head">
+  <p class="overline">Presentations</p>
+  <h1>Slides and posters</h1>
+  <p class="lead">Presentations tied to my papers, with files to view or download. Conference talks are listed on the <a href="/cv/#presentations">CV</a>.</p>
+</section>
+<div class="wrap decks">{cards}</div>
+"""
+    write("presentations/index.html", shell("Presentations", "/presentations/", body,
+          "Presentations by Jesus E. Vazquez: slides and posters linked to papers on incomplete data and causal inference."))
+
+
 def page_publications(papers, abstracts):
     pubs = [p for p in papers if p["status"] in ("published", "review", "abstract")]
     counts = {k: sum(1 for p in pubs if p["status"] == k) for k in ("published", "review", "abstract")}
@@ -763,6 +811,7 @@ def main():
     page_home(papers, abstracts)
     page_research(papers, abstracts)
     page_publications(papers, abstracts)
+    page_presentations()
     page_cv(sections)
     print(f"{len(papers)} papers, {len(sections)} CV sections written to {OUT}")
     if _unknown:
