@@ -534,7 +534,7 @@ def paper_li(p, abstracts=None, with_type=False):
 # ================================================================== page shell
 def shell(title, path, body, description):
     nav = [("Home", "/"), ("Research", "/research/"), ("Publications", "/publications/"),
-           ("Presentations", "/presentations/"), ("CV", "/cv/")]
+           ("Presentations", "/presentations/"), ("Work with me", "/work-with-me/"), ("CV", "/cv/")]
     cur = ' class="active" aria-current="page"'
     links = "".join(f'<a href="{u}"{cur if u == path else ""}>{t}</a>' for t, u in nav)
     today = datetime.date.today().strftime("%B %d, %Y").replace(" 0", " ")
@@ -742,6 +742,58 @@ PRESENTATIONS = [
 ]
 
 
+# Paste the Google Form share link here. While empty, the page shows an email link instead.
+FORM_URL = ""
+
+VALUES = [
+    ("Curiosity",
+     "Curiosity comes first. Broad, general ideas are welcome, especially in a field where publishing moves fast. "
+     "Curiosity leads to questions that matter to society, and good questions lead to insightful answers."),
+    ("Correctness and truth",
+     "Work does not get rushed to publication. Published results shape later research, and decisions may follow from them. "
+     "Each project takes the time needed to be correct, and difficult questions deserve answers of the highest quality."),
+    ("Learning and compassion",
+     "The team keeps a learning mindset. Compassion goes in two directions: toward ourselves during the learning process, "
+     "and toward the people we do research with."),
+    ("Growth",
+     "Every project looks for ways to grow. Feedback, stronger writing, and higher-quality work are part of the routine. "
+     "Growth connects to learning, with a sharper focus on feedback and craft."),
+    ("Openness about AI",
+     "AI tools are here to stay, so the team states how each tool gets used. Together, we decide where the tools help, "
+     "which answers can be trusted, and where to move carefully."),
+]
+
+
+def page_work():
+    secs = "".join(
+        f'<section class="area-block"><div class="area-head"><span class="num">{i:02d}</span><h2>{html.escape(t)}</h2></div>'
+        f'<p class="area-desc">{html.escape(x)}</p></section>'
+        for i, (t, x) in enumerate(VALUES, 1))
+    if FORM_URL:
+        action = (f'<p><a class="btn" href="{html.escape(FORM_URL)}" target="_blank" rel="noopener">Fill out the interest form</a></p>')
+    else:
+        action = ('<p>The interest form is coming soon. In the meantime, email me at '
+                  '<a class="mail" data-u="jvazqu18" data-d="jh.edu" href="#">jvazqu18 [at] jh.edu</a> '
+                  'with a short note about your interests.</p>')
+    body = f"""
+<section class="wrap page-head">
+  <p class="overline">Work with me</p>
+  <h1>Students and collaborators</h1>
+  <p class="lead">I welcome high school students, undergraduates, master's students, PhD students, postdocs, and collaborators who want to work on statistical methods for incomplete data and health applications. The <a href="/research/">Research</a> page lists current projects. The values below describe how the team works.</p>
+</section>
+<div class="wrap">{secs}</div>
+<section class="wrap section">
+  <div class="callout">
+    <h3>Interested in working together?</h3>
+    <p>I do not currently have funding for student positions, so projects are unpaid and built around learning and, when contributions warrant, co-authorship. Please tell me about your background, your interests, and what you hope to learn.</p>
+    {action}
+  </div>
+</section>
+"""
+    write("work-with-me/index.html", shell("Work with me", "/work-with-me/", body,
+          "Work with Jesus E. Vazquez: mentoring values and an interest form for students and collaborators."))
+
+
 def page_presentations():
     (OUT / "presentations").mkdir(parents=True, exist_ok=True)
     cards = ""
@@ -850,6 +902,7 @@ def main():
     page_research(papers, abstracts)
     page_publications(papers, abstracts)
     page_presentations()
+    page_work()
     page_cv(sections)
     print(f"{len(papers)} papers, {len(sections)} CV sections written to {OUT}")
     if _unknown:
