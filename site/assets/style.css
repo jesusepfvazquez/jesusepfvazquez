@@ -283,3 +283,9 @@ ul, ol { margin: 0; padding: 0; }
   .deck { grid-template-columns: 1fr; gap: 20px; }
   .deck-side { max-width: 250px; margin: 0 auto; }
 }
+
+/* Work with me: tighter spacing */
+.values .area-block { padding: 20px 0 6px; }
+.values .area-head { margin-bottom: 2px; }
+.values .area-head h2 { font-size: 1.35rem; }
+.values .area-desc { margin-bottom: 8px; }

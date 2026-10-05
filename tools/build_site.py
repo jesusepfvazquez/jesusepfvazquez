@@ -781,7 +781,7 @@ def page_work():
   <h1>Students and collaborators</h1>
   <p class="lead">I welcome high school students, undergraduates, master's students, PhD students, postdocs, and collaborators who want to work on statistical methods for incomplete data and health applications. The <a href="/research/">Research</a> page lists current projects. The values below describe how the team works.</p>
 </section>
-<div class="wrap">{secs}</div>
+<div class="wrap values">{secs}</div>
 <section class="wrap section">
   <div class="callout">
     <h3>Interested in working together?</h3>
