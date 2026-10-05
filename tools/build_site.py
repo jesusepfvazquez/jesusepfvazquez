@@ -666,7 +666,12 @@ def page_home(papers, abstracts):
           "Jesus E. Vazquez, Postdoctoral Fellow in Biostatistics at Johns Hopkins. Statistical methods for incomplete and distributed data."))
 
 
+# Titles kept off the Research page (they stay in the CV and its PDF).
+HIDE_FROM_RESEARCH = ["Robustness of parametric maximum likelihood estimation"]
+
+
 def page_research(papers, abstracts):
+    papers = [p for p in papers if not any(h.lower() in p["title"].lower() for h in HIDE_FROM_RESEARCH)]
     buckets = assign_areas(papers)
     nav = "".join(f'<a href="#{slug(a["title"])}">{a["title"]}</a>' for a, b in zip(AREAS, buckets) if b)
     secs = ""
