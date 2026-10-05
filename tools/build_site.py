@@ -769,8 +769,8 @@ TEAM = [
      "work": "Working on the multiply-robust IPW estimator and on clinical trial enrichment for Huntington disease", "photo": "madhuri-raman.jpg", "url": "https://www.linkedin.com/in/madhuri-raman/"},
     {"name": "Dewei Lin", "role": "PhD student, George Washington University",
      "work": "Working on identifiability of regression models with a right-censored covariate; co-author on higher educational attainment in Huntington disease families", "photo": "dewei-lin.jpg", "url": ""},
-    {"name": "Alex Reyes Aranda", "role": "Mentee through Cientifico Latino",
-     "work": "Mentoring on graduate school applications", "photo": "alex-reyes-aranda.jpg",
+    {"name": "Alex Reyes Aranda", "role": "Undergraduate in computer science, University of Southern California",
+     "work": "Mentoring on graduate school applications through Cientifico Latino", "photo": "alex-reyes-aranda.jpg",
      "url": "https://www.linkedin.com/in/alex-reyes-aranda/"},
 ]
 
