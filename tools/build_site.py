@@ -766,7 +766,7 @@ VALUES = [
 
 TEAM = [
     {"name": "Madhuri Raman", "role": "PhD student, UNC Chapel Hill",
-     "work": "Working on the multiply-robust IPW estimator", "photo": "madhuri-raman.jpg", "url": ""},
+     "work": "Working on the multiply-robust IPW estimator", "photo": "madhuri-raman.jpg", "url": "https://www.linkedin.com/in/madhuri-raman/"},
 ]
 
 
