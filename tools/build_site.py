@@ -779,7 +779,7 @@ def page_work():
         + f'</div><div class="person-role">{html.escape(p["role"])}</div>'
         f'<div class="person-work">{html.escape(p["work"])}</div></div></div>'
         for p in TEAM)
-    team = (f'<section class="wrap section team"><h2>Who I work with</h2><div class="people">{team_cards}</div></section>'
+    team = (f'<section class="wrap section team"><h2>Students I work with</h2><div class="people">{team_cards}</div></section>'
             if TEAM else "")
     secs = "".join(
         f'<section class="area-block"><div class="area-head"><span class="num">{i:02d}</span><h2>{html.escape(t)}</h2></div>'
