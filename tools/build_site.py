@@ -790,7 +790,7 @@ def page_work():
     else:
         action = ('<p>The interest form is coming soon. In the meantime, email me at '
                   '<a class="mail" data-u="jvazqu18" data-d="jh.edu" href="#">jvazqu18 [at] jh.edu</a> '
-                  'with a short note about your interests.</p>')
+                  'with your CV/resume and a short note about your interests.</p>')
     body = f"""
 <section class="wrap page-head">
   <p class="overline">Students and collaborators</p>
