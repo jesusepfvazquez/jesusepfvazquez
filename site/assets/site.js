@@ -6,6 +6,25 @@
     if (a.textContent.indexOf("[at]") !== -1) a.textContent = addr;
   });
 
+  var extra = document.querySelectorAll(".news .news-extra");
+  if (extra.length) {
+    var list = document.querySelector(".news");
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "btn ghost news-toggle";
+    btn.setAttribute("aria-expanded", "false");
+    var setOpen = function (open) {
+      extra.forEach(function (li) { li.hidden = !open; });
+      btn.textContent = open ? "Show fewer" : "Show earlier news";
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+    };
+    btn.addEventListener("click", function () {
+      setOpen(btn.getAttribute("aria-expanded") !== "true");
+    });
+    list.insertAdjacentElement("afterend", btn);
+    setOpen(false);
+  }
+
   var pills = document.querySelectorAll(".pill");
   if (!pills.length) return;
   var items = document.querySelectorAll(".paper[data-type]");

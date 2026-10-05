@@ -609,10 +609,11 @@ def page_home(papers, abstracts):
                     key=lambda p: (p["date"], p["status"] == "published"), reverse=True)[:5]
     recent_html = "".join(paper_li(p) for p in recent)
     news_items = json.loads((ROOT / "tools" / "news.json").read_text(encoding="utf-8"))
+    NEWS_EXTRA = ' class="news-extra"'
     news_html = "".join(
-        f'<li><span class="news-date">{html.escape(n["date"])}</span>'
+        f'<li{NEWS_EXTRA if k >= 5 else ""}><span class="news-date">{html.escape(n["date"])}</span>'
         + (f'<a href="{html.escape(n["url"])}">{html.escape(n["text"])}</a>' if n.get("url") else html.escape(n["text"]))
-        + "</li>" for n in news_items)
+        + "</li>" for k, n in enumerate(news_items))
     link_row = " ".join(f'<a href="{u}" target="_blank" rel="noopener">{t}</a>' for t, u in LINKS)
     body = f"""
 <section class="wrap hero">
