@@ -646,8 +646,8 @@ def page_home(papers, abstracts):
     <h2>Get in touch</h2>
     <div class="callout">
       <h3>Open to new collaborations</h3>
-      <p>I enjoy working with students and collaborators on incomplete data, causal questions, and public health problems. Projects often grow into papers, and I like to write them together. Send a short email with your CV and what draws you to this work. Researchers from other fields are welcome too.</p>
-      <a class="btn mail" data-u="{EMAIL_USER}" data-d="{EMAIL_DOMAIN}" href="#">Email me</a>
+      <p>I enjoy working with students and collaborators on incomplete data, causal questions, and public health problems. Projects often grow into papers, and I like to write them together. Researchers from other fields are welcome too. Students can start on the Work with me page; everyone else can send an email.</p>
+      <p class="cta"><a class="btn" href="/work-with-me/">Work with me</a> <a class="btn ghost mail" data-u="{EMAIL_USER}" data-d="{EMAIL_DOMAIN}" href="#">Email me</a></p>
     </div>
   </div>
 </section>
