@@ -718,6 +718,18 @@ PRESENTATIONS = [
         "paper": "https://doi.org/10.48550/arXiv.2511.15929",
         "paper_label": "Paper on arXiv",
     },
+    {
+        "title": "Federated learning with incomplete data: when to use complete cases and when to weight",
+        "kind": "International Biometric Conference, Seoul, South Korea, July 14, 2026",
+        "pdf": None,
+        "preview": "ibc-preview.jpg",
+        "slides": "ibc-2026-slides.pdf",
+        "text": ("Talk on federated learning when each site has missing data, motivated by pleural infection "
+                 "outcomes across hospitals. The talk covers when the complete case estimator is enough and "
+                 "when a weighted estimator is needed, and how to correct its variance."),
+        "paper": "https://arxiv.org/abs/2605.20125",
+        "paper_label": "Paper on arXiv",
+    },
 ]
 
 
