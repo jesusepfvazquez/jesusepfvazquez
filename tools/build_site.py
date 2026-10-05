@@ -696,6 +696,7 @@ PRES_SRC = ROOT / "content" / "presentations"
 PRESENTATIONS = [
     {
         "title": "Causal inference with a right-censored marker of disease progression",
+        "id": "retreat",
         "kind": "JHU Biostatistics Retreat Presentation, October 2, 2026",
         "pdf": "retreat-vazquez.pdf",
         "preview": "retreat-vazquez-preview.jpg",
@@ -708,6 +709,7 @@ PRESENTATIONS = [
     },
     {
         "title": "Matching estimators to censoring rate improves inference with outcome-dependent right-censored covariates",
+        "id": "compstat",
         "kind": "COMPSTAT 2026, Athens, Greece, August 27, 2026",
         "pdf": None,
         "preview": "compstat-preview.jpg",
@@ -720,6 +722,7 @@ PRESENTATIONS = [
     },
     {
         "title": "Federated learning with incomplete data: when to use complete cases and when to weight",
+        "id": "ibc",
         "kind": "International Biometric Conference, Seoul, South Korea, July 14, 2026",
         "pdf": None,
         "preview": "ibc-preview.jpg",
@@ -742,7 +745,7 @@ def page_presentations():
         ext = ' target="_blank" rel="noopener"' if d["paper"].startswith("http") else ""
         open_btn = (f'<a class="btn" href="/presentations/{d["pdf"]}" target="_blank" rel="noopener">Open PDF</a>\n    ' if d["pdf"] else "")
         cards += f'''
-<article class="deck">
+<article class="deck" id="{d["id"]}">
   <div class="deck-side">
     <a class="deck-thumb" href="/presentations/{d["pdf"] or d["slides"]}" target="_blank" rel="noopener">
       <img src="/presentations/{d["preview"]}" alt="Preview of the presentation: {html.escape(d["title"])}" loading="lazy">

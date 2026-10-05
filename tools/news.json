@@ -6,7 +6,7 @@
   {
     "date": "October 2026",
     "text": "Presented at the JHU Biostatistics Retreat: causal inference with a right-censored marker of disease progression.",
-    "url": "/presentations/"
+    "url": "/presentations/#retreat"
   },
   {
     "date": "September 2026",
@@ -15,11 +15,13 @@
   },
   {
     "date": "August 2026",
-    "text": "Presented at COMPSTAT in Athens, Greece: robust estimation under outcome dependent right censoring in Huntington disease."
+    "text": "Presented at COMPSTAT in Athens, Greece: robust estimation under outcome dependent right censoring in Huntington disease.",
+    "url": "/presentations/#compstat"
   },
   {
     "date": "July 2026",
-    "text": "Presented at the International Biometric Conference in Seoul, South Korea: federated learning with incomplete data."
+    "text": "Presented at the International Biometric Conference in Seoul, South Korea: federated learning with incomplete data.",
+    "url": "/presentations/#ibc"
   },
   {
     "date": "June 2026",
