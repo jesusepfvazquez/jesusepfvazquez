@@ -788,7 +788,7 @@ def page_work():
     if FORM_URL:
         action = (f'<p><a class="btn" href="{html.escape(FORM_URL)}" target="_blank" rel="noopener">Fill out the interest form</a></p>')
     else:
-        action = ('<p>The interest form is coming soon. In the meantime, email me at '
+        action = ('<p>Please email me at '
                   '<a class="mail" data-u="jvazqu18" data-d="jh.edu" href="#">jvazqu18 [at] jh.edu</a> '
                   'with your CV/resume and a short note about your interests.</p>')
     body = f"""
