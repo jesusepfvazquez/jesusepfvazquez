@@ -764,7 +764,23 @@ VALUES = [
 ]
 
 
+TEAM = [
+    {"name": "Madhuri Raman", "role": "PhD student, UNC Chapel Hill",
+     "work": "Working on the multiply-robust IPW estimator", "photo": "madhuri-raman.jpg", "url": ""},
+]
+
+
 def page_work():
+    team_cards = "".join(
+        '<div class="person">'
+        f'<img src="/assets/team/{p["photo"]}" alt="Portrait of {html.escape(p["name"])}" width="400" height="400" loading="lazy">'
+        '<div><div class="person-name">'
+        + (f'<a href="{html.escape(p["url"])}" target="_blank" rel="noopener">{html.escape(p["name"])}</a>' if p["url"] else html.escape(p["name"]))
+        + f'</div><div class="person-role">{html.escape(p["role"])}</div>'
+        f'<div class="person-work">{html.escape(p["work"])}</div></div></div>'
+        for p in TEAM)
+    team = (f'<section class="wrap section team"><h2>Who I work with</h2><div class="people">{team_cards}</div></section>'
+            if TEAM else "")
     secs = "".join(
         f'<section class="area-block"><div class="area-head"><span class="num">{i:02d}</span><h2>{html.escape(t)}</h2></div>'
         f'<p class="area-desc">{html.escape(x)}</p></section>'
@@ -782,6 +798,7 @@ def page_work():
   <p class="lead">I welcome high school students, undergraduates, master's students, PhD students, postdocs, and collaborators who want to work on statistical methods for incomplete data and health applications. The <a href="/research/">Research</a> page lists current projects. The values below describe how the team works.</p>
 </section>
 <div class="wrap values">{secs}</div>
+{team}
 <section class="wrap section">
   <div class="callout">
     <h3>Interested in working together?</h3>
