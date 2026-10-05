@@ -793,8 +793,8 @@ def page_work():
                   'with a short note about your interests.</p>')
     body = f"""
 <section class="wrap page-head">
-  <p class="overline">Work with me</p>
-  <h1>Students and collaborators</h1>
+  <p class="overline">Students and collaborators</p>
+  <h1>Work with me</h1>
   <p class="lead">I welcome high school students, undergraduates, master's students, PhD students, postdocs, and collaborators who want to work on statistical methods for incomplete data and health applications. The <a href="/research/">Research</a> page lists current projects. The values below describe how the team works.</p>
 </section>
 <div class="wrap values">{secs}</div>
