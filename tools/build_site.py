@@ -765,9 +765,9 @@ VALUES = [
 
 
 TEAM = [
-    {"name": "Madhuri Raman", "role": "PhD student, UNC Chapel Hill",
+    {"name": "Madhuri Raman", "role": "PhD candidate in biostatistics, UNC Chapel Hill",
      "work": "Working on the multiply-robust IPW estimator and on clinical trial enrichment for Huntington disease", "photo": "madhuri-raman.jpg", "url": "https://www.linkedin.com/in/madhuri-raman/"},
-    {"name": "Dewei Lin", "role": "PhD student, George Washington University",
+    {"name": "Dewei Lin", "role": "PhD student in statistics, George Washington University",
      "work": "Working on identifiability of regression models with a right-censored covariate; co-author on higher educational attainment in Huntington disease families", "photo": "dewei-lin.jpg", "url": "https://www.linkedin.com/in/dewei-lin-ms-765632200/"},
     {"name": "Alex Reyes Aranda", "role": "Undergraduate in computer science, University of Southern California",
      "work": "Mentoring on graduate school applications through Cientifico Latino", "photo": "alex-reyes-aranda.jpg",
