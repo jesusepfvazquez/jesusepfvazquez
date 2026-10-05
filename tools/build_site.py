@@ -619,7 +619,7 @@ def page_home(papers, abstracts):
 <section class="wrap hero">
   <div class="hero-text">
     <p class="overline">Postdoctoral Fellow · Biostatistics · Johns Hopkins</p>
-    <h1>{NAME}<span class="degree">, Ph.D.</span></h1>
+    <h1>{NAME}, Ph.D.</h1>
     <p class="lead">I develop statistical methods for incomplete and distributed data, with applications across neurological, pulmonary, and cardiovascular health.</p>
     <p class="cta">
       <a class="btn" href="/research/">Research</a>
