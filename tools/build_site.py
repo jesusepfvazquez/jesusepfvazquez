@@ -790,12 +790,6 @@ RESOURCES = [
 
 
 def page_work():
-    res_items = "".join(
-        f'<li><a href="{html.escape(u)}" target="_blank" rel="noopener">{html.escape(t)}</a>'
-        f'<span>{html.escape(d)}</span></li>' for t, u, d in RESOURCES)
-    resources = ('<section class="wrap section resources"><h2>Resources for undergraduates</h2>'
-                 '<p class="res-lead">For undergraduates writing personal statements and fellowship essays for graduate school applications.</p>'
-                 f'<ul class="res-list">{res_items}</ul></section>')
     team_cards = "".join(
         '<div class="person">'
         f'<img src="/assets/team/{p["photo"]}" alt="Portrait of {html.escape(p["name"])}" width="400" height="400" loading="lazy">'
@@ -824,7 +818,6 @@ def page_work():
 </section>
 <div class="wrap values">{secs}</div>
 {team}
-{resources}
 <section class="wrap section">
   <div class="callout">
     <h3>Interested in working together?</h3>
@@ -835,7 +828,7 @@ def page_work():
 <section class="wrap section">
   <div class="callout">
     <h3>Undergraduate curious about biostatistics?</h3>
-    <p>I collected workshops, paid summer programs, and graduate school advice for undergraduates who want to learn more about the field.</p>
+    <p>I collected workshops, paid summer programs, and graduate school advice, including guides for writing personal statements, for undergraduates who want to learn more about the field.</p>
     <p><a class="btn" href="/work-with-me/undergraduates/">Resources for undergraduates</a></p>
   </div>
 </section>
@@ -876,7 +869,7 @@ UG_SECTIONS = [
         ("Científico Latino Graduate School Mentorship Initiative", "https://www.cientificolatino.com/gsmi",
          "Free one-on-one mentoring for students applying to STEM master's and PhD programs. "
          "The program also offers application fee waivers. I mentor students through the program."),
-    ]),
+    ] + RESOURCES),
 ]
 UG_TIPS = [
     ("MS or PhD.",
