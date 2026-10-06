@@ -775,7 +775,27 @@ TEAM = [
 ]
 
 
+RESOURCES = [
+    ("Alex Lang's NSF GRFP application guide", "https://www.alexhunterlang.com/nsf-fellowship",
+     "A guide by a past awardee that collects advice, past winners' essays, and links in one place. Most of the advice carries over to personal and research statements for graduate school."),
+    ("Collection of successful essays", "https://docs.google.com/spreadsheets/d/1xoezGhbtcpg3BvNdag2F5dTQM-Xl2EELUgAfG1eUg0s",
+     "A sortable spreadsheet of statements from past applicants, useful for seeing what a strong draft looks like."),
+    ("Essay Insights by Robin Walker", "http://grfpessayinsights.missouri.edu/index.php",
+     "A detailed walk through how to plan and write each essay."),
+    ("Advice from Claire Bowen", "http://www.clairemckaybowen.com/fellowships.html",
+     "Practical advice with excerpts from essays that succeeded."),
+    ("Official NSF GRFP tips", "https://www.nsfgrfp.org/applicants/tips/",
+     "Guidance from the program, including the review criteria. Check the official site for current rules and deadlines."),
+]
+
+
 def page_work():
+    res_items = "".join(
+        f'<li><a href="{html.escape(u)}" target="_blank" rel="noopener">{html.escape(t)}</a>'
+        f'<span>{html.escape(d)}</span></li>' for t, u, d in RESOURCES)
+    resources = ('<section class="wrap section resources"><h2>Resources for application essays</h2>'
+                 '<p class="res-lead">Students I mentor on graduate school and fellowship applications often start with these.</p>'
+                 f'<ul class="res-list">{res_items}</ul></section>')
     team_cards = "".join(
         '<div class="person">'
         f'<img src="/assets/team/{p["photo"]}" alt="Portrait of {html.escape(p["name"])}" width="400" height="400" loading="lazy">'
@@ -804,6 +824,7 @@ def page_work():
 </section>
 <div class="wrap values">{secs}</div>
 {team}
+{resources}
 <section class="wrap section">
   <div class="callout">
     <h3>Interested in working together?</h3>

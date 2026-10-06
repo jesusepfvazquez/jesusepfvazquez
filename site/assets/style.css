@@ -320,3 +320,12 @@ ul, ol { margin: 0; padding: 0; }
 .res-sub { margin-top: 6px; }
 .res-tips { max-width: 44em; padding-left: 1.3em; margin: 0 0 18px; color: #2c3a4d; }
 .res-tips li { padding: 4px 0; }
+
+.resources { padding-top: 28px; padding-bottom: 6px; border-top: 1px solid var(--line); }
+.resources h2 { font-size: 1.9rem; margin-bottom: 8px; }
+.res-lead { color: var(--muted); margin-bottom: 12px; max-width: 44em; }
+.res-list { list-style: none; max-width: 50em; }
+.res-list li { padding: 10px 0; border-bottom: 1px solid var(--line); }
+.res-list li:last-child { border-bottom: 0; }
+.res-list a { font-weight: 600; }
+.res-list span { display: block; color: #2c3a4d; font-size: 0.97rem; margin-top: 2px; }
