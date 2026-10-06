@@ -793,8 +793,8 @@ def page_work():
     res_items = "".join(
         f'<li><a href="{html.escape(u)}" target="_blank" rel="noopener">{html.escape(t)}</a>'
         f'<span>{html.escape(d)}</span></li>' for t, u, d in RESOURCES)
-    resources = ('<section class="wrap section resources"><h2>Resources for application essays</h2>'
-                 '<p class="res-lead">Students I mentor on graduate school and fellowship applications often start with these.</p>'
+    resources = ('<section class="wrap section resources"><h2>Resources for undergraduates</h2>'
+                 '<p class="res-lead">For undergraduates writing personal statements and fellowship essays for graduate school applications.</p>'
                  f'<ul class="res-list">{res_items}</ul></section>')
     team_cards = "".join(
         '<div class="person">'
