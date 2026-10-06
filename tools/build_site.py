@@ -846,7 +846,7 @@ UG_SECTIONS = [
          "Deadlines are expected in October 2026."),
         ("NIH Summer Institutes in Biostatistics and Data Science",
          "https://www.nhlbi.nih.gov/grants-and-training/summer-institute-biostatistics",
-         "A group of funded programs at universities including Boston University, Columbia, Iowa, and UTMB. "
+         "A group of funded programs at universities including Boston University, Columbia, Iowa, UTMB, and Yale. "
          "Most sites post dates in winter, with deadlines in March."),
         ("Michigan Big Data Summer Institute", "https://sph.umich.edu/bdsi/",
          "A six-week research program with housing, a stipend, and travel support. Check the site for 2027 dates."),
