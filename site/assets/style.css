@@ -308,3 +308,15 @@ ul, ol { margin: 0; padding: 0; }
 @media (max-width: 820px) { .values { grid-template-columns: 1fr; } }
 
 @media (min-width: 821px) { .hero h1 { white-space: nowrap; } }
+
+/* resources for undergraduates */
+.ug-intro { padding-top: 4px; padding-bottom: 18px; }
+.ug-intro p { margin-bottom: 0.9em; }
+.res-list { list-style: none; padding: 0; margin: 4px 0 18px; max-width: 44em; }
+.res-list li { padding: 12px 0; border-top: 1px solid var(--line); }
+.res-list li:first-child { border-top: 0; }
+.res-name { display: block; font-weight: 600; margin-bottom: 3px; }
+.res-text { color: #2c3a4d; }
+.res-sub { margin-top: 6px; }
+.res-tips { max-width: 44em; padding-left: 1.3em; margin: 0 0 18px; color: #2c3a4d; }
+.res-tips li { padding: 4px 0; }

@@ -811,9 +811,102 @@ def page_work():
     {action}
   </div>
 </section>
+<section class="wrap section">
+  <div class="callout">
+    <h3>Undergraduate curious about biostatistics?</h3>
+    <p>I collected workshops, paid summer programs, and graduate school advice for undergraduates who want to learn more about the field.</p>
+    <p><a class="btn" href="/work-with-me/undergraduates/">Resources for undergraduates</a></p>
+  </div>
+</section>
 """
     write("work-with-me/index.html", shell("Work with me", "/work-with-me/", body,
           "Work with Jesus E. Vazquez: mentoring values and an interest form for students and collaborators."))
+
+
+# ---- Resources for undergraduates (check every fall: dates, deadlines, SIBS status)
+UG_CHECKED = "October 2026"
+UG_SECTIONS = [
+    ("Learn about the field", "", [
+        ("STATtr@k", "https://stattrak.amstat.org/",
+         "From the American Statistical Association: articles on statistics careers, scholarships, and early-career advice."),
+    ]),
+    ("Attend a workshop", "", [
+        ("ENAR Fostering Excellence in Biostatistics Workshop", "https://sites.google.com/view/enar-febw",
+         "A free one-day workshop on March 14, 2027 in Boston. Students meet biostatisticians from academia, government, "
+         "and industry. Lunch is included, travel awards are available, and a graduate program expo runs the same evening."),
+    ]),
+    ("Spend a summer in biostatistics", "All of the programs below cover housing and pay a stipend.", [
+        ("Weill Cornell Biostatistics Summer Internship",
+         "https://phs.weill.cornell.edu/research-collaboration/divisions-institutes/biostatistics/biostatistics-summer-internship",
+         "June 7 to July 23, 2027, in New York. The program pays a $5,000 stipend and provides housing. "
+         "The deadline is February 19, 2027."),
+        ("Harvard Summer Program in Biostatistics and Computational Biology",
+         "https://hsph.harvard.edu/fellowship-special-program/biostatistics-computational-biology-summer-program/",
+         "Returns in 2027 after a pause in 2026. The program covers travel and living costs. "
+         "Deadlines are expected in October 2026."),
+        ("NIH Summer Institutes in Biostatistics and Data Science",
+         "https://www.nhlbi.nih.gov/grants-and-training/summer-institute-biostatistics",
+         "A group of funded programs at universities including Boston University, Columbia, Iowa, and UTMB. "
+         "Most sites post dates in winter, with deadlines in March."),
+        ("Michigan Big Data Summer Institute", "https://sph.umich.edu/bdsi/",
+         "A six-week research program with housing, a stipend, and travel support. Check the site for 2027 dates."),
+    ]),
+    ("Apply to graduate school", "", [
+        ("Científico Latino Graduate School Mentorship Initiative", "https://www.cientificolatino.com/gsmi",
+         "Free one-on-one mentoring for students applying to STEM master's and PhD programs. "
+         "The program also offers application fee waivers. I mentor students through the program."),
+    ]),
+]
+UG_TIPS = [
+    ("MS or PhD.",
+     "An MS takes about two years and leads to analyst jobs in industry, government, and academia. "
+     "A PhD takes about five years, usually comes with a stipend, and trains students to develop new methods. "
+     "Many PhD programs admit students directly from college."),
+    ("Coursework.",
+     "Most programs expect calculus through multivariable calculus, plus linear algebra. "
+     "Real analysis helps for PhD programs. Programming in R or Python helps for every program."),
+    ("Letters.",
+     "Letters from research mentors carry the most weight. A summer program is a good way to get one."),
+]
+
+
+def page_undergrads():
+    def res_li(name, url, text):
+        return (f'<li><a class="res-name" href="{html.escape(url)}" target="_blank" rel="noopener">{html.escape(name)}</a>'
+                f'<span class="res-text">{html.escape(text)}</span></li>')
+    blocks = []
+    for i, (title, intro, items) in enumerate(UG_SECTIONS, 1):
+        extra = ""
+        if title == "Apply to graduate school":
+            tips = "".join(f'<li><strong>{html.escape(a)}</strong> {html.escape(b)}</li>' for a, b in UG_TIPS)
+            extra = f'<p class="area-desc res-sub">A few notes from me:</p><ul class="res-tips">{tips}</ul>'
+        blocks.append(
+            f'<section class="area-block"><div class="area-head"><span class="num">{i:02d}</span><h2>{html.escape(title)}</h2></div>'
+            + (f'<p class="area-desc">{html.escape(intro)}</p>' if intro else "")
+            + f'<ul class="res-list">{"".join(res_li(*it) for it in items)}</ul>{extra}</section>')
+    body = f"""
+<section class="wrap page-head">
+  <p class="overline">Resources</p>
+  <h1>For undergraduates</h1>
+  <p class="lead">Biostatisticians design studies and analyze data in medicine and public health. Many students first hear about biostatistics late in college. I collected the programs and resources below for undergraduates who want to learn more.</p>
+</section>
+<section class="wrap ug-intro">
+  <div class="prose">
+    <p><strong>My path.</strong> I grew up in Santa Fe, New Mexico, and went to Capital High School. I graduated from the University of New Mexico in 2019. I then earned my MS and PhD in biostatistics at UNC Chapel Hill. I am now a postdoctoral fellow in biostatistics at Johns Hopkins.</p>
+    <p><strong>What a biostatistician does.</strong> Biostatisticians build and apply statistical methods for health data. The daily work includes designing clinical trials, writing code to analyze data, and working with doctors and scientists on their questions. When standard tools fail, biostatisticians develop new methods. My own research focuses on data with missing or censored values, such as the age at disease onset in Huntington disease.</p>
+  </div>
+</section>
+<div class="wrap">{"".join(blocks)}</div>
+<section class="wrap section">
+  <div class="callout">
+    <h3>Get in touch</h3>
+    <p>If you are an undergraduate thinking about biostatistics, please email me at <a class="mail" data-u="{EMAIL_USER}" data-d="{EMAIL_DOMAIN}" href="#">{EMAIL_USER} [at] {EMAIL_DOMAIN}</a>. I am happy to talk about programs, applications, or graduate school life.</p>
+    <p class="note">Every entry was checked in {UG_CHECKED}.</p>
+  </div>
+</section>
+"""
+    write("work-with-me/undergraduates/index.html", shell("For undergraduates", "/work-with-me/", body,
+          "Resources for undergraduates interested in biostatistics: workshops, summer programs, and graduate school advice."))
 
 
 def page_presentations():
@@ -925,6 +1018,7 @@ def main():
     page_publications(papers, abstracts)
     page_presentations()
     page_work()
+    page_undergrads()
     page_cv(sections)
     print(f"{len(papers)} papers, {len(sections)} CV sections written to {OUT}")
     if _unknown:
