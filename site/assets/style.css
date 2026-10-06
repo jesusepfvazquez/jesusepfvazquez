@@ -329,3 +329,9 @@ ul, ol { margin: 0; padding: 0; }
 .res-list li:last-child { border-bottom: 0; }
 .res-list a { font-weight: 600; }
 .res-list span { display: block; color: #2c3a4d; font-size: 0.97rem; margin-top: 2px; }
+
+/* student resources link on Work with me */
+.resources-link { padding-top: 28px; padding-bottom: 6px; border-top: 1px solid var(--line); }
+.resources-link h2 { font-size: 1.9rem; margin-bottom: 10px; }
+.resources-link p { max-width: 42em; margin-bottom: 0.6em; }
+.resources-link .more { font-weight: 600; }

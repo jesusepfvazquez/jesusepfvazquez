@@ -812,18 +812,16 @@ def page_work():
 </section>
 <div class="wrap values">{secs}</div>
 {team}
+<section class="wrap section resources-link">
+  <h2>Student resources</h2>
+  <p>Workshops, paid summer research programs, and graduate school and fellowship advice, including NSF GRFP guides, for undergraduates and graduate students.</p>
+  <p><a class="more" href="/work-with-me/resources/">Browse student resources &rarr;</a></p>
+</section>
 <section class="wrap section">
   <div class="callout">
     <h3>Interested in working together?</h3>
     <p>I do not currently have funding for student positions, so projects are unpaid and built around learning and, when contributions warrant, co-authorship. Please tell me about your background, your interests, and what you hope to learn.</p>
     {action}
-  </div>
-</section>
-<section class="wrap section">
-  <div class="callout">
-    <h3>Undergraduate curious about biostatistics or applying to graduate school?</h3>
-    <p>I collected workshops, paid summer programs, and graduate school advice, including guides for writing personal statements, for undergraduates who want to learn more about the field.</p>
-    <p><a class="btn" href="/work-with-me/undergraduates/">Resources for undergraduates</a></p>
   </div>
 </section>
 """
@@ -915,8 +913,8 @@ def page_undergrads():
     body = f"""
 <section class="wrap page-head">
   <p class="overline">Resources</p>
-  <h1>For undergraduates</h1>
-  <p class="lead">Biostatisticians design studies and analyze data in medicine and public health. Many students first hear about biostatistics late in college. I collected the programs and resources below for undergraduates who want to learn more.</p>
+  <h1>Student resources</h1>
+  <p class="lead">Biostatisticians design studies and analyze data in medicine and public health. Many students first hear about biostatistics late in college. I collected the programs and resources below for undergraduates who want to learn more and for graduate students applying for fellowships.</p>
 </section>
 <section class="wrap ug-intro">
   <div class="prose">
@@ -928,13 +926,13 @@ def page_undergrads():
 <section class="wrap section">
   <div class="callout">
     <h3>Get in touch</h3>
-    <p>If you are an undergraduate thinking about biostatistics, please email me at <a class="mail" data-u="{EMAIL_USER}" data-d="{EMAIL_DOMAIN}" href="#">{EMAIL_USER} [at] {EMAIL_DOMAIN}</a>. I am happy to talk about programs, applications, or graduate school life.</p>
+    <p>If you are a student thinking about biostatistics or graduate school, please email me at <a class="mail" data-u="{EMAIL_USER}" data-d="{EMAIL_DOMAIN}" href="#">{EMAIL_USER} [at] {EMAIL_DOMAIN}</a>. I am happy to talk about programs, applications, or graduate school life.</p>
     <p class="note">Every entry was checked in {UG_CHECKED}.</p>
   </div>
 </section>
 """
-    write("work-with-me/undergraduates/index.html", shell("For undergraduates", "/work-with-me/", body,
-          "Resources for undergraduates interested in biostatistics: workshops, summer programs, and graduate school advice."))
+    write("work-with-me/resources/index.html", shell("Student resources", "/work-with-me/", body,
+          "Resources for students interested in biostatistics: workshops, summer programs, graduate school and fellowship advice."))
 
 
 def page_presentations():

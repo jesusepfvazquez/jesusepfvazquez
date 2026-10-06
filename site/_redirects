@@ -6,3 +6,5 @@
 /authors/* / 301
 /tag/* / 301
 /category/* / 301
+/work-with-me/undergraduates/* /work-with-me/resources/ 301!
+/work-with-me/undergraduates /work-with-me/resources/ 301!
