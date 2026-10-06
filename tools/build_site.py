@@ -778,12 +778,6 @@ TEAM = [
 RESOURCES = [
     ("Alex Lang's NSF GRFP application guide", "https://www.alexhunterlang.com/nsf-fellowship",
      "A guide by a past awardee that collects advice, past winners' essays, and links in one place. Most of the advice carries over to personal and research statements for graduate school."),
-    ("Collection of successful essays", "https://docs.google.com/spreadsheets/d/1xoezGhbtcpg3BvNdag2F5dTQM-Xl2EELUgAfG1eUg0s",
-     "A sortable spreadsheet of statements from past applicants, useful for seeing what a strong draft looks like."),
-    ("Essay Insights by Robin Walker", "http://grfpessayinsights.missouri.edu/index.php",
-     "A detailed walk through how to plan and write each essay."),
-    ("Advice from Claire Bowen", "http://www.clairemckaybowen.com/fellowships.html",
-     "Practical advice with excerpts from essays that succeeded."),
     ("Official NSF GRFP tips", "https://www.nsfgrfp.org/applicants/tips/",
      "Guidance from the program, including the review criteria. Check the official site for current rules and deadlines."),
 ]
