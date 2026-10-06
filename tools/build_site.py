@@ -859,6 +859,26 @@ UG_SECTIONS = [
         ("Michigan Big Data Summer Institute", "https://sph.umich.edu/bdsi/",
          "A six-week research program with housing, a stipend, and travel support. Check the site for 2027 dates."),
     ]),
+    ("Try research in any field", "A first research experience does not have to be in biostatistics. Mine was not. "
+     "The programs below pay a stipend and cover housing.", [
+        ("University of Minnesota Life Sciences Summer Undergraduate Research Program (LSSURP)",
+         "https://med.umn.edu/gps/undergraduate-research/life-sciences-summer",
+         "Ten weeks of research in the life sciences for students headed to graduate school. "
+         "The program covers travel, housing, and meals and pays a stipend. The deadline is usually in early February. "
+         "LSSURP was my first summer research program."),
+        ("Michigan State Advanced Computational Research Experience (ACRES)", "https://icer-acres.msu.edu/about/index.aspx",
+         "A ten-week NSF-funded program in computational and data science research. "
+         "The program pays a $7,000 stipend and covers housing, meals, and travel. I took part in ACRES as an undergraduate."),
+        ("Big Ten Summer Research Opportunities Program (SROP)", "https://www.btaa.org/resources-for/students/srop",
+         "Summer research at Big Ten universities for undergraduates preparing for graduate school."),
+        ("Leadership Alliance Summer Research Early Identification Program", "https://theleadershipalliance.org/summer-research-early-identification-program/",
+         "Eight to ten weeks of research at about 20 partner universities for students headed to a PhD. "
+         "One application covers several schools. The deadline is usually in early February."),
+        ("NSF Research Experiences for Undergraduates (REU)", "https://www.nsf.gov/funding/initiatives/reu/students",
+         "A searchable list of funded summer research sites across every field of science, including statistics and mathematics."),
+        ("Pathways to Science", "https://www.pathwaystoscience.org/",
+         "A large database of summer programs and fellowships, searchable by field and student level."),
+    ]),
     ("Apply to graduate school", "", [
         ("Científico Latino Graduate School Mentorship Initiative", "https://www.cientificolatino.com/gsmi",
          "Free one-on-one mentoring for students applying to STEM master's and PhD programs. "
