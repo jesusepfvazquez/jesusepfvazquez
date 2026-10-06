@@ -821,7 +821,7 @@ def page_work():
 </section>
 <section class="wrap section">
   <div class="callout">
-    <h3>Undergraduate curious about biostatistics?</h3>
+    <h3>Undergraduate curious about biostatistics or applying to graduate school?</h3>
     <p>I collected workshops, paid summer programs, and graduate school advice, including guides for writing personal statements, for undergraduates who want to learn more about the field.</p>
     <p><a class="btn" href="/work-with-me/undergraduates/">Resources for undergraduates</a></p>
   </div>
