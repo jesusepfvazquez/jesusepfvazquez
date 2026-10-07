@@ -335,3 +335,5 @@ ul, ol { margin: 0; padding: 0; }
 .resources-link h2 { font-size: 1.9rem; margin-bottom: 10px; }
 .resources-link p { max-width: 42em; margin-bottom: 0.6em; }
 .resources-link .more { font-weight: 600; }
+.about-me h2 { font-size: 1.9rem; margin-bottom: 8px; }
+.about-me p { max-width: 44em; color: #2c3a4d; }

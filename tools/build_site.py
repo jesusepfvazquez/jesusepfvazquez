@@ -636,7 +636,7 @@ def page_home(papers, abstracts):
     <div class="prose">
       <p>I am a Postdoctoral Fellow in the Department of Biostatistics at the <a href="https://publichealth.jhu.edu" target="_blank" rel="noopener">Johns Hopkins Bloomberg School of Public Health</a>, where I hold the <a href="https://facultyaffairs.jhu.edu/initiatives/deia/ppdf/" target="_blank" rel="noopener">Johns Hopkins Provost Postdoctoral Fellowship</a> under <a href="https://www.elizabethstuart.org" target="_blank" rel="noopener">Dr. Elizabeth A. Stuart</a>. I completed my Ph.D. in Biostatistics at the University of North Carolina at Chapel Hill under <a href="https://tpgarcia.github.io" target="_blank" rel="noopener">Dr. Tanya P. Garcia</a>. My dissertation developed robust and efficient estimators for regression models with right-censored covariates, with applications to Huntington disease progression.</p>
       <p>My research focuses on settings where data are incomplete or distributed: censoring, missingness, and data that cannot leave the institutions that collect them. Currently, I am working on federated learning frameworks that let multiple clinical sites draw joint inferences without sharing individual-level data. I collaborate across health domains, including neurological disease, pulmonary health, preterm kidney health, cardiovascular outcomes, and physical activity.</p>
-      <p>On the personal side, I consider myself a <em>fronterizo</em>, as I grew up on both sides of the US-Mexico border (Chihuahua and New Mexico). My favorite board game is Catan, pineapple goes on pizza, and one of my favorite quotes is <em>&ldquo;De aqu&iacute; y de all&aacute;,&rdquo;</em> which translates to &ldquo;from here and from there.&rdquo; I really like this quote because it allows us to fully embrace our Latino heritage and also welcomes our experience growing up here in the US: we can be part of both cultures.</p>
+      <p>On the personal side, I consider myself a <em>fronterizo</em>, as I grew up on both sides of the US-Mexico border (Chihuahua and New Mexico).</p>
     </div>
   </div>
 </section>
@@ -811,6 +811,10 @@ def page_work():
   <p class="lead">I welcome high school students, undergraduates, master's students, PhD students, postdocs, and collaborators who want to work on statistical methods for incomplete data and health applications. The <a href="/research/">Research</a> page lists current projects. The values below describe how the team works.</p>
 </section>
 <div class="wrap values">{secs}</div>
+<section class="wrap section about-me">
+  <h2>A bit about me</h2>
+  <p>I consider myself a <em>fronterizo</em>: I grew up on both sides of the US-Mexico border (Chihuahua and New Mexico). My favorite board game is Catan, and pineapple goes on pizza. One of my favorite quotes is <em>&ldquo;De aqu&iacute; y de all&aacute;,&rdquo;</em> which translates to &ldquo;from here and from there.&rdquo; The quote lets us embrace our Latino heritage and also welcomes our experience growing up in the US: we can be part of both cultures.</p>
+</section>
 {team}
 <section class="wrap section resources-link">
   <h2>Student resources</h2>
