@@ -42,7 +42,7 @@ SKIP_SECTIONS = set()  # kept off the public page; the PDF still has them
 # ------------------------------------------------------------------ research areas
 AREAS = [
     {
-        "title": "Right-Censored Covariate Regression",
+        "title": "Right-Censored Covariates",
         "blurb": "Estimators for regression when a time-to-event covariate is only partly observed.",
         "keywords": ["censored covariate", "missing covariate", "outcome dependent right",
                      "conditional mean imputation"],
@@ -56,7 +56,7 @@ AREAS = [
         ),
     },
     {
-        "title": "Causal Inference with Right-Censored Confounders",
+        "title": "Right-Censored Confounders",
         "blurb": "Identification and estimation when a confounder, or its proxy, is right-censored.",
         "keywords": ["target trial", "right-censored confounder", "right-censored marker", "latent severity"],
         "text": (
@@ -710,7 +710,7 @@ PRESENTATIONS = [
                  "disease onset and the current age carries similar information, but the age at onset is "
                  "right-censored. The page sets up the statistical problem and shows simulation results "
                  "for the complete case and IPW estimators across censoring rates."),
-        "paper": "/research/#" + "causal-inference-with-right-censored-confounders",
+        "paper": "/research/#" + "right-censored-confounders",
     },
     {
         "title": "Matching estimators to censoring rate improves inference with outcome-dependent right-censored covariates",
