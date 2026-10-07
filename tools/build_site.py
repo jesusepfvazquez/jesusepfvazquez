@@ -641,6 +641,16 @@ def page_home(papers, abstracts):
   </div>
 </section>
 
+<section class="wrap section" id="news">
+  <div class="section-head"><h2>Recent News</h2><a class="more" href="/publications/">Full publication list</a></div>
+  <ul class="news">{news_html}</ul>
+</section>
+
+<section class="wrap section" id="areas">
+  <div class="section-head"><h2>Research areas</h2><a class="more" href="/research/">All papers by area</a></div>
+  <div class="area-rows">{rows}</div>
+</section>
+
 <section class="wrap section" id="contact">
   <div class="cols">
     <h2>Get in touch</h2>
@@ -650,16 +660,6 @@ def page_home(papers, abstracts):
       <p class="cta"><a class="btn" href="/work-with-me/">Work with me</a> <a class="btn ghost mail" data-u="{EMAIL_USER}" data-d="{EMAIL_DOMAIN}" href="#">Email me</a></p>
     </div>
   </div>
-</section>
-
-<section class="wrap section" id="areas">
-  <div class="section-head"><h2>Research areas</h2><a class="more" href="/research/">All papers by area</a></div>
-  <div class="area-rows">{rows}</div>
-</section>
-
-<section class="wrap section" id="news">
-  <div class="section-head"><h2>Recent News</h2><a class="more" href="/publications/">Full publication list</a></div>
-  <ul class="news">{news_html}</ul>
 </section>
 """
     write("index.html", shell("Home", "/", body,
