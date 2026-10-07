@@ -728,6 +728,19 @@ PRESENTATIONS = [
         "paper": "https://arxiv.org/abs/2605.20125",
         "paper_label": "Paper on arXiv",
     },
+    {
+        "title": "How we work together: lab values",
+        "id": "lab-values",
+        "kind": "Stuart Lab Meeting, Johns Hopkins Biostatistics, November 4, 2025",
+        "pdf": None,
+        "preview": "lab-values-preview.jpg",
+        "slides": "lab-values-2025-slides.pdf",
+        "text": ("Slides on the values that guide how the lab works together: a mindset of improving the lab, "
+                 "engaging in lab meetings and operations, sharing skills through workshops and co-working "
+                 "sessions, and building community by supporting each other. The slides close with a prompt "
+                 "for each member to propose a team agreement."),
+        "paper": None,
+    },
 ]
 
 
@@ -935,8 +948,10 @@ def page_presentations():
     for d in PRESENTATIONS:
         for f in filter(None, (d["pdf"], d["preview"], d["slides"])):
             shutil.copy(PRES_SRC / f, OUT / "presentations" / f)
-        ext = ' target="_blank" rel="noopener"' if d["paper"].startswith("http") else ""
+        ext = ' target="_blank" rel="noopener"' if (d["paper"] or "").startswith("http") else ""
         open_btn = (f'<a class="btn" href="/presentations/{d["pdf"]}" target="_blank" rel="noopener">Open PDF</a>\n    ' if d["pdf"] else "")
+        paper_btn = f'<a class="btn ghost" href="{d["paper"]}"{ext}>{d.get("paper_label","Related paper")}</a>' if d["paper"] else ""
+        cta = f'<p class="cta">{open_btn}{paper_btn}</p>' if (open_btn or paper_btn) else ""
         cards += f'''
 <article class="deck" id="{d["id"]}">
   <div class="deck-side">
@@ -949,14 +964,14 @@ def page_presentations():
     <p class="overline">{html.escape(d["kind"])}</p>
     <h2>{html.escape(d["title"])}</h2>
     <p>{html.escape(d["text"])}</p>
-    <p class="cta">{open_btn}<a class="btn ghost" href="{d["paper"]}"{ext}>{d.get("paper_label","Related paper")}</a></p>
+    {cta}
   </div>
 </article>'''
     body = f"""
 <section class="wrap page-head">
   <p class="overline">Presentations</p>
   <h1>Slides and posters</h1>
-  <p class="lead">Presentations tied to my papers, with files to view or download. Conference talks are listed on the <a href="/cv/#presentations">CV</a>.</p>
+  <p class="lead">Presentations with files to view or download; most are tied to my papers. Conference talks are listed on the <a href="/cv/#presentations">CV</a>.</p>
 </section>
 <div class="wrap decks">{cards}</div>
 """
