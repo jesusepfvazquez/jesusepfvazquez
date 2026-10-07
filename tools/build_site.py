@@ -807,12 +807,13 @@ def page_work():
 <section class="wrap page-head">
   <p class="overline">Students and collaborators</p>
   <h1>Work with me</h1>
-  <p class="lead">I welcome high school students, undergraduates, master's students, PhD students, postdocs, and collaborators who want to work on statistical methods for incomplete data and health applications. The <a href="/research/">Research</a> page lists current projects. The values below describe how the team works.</p>
+  <p class="lead">I welcome high school students, undergraduates, master's students, PhD students, postdocs, and collaborators who want to work on statistical methods for incomplete data and health applications. The <a href="/research/">Research</a> page lists current projects.</p>
 </section>
 <section class="wrap section about-me">
   <h2>A bit about me</h2>
   <p>I consider myself a <em>fronterizo</em>: I grew up on both sides of the US-Mexico border (Chihuahua and New Mexico). My favorite board game is Catan, and pineapple goes on pizza. One of my favorite quotes is <em>&ldquo;De aqu&iacute; y de all&aacute;,&rdquo;</em> which translates to &ldquo;from here and from there.&rdquo; The quote lets us embrace our Latino heritage and also welcomes our experience growing up in the US: we can be part of both cultures.</p>
 </section>
+<p class="wrap values-lead">The values below describe how the team works.</p>
 <div class="wrap values">{secs}</div>
 {team}
 <section class="wrap section resources-link">
