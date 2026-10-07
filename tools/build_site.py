@@ -42,29 +42,19 @@ SKIP_SECTIONS = set()  # kept off the public page; the PDF still has them
 # ------------------------------------------------------------------ research areas
 AREAS = [
     {
-        "title": "Right-Censored Covariates",
-        "blurb": "Estimators for regression when a time-to-event covariate is only partly observed.",
+        "title": "Right-Censored Covariates and Confounders",
+        "blurb": "Regression and causal inference when a time-to-event covariate or confounder is only partly observed.",
         "keywords": ["censored covariate", "missing covariate", "outcome dependent right",
-                     "conditional mean imputation"],
+                     "conditional mean imputation", "target trial", "right-censored confounder",
+                     "right-censored marker", "latent severity"],
         "text": (
             "In many cohort studies, a covariate is a time-to-event variable that is only partly "
             "observed. In Huntington disease studies, for example, age at clinical diagnosis is "
             "unknown for participants who have not yet been diagnosed at their last visit. I develop "
-            "robust and efficient estimators for regression models with right-censored covariates, "
-            "study the links between right-censored and missing covariates, and apply the estimators "
-            "to Huntington disease progression data."
-        ),
-    },
-    {
-        "title": "Right-Censored Confounders",
-        "blurb": "Identification and estimation when a confounder, or its proxy, is right-censored.",
-        "keywords": ["target trial", "right-censored confounder", "right-censored marker", "latent severity"],
-        "text": (
-            "Observational studies of treatment effects are limited when an important confounder, "
-            "such as disease aggressiveness, is not measured, and in slowly progressive diseases the "
-            "available proxies of the confounder are often right-censored. I formalize identification "
-            "conditions for this setting and develop weighted estimators, with applications to "
-            "antidepressant use in Huntington disease."
+            "robust and efficient estimators for regression models with right-censored covariates "
+            "and study the links between right-censored and missing covariates. I also formalize "
+            "identification conditions for observational studies in which a confounder, or its "
+            "proxy, is right-censored. The estimators are applied to Huntington disease progression data."
         ),
     },
     {
@@ -710,7 +700,7 @@ PRESENTATIONS = [
                  "disease onset and the current age carries similar information, but the age at onset is "
                  "right-censored. The page sets up the statistical problem and shows simulation results "
                  "for the complete case and IPW estimators across censoring rates."),
-        "paper": "/research/#" + "right-censored-confounders",
+        "paper": "/research/#" + "right-censored-covariates-and-confounders",
     },
     {
         "title": "Matching estimators to censoring rate improves inference with outcome-dependent right-censored covariates",
