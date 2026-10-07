@@ -880,7 +880,8 @@ UG_SECTIONS = [
     ("Apply to graduate school", "", [
         ("Graduate school application tracker (Excel)", "/assets/files/grad-school-application-tracker.xlsx",
          "A spreadsheet I made for tracking programs, deadlines, application fees, faculty of interest, and letters of recommendation. "
-         "Deadlines and letter counts update by themselves, and a month-by-month timeline is included. Download it and make it yours."),
+         "Deadlines and letter counts update by themselves, and a month-by-month timeline is included. "
+         "I built the spreadsheet with help from Claude, an AI assistant. Please modify it to fit your needs."),
         ("Científico Latino Graduate School Mentorship Initiative", "https://www.cientificolatino.com/gsmi",
          "Free one-on-one mentoring for students applying to STEM master's and PhD programs. "
          "The program also offers application fee waivers. I mentor students through the program."),
