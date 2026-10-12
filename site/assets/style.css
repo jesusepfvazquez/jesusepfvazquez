@@ -97,7 +97,7 @@ ul, ol { margin: 0; padding: 0; }
 .links a { margin-right: 14px; }
 .portrait { margin: 0; position: relative; max-width: 340px; justify-self: end; width: 100%; }
 .portrait::before {
-  content: ""; position: absolute; inset: -10px; border: 3px solid var(--amber);
+  content: ""; position: absolute; inset: -10px; border: 3px solid var(--fill-hover);
   border-radius: 50%;
 }
 .portrait img {
