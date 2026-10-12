@@ -537,7 +537,7 @@ def shell(title, path, body, description):
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{html.escape(full_title)}</title>
 <meta name="description" content="{html.escape(description, quote=True)}">
-<link rel="icon" href="data:,">
+<link rel="icon" type="image/png" href="/assets/blank.png?v={BUILD_ID}">
 <link rel="stylesheet" href="/assets/style.css?v={BUILD_ID}">
 </head>
 <body>
