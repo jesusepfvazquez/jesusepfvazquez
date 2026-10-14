@@ -729,6 +729,20 @@ PRESENTATIONS = [
         "paper_label": "Paper on arXiv",
     },
     {
+        "title": "Federated learning with incomplete data: a weighted approach with variance correction",
+        "id": "t32",
+        "kind": "CIDI T32 Meeting, Johns Hopkins, March 10, 2026",
+        "pdf": None,
+        "preview": "t32-preview.jpg",
+        "slides": "t32-2026-slides.pdf",
+        "text": ("A lecture for the CIDI T32 trainees on federated learning when sites have missing data. The slides "
+                 "introduce distributed research networks and the COLA-GLM estimator, which assumes complete data, and "
+                 "then develop a weighted version for missing covariates, with simulation results on bias, coverage, "
+                 "and the variance correction. The example comes from pleural infection data at two sources."),
+        "paper": "https://arxiv.org/abs/2605.20125",
+        "paper_label": "Paper on arXiv",
+    },
+    {
         "title": "How we work together: lab values",
         "id": "lab-values",
         "kind": "Stuart Lab Meeting, Johns Hopkins Biostatistics, November 4, 2025",
