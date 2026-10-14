@@ -790,7 +790,7 @@ TEAM = [
      "url": "https://www.linkedin.com/in/alex-reyes-aranda/"},
     {"name": "Lidio Jaimes", "role": "ScM candidate in biostatistics, Johns Hopkins University",
      "work": "Working on the sex of the affected parent and parental age at symptom onset in Enroll-HD",
-     "photo": "lidio-jaimes.jpg", "url": ""},
+     "photo": "lidio-jaimes.jpg", "url": "https://www.linkedin.com/in/lidiojaimes/"},
 ]
 
 
