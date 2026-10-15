@@ -95,7 +95,7 @@ ul, ol { margin: 0; padding: 0; }
 .btn.ghost:hover { background: var(--fill); border-color: var(--fill); color: #fff; }
 .links { font-size: 0.95rem; color: var(--muted); }
 .links a { margin-right: 14px; }
-.portrait { margin: 0; position: relative; max-width: 340px; justify-self: end; width: 100%; }
+.portrait { margin: 0; position: relative; max-width: 280px; justify-self: end; width: 100%; }
 .portrait::before {
   content: ""; position: absolute; inset: -10px; border: 3px solid var(--fill-hover);
   border-radius: 50%;
