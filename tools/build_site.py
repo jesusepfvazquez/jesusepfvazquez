@@ -1104,7 +1104,7 @@ def page_opportunities():
 <section class="wrap page-head">
   <p class="overline">Student resources</p>
   <h1>Research opportunities</h1>
-  <p class="lead">Paid summer research programs, internships, and workshops for undergraduates interested in biostatistics, statistics, data science, and public health. Each week an AI assistant (Claude) checks every listing against the program's own page, and I review the changes before they go live.</p>
+  <p class="lead">Paid summer research programs, internships, and workshops for undergraduates interested in biostatistics, statistics, data science, and public health.</p>
   <p class="opp-warn"><strong>Please double-check before you apply.</strong> Listings are verified with AI and can contain mistakes. Always confirm deadlines, pay, and eligibility on the program's official page.</p>
   <p class="opp-stats"><strong>{len(opps)}</strong> listings &middot; <strong>{n_open}</strong> accepting applications &middot; <strong id="soon">0</strong> deadlines in the next 30 days &middot; last checked {fmt(latest)}</p>
 </section>
