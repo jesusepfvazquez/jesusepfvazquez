@@ -798,5 +798,29 @@
     "summary": "Federal program that prepares students for doctoral study through mentored research, summer internships, and help with graduate applications. If your college has a McNair program, apply early in your undergraduate years.",
     "citizenship": "notstated",
     "citizenship_note": "Eligibility rules for federal TRIO programs can exclude students without citizenship or permanent residency. Ask your campus McNair office."
+  },
+  {
+    "id": "penn-suip",
+    "title": "Summer Undergraduate Internship Program (SUIP)",
+    "org": "University of Pennsylvania, Perelman School of Medicine",
+    "type": "Internship",
+    "location": "Philadelphia, PA",
+    "deadline": "2027-02-01",
+    "deadline_note": "Applications opened October 1, 2026 and close February 1, 2027 at 11:59 PM ET. Late or incomplete applications are not considered. First offers after February 18; more decisions through March 18.",
+    "dates": "June 7 to August 13, 2027 (10 weeks)",
+    "pay": "$5,500 stipend + on-campus housing, meal plan, and one round trip to Penn",
+    "eligibility": "US citizens and permanent residents; enrolled at a four-year college in the fall after the program (graduating seniors not eligible); preference for students who have finished sophomore or junior year; no prior research experience required",
+    "citizenship": "citizens",
+    "citizenship_note": "Limited to US citizens and permanent residents.",
+    "tags": [
+      "Biostatistics",
+      "Public health",
+      "Life sciences",
+      "Computational biology"
+    ],
+    "status": "open",
+    "url": "https://www.med.upenn.edu/research-trainee-affairs/suip/",
+    "verified": "2026-10-19",
+    "summary": "Ten-week paid research internship at Penn Medicine across the biomedical sciences. Epidemiology and biostatistics is one of the research areas, and applicants interested in biostatistics can say so on the application."
   }
 ]

@@ -1121,6 +1121,7 @@ def page_opportunities():
   <div class="opps" id="opps">{''.join(cards)}</div>
   <p class="empty" id="none" hidden>No listings match.</p>
   <p class="note">Most summer programs open between November and January and close between January and March. Programs marked "Funding uncertain" ran in 2026, but their 2027 funding has not been announced. </p>
+  <p class="note">More places to look: the <a href="https://www.amstat.org/education/statistics-students/internships-and-fellowships" target="_blank" rel="noopener">American Statistical Association's internships and fellowships page</a>, the <a href="https://www.nsf.gov/funding/initiatives/reu/students" target="_blank" rel="noopener">NSF REU site list</a>, and <a href="https://www.pathwaystoscience.org/" target="_blank" rel="noopener">Pathways to Science</a>.</p>
   <div class="callout opp-suggest"><h3>Know a program that belongs here?</h3><p>Suggest it through a short form on GitHub. Each week new suggestions are added to the website.</p><p><a class="btn" href="{SUGGEST_URL}" target="_blank" rel="noopener">Suggest a program</a></p><p class="note">No GitHub account? Email me the program's link at <a class="mail" data-u="{EMAIL_USER}" data-d="{EMAIL_DOMAIN}" href="#">{EMAIL_USER} [at] {EMAIL_DOMAIN}</a>.</p></div>
 </section>
 <script>
