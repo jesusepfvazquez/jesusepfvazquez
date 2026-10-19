@@ -524,7 +524,7 @@ def paper_li(p, abstracts=None, with_type=False):
 # ================================================================== page shell
 def shell(title, path, body, description):
     nav = [("Home", "/"), ("Research", "/research/"), ("Publications", "/publications/"),
-           ("Presentations", "/presentations/"), ("Work with me", "/work-with-me/"), ("CV", "/cv/")]
+           ("Presentations", "/presentations/"), ("Work with me", "/work-with-me/"), ("Opportunities", "/opportunities/"), ("CV", "/cv/")]
     cur = ' class="active" aria-current="page"'
     links = "".join(f'<a href="{u}"{cur if u == path else ""}>{t}</a>' for t, u in nav)
     today = datetime.date.today().strftime("%B %d, %Y").replace(" 0", " ")
@@ -835,7 +835,7 @@ def page_work():
 <section class="wrap section resources-link">
   <h2>Student resources</h2>
   <p>Workshops, paid summer research programs, and graduate school and fellowship advice, including NSF GRFP guides, for undergraduates and graduate students.</p>
-  <p><a class="more" href="/work-with-me/resources/">Browse student resources &rarr;</a> &nbsp; <a class="more" href="/work-with-me/opportunities/">See research opportunities, updated weekly &rarr;</a></p>
+  <p><a class="more" href="/work-with-me/resources/">Browse student resources &rarr;</a> &nbsp; <a class="more" href="/opportunities/">See research opportunities, updated weekly &rarr;</a></p>
 </section>
 <section class="wrap section">
   <div class="callout">
@@ -938,7 +938,7 @@ def page_undergrads():
 <section class="wrap page-head">
   <p class="overline">Resources</p>
   <h1>Student resources</h1>
-  <p class="lead">Biostatisticians design studies and analyze data in medicine and public health. Many students first hear about biostatistics late in college. I collected the programs and resources below for undergraduates who want to learn more and for graduate students applying for fellowships. For a full list of current programs with deadlines, see <a href="/work-with-me/opportunities/">Research opportunities</a>, which I update every week.</p>
+  <p class="lead">Biostatisticians design studies and analyze data in medicine and public health. Many students first hear about biostatistics late in college. I collected the programs and resources below for undergraduates who want to learn more and for graduate students applying for fellowships. For a full list of current programs with deadlines, see <a href="/opportunities/">Research opportunities</a>, which I update every week.</p>
 </section>
 <section class="wrap ug-intro">
   <div class="prose">
@@ -1102,7 +1102,8 @@ def page_opportunities():
 <section class="wrap page-head">
   <p class="overline">Student resources</p>
   <h1>Research opportunities</h1>
-  <p class="lead">Paid summer research programs, internships, and workshops for undergraduates interested in biostatistics, statistics, data science, and public health. I check every listing against the program's own page and update the list every week. Please confirm dates and requirements on the original posting.</p>
+  <p class="lead">Paid summer research programs, internships, and workshops for undergraduates interested in biostatistics, statistics, data science, and public health. Each week an AI assistant (Claude) checks every listing against the program's own page, and I review the changes before they go live.</p>
+  <p class="opp-warn"><strong>Please double-check before you apply.</strong> Listings are verified with AI and can contain mistakes. Always confirm deadlines, pay, and eligibility on the program's official page.</p>
   <p class="opp-stats"><strong>{len(opps)}</strong> listings &middot; <strong>{n_open}</strong> accepting applications &middot; <strong id="soon">0</strong> deadlines in the next 30 days &middot; last checked {fmt(latest)}</p>
 </section>
 <section class="wrap">
@@ -1146,7 +1147,7 @@ def page_opportunities():
 }})();
 </script>
 """
-    write("work-with-me/opportunities/index.html", shell("Research opportunities", "/work-with-me/", body,
+    write("opportunities/index.html", shell("Research opportunities", "/opportunities/", body,
           "Paid research opportunities for undergraduates in biostatistics, statistics, data science, and public health, checked weekly."))
 
 
