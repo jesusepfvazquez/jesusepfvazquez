@@ -421,9 +421,9 @@
     "type": "Internship",
     "location": "Baltimore, MD",
     "deadline": null,
-    "deadline_note": "Summer 2027 applications will open in Fall 2026; deadline not posted. Decisions late March to mid-April.",
+    "deadline_note": "Summer 2027 applications open in fall 2026; the deadline has not been posted yet. Decisions go out from late March to mid-April.",
     "dates": "May 30 to July 23, 2027 (eight weeks)",
-    "pay": "$3,000 stipend + housing for most students",
+    "pay": "$3,000 stipend + housing for most students (meals and transportation not covered)",
     "eligibility": "US citizens or permanent residents; degree-seeking at a US college with 2 years completed; recent graduates (within 2 years) not in grad school eligible; no graduate or HS students",
     "tags": [
       "Public health",
@@ -431,11 +431,11 @@
       "Life sciences"
     ],
     "status": "upcoming",
-    "url": "https://publichealth.jhu.edu/dsip",
+    "url": "https://publichealth.jhu.edu/about/inclusion-diversity-anti-racism-and-equity-idare/diversity-summer-internship-program-for-undergraduates",
     "verified": "2026-10-19",
     "summary": "Eight-week public health research internship at the Bloomberg School with faculty mentors. Housing is provided on or near the Homewood campus.",
     "citizenship": "citizens",
-    "citizenship_note": "Limited to US citizens and permanent residents (some also accept US nationals)."
+    "citizenship_note": "Limited to US citizens and permanent residents; international students cannot apply."
   },
   {
     "id": "penn-ldi-sumr",
