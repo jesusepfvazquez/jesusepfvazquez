@@ -1063,7 +1063,8 @@ def page_cv(sections):
 
 # ---- Research opportunities board (data: tools/opportunities.json; updated weekly)
 OPPS = ROOT / "tools" / "opportunities.json"
-OPP_STATUS = {"open": "Accepting applications", "upcoming": "Opens soon", "uncertain": "Funding uncertain", "closed": "Closed"}
+OPP_STATUS = {"open": "Accepting applications", "upcoming": "Opens soon", "uncertain": "Funding uncertain", "varies": "Varies by campus", "closed": "Closed"}
+SUGGEST_URL = "https://github.com/jesusepfvazquez/jesusepfvazquez/issues/new?template=suggest-opportunity.yml"
 
 
 def page_opportunities():
@@ -1115,7 +1116,8 @@ def page_opportunities():
   <p class="muted opp-count"><span id="shown">{len(opps)}</span> shown</p>
   <div class="opps" id="opps">{''.join(cards)}</div>
   <p class="empty" id="none" hidden>No listings match.</p>
-  <p class="note">Most summer programs open between November and January and close between January and March. Programs marked "Funding uncertain" ran in 2026, but their 2027 funding has not been announced. Know of a program that belongs here? Email me at <a class="mail" data-u="{EMAIL_USER}" data-d="{EMAIL_DOMAIN}" href="#">{EMAIL_USER} [at] {EMAIL_DOMAIN}</a>.</p>
+  <p class="note">Most summer programs open between November and January and close between January and March. Programs marked "Funding uncertain" ran in 2026, but their 2027 funding has not been announced. </p>
+  <div class="callout opp-suggest"><h3>Know a program that belongs here?</h3><p>Suggest it through a short form on GitHub. Each week the AI assistant checks new suggestions against the program's official page, and I review every addition before it goes live.</p><p><a class="btn" href="{SUGGEST_URL}" target="_blank" rel="noopener">Suggest a program</a></p><p class="note">No GitHub account? Email me the program's link at <a class="mail" data-u="{EMAIL_USER}" data-d="{EMAIL_DOMAIN}" href="#">{EMAIL_USER} [at] {EMAIL_DOMAIN}</a>.</p></div>
 </section>
 <script>
 (function(){{

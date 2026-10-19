@@ -687,5 +687,46 @@
     "url": "https://college.mayo.edu/academics/biomedical-research-training/summer-undergraduate-research-fellowship-surf/admissions/",
     "verified": "2026-10-19",
     "summary": "Ten-week paid biomedical research fellowship at three Mayo Clinic campuses. Fellows choose a research area and are matched with a mentor."
+  },
+  {
+    "id": "unm-el-puente-research-fellowship",
+    "title": "El Puente Research Fellowship",
+    "org": "University of New Mexico, El Centro de la Raza",
+    "type": "Fellowship",
+    "location": "Albuquerque, NM",
+    "deadline": null,
+    "deadline_note": "For UNM students only. The 2026 application closed May 31, 2026, with finalist interviews in June. The 2027 to 2028 cycle has not been posted yet.",
+    "dates": "Two semesters (fall and spring)",
+    "pay": "$1,800 scholarship after completing fellowship requirements",
+    "eligibility": "UNM undergraduates with at least 30 credit hours completed or in progress, enrolled for both fall and spring; GPA 3.0 or above preferred; underrepresented in higher education, first-generation, or low-income; open regardless of immigration status",
+    "tags": [
+      "Any STEM",
+      "Public health"
+    ],
+    "status": "upcoming",
+    "url": "https://elcentro.unm.edu/programs/el-puente-research-fellowship/",
+    "verified": "2026-10-19",
+    "summary": "Year-long research fellowship at UNM that pairs students with faculty and graduate mentors to prepare for graduate school. It includes graduate school visits during spring break. Prior research experience is not required."
+  },
+  {
+    "id": "mcnair-scholars",
+    "title": "Ronald E. McNair Postbaccalaureate Achievement Program (McNair Scholars)",
+    "org": "U.S. Department of Education TRIO program, run by individual colleges",
+    "type": "Campus program",
+    "location": "About 200 colleges nationwide; check your campus",
+    "deadline": null,
+    "deadline_note": "Each campus runs its own application and deadlines. Search for \"McNair Scholars\" and your college name. The Department of Education canceled funds for some campus programs in 2025, so confirm your campus still has one.",
+    "dates": "Usually multi-year, while you are an undergraduate",
+    "pay": "Required summer research internship; most campuses pay a stipend (amounts vary)",
+    "eligibility": "Undergraduates at a participating college. At least two-thirds of participants must be low-income and first-generation; the rest come from groups underrepresented in graduate education",
+    "tags": [
+      "Any STEM",
+      "Public health",
+      "Statistics"
+    ],
+    "status": "varies",
+    "url": "https://www.ed.gov/grants-and-programs/grants-higher-education/federal-trio-programs/ronald-e-mcnair-postbaccalaureate-achievement-program-84217a",
+    "verified": "2026-10-19",
+    "summary": "Federal program that prepares students for doctoral study through mentored research, summer internships, and help with graduate applications. If your college has a McNair program, apply early in your undergraduate years."
   }
 ]

@@ -1,0 +1,61 @@
+name: Suggest a research opportunity
+description: Suggest a paid research program, internship, or workshop for undergraduates to add to the Research opportunities page.
+title: "[Opportunity]: "
+labels: ["opportunity-suggestion"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a program. Each week an AI assistant checks suggestions against the program's official page, and Jesus reviews every addition before it goes live. Programs need to be paid (stipend, salary, or scholarship) or free to attend.
+  - type: input
+    id: name
+    attributes:
+      label: Program name
+      placeholder: "Summer Institute in Biostatistics"
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Official program page
+      description: A link to the program's own website, not a news story or aggregator.
+      placeholder: "https://"
+    validations:
+      required: true
+  - type: input
+    id: org
+    attributes:
+      label: Institution or organization
+    validations:
+      required: true
+  - type: dropdown
+    id: type
+    attributes:
+      label: Type
+      options:
+        - Summer program
+        - REU
+        - Internship
+        - Workshop
+        - Fellowship
+        - Campus program
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why it fits
+      description: One or two sentences on how the program relates to biostatistics, statistics, data science, or public health research.
+  - type: input
+    id: deadline
+    attributes:
+      label: Deadline (if known)
+      placeholder: "February 1, 2027"
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirm
+      options:
+        - label: The program is paid or free to attend.
+          required: true

@@ -369,3 +369,4 @@ ul, ol { margin: 0; padding: 0; }
 .opp-tag { display: inline-block; background: var(--sky); color: var(--heading); border-radius: 999px; padding: 1px 8px; margin: 0 4px 4px 0; }
 @media (max-width: 820px) { .opps { grid-template-columns: 1fr; } .opp-deadline { margin-left: 0; width: 100%; } }
 .opp-warn { max-width: 44em; margin-top: 12px; padding: 10px 14px; border-left: 4px solid var(--amber); background: var(--paper); font-size: 0.95rem; }
+.opp-suggest { margin: 18px 0 30px; }
