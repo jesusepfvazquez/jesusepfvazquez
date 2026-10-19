@@ -835,7 +835,7 @@ def page_work():
 <section class="wrap section resources-link">
   <h2>Student resources</h2>
   <p>Workshops, paid summer research programs, and graduate school and fellowship advice, including NSF GRFP guides, for undergraduates and graduate students.</p>
-  <p><a class="more" href="/work-with-me/resources/">Browse student resources &rarr;</a></p>
+  <p><a class="more" href="/work-with-me/resources/">Browse student resources &rarr;</a> &nbsp; <a class="more" href="/work-with-me/opportunities/">See research opportunities, updated weekly &rarr;</a></p>
 </section>
 <section class="wrap section">
   <div class="callout">
@@ -938,7 +938,7 @@ def page_undergrads():
 <section class="wrap page-head">
   <p class="overline">Resources</p>
   <h1>Student resources</h1>
-  <p class="lead">Biostatisticians design studies and analyze data in medicine and public health. Many students first hear about biostatistics late in college. I collected the programs and resources below for undergraduates who want to learn more and for graduate students applying for fellowships.</p>
+  <p class="lead">Biostatisticians design studies and analyze data in medicine and public health. Many students first hear about biostatistics late in college. I collected the programs and resources below for undergraduates who want to learn more and for graduate students applying for fellowships. For a full list of current programs with deadlines, see <a href="/work-with-me/opportunities/">Research opportunities</a>, which I update every week.</p>
 </section>
 <section class="wrap ug-intro">
   <div class="prose">
@@ -1061,6 +1061,95 @@ def page_cv(sections):
         shutil.copy(PDF_SRC, OUT / "cv" / "VAZQUEZ-CV.pdf")
 
 
+# ---- Research opportunities board (data: tools/opportunities.json; updated weekly)
+OPPS = ROOT / "tools" / "opportunities.json"
+OPP_STATUS = {"open": "Accepting applications", "upcoming": "Opens soon", "uncertain": "Funding uncertain", "closed": "Closed"}
+
+
+def page_opportunities():
+    opps = json.loads(OPPS.read_text(encoding="utf-8")) if OPPS.exists() else []
+    opps = [o for o in opps if o.get("status") != "closed"]
+    opps.sort(key=lambda o: (o.get("deadline") or "9999", o["title"]))
+    types = sorted({o["type"] for o in opps})
+    latest = max((o.get("verified", "") for o in opps), default="")
+    def fmt(d):
+        try:
+            return datetime.date.fromisoformat(d).strftime("%B %d, %Y").replace(" 0", " ")
+        except Exception:
+            return d
+    cards = []
+    for o in opps:
+        e = lambda k: html.escape(str(o.get(k, "") or ""))
+        tags = "".join(f'<span class="opp-tag">{html.escape(t)}</span>' for t in o.get("tags", []))
+        dl = (f'<span class="opp-deadline" data-deadline="{e("deadline")}">Deadline {fmt(o["deadline"])}</span>'
+              if o.get("deadline") else '<span class="opp-deadline muted">Deadline not posted yet</span>')
+        rows = "".join(f'<div><dt>{lab}</dt><dd>{e(k)}</dd></div>' for lab, k in
+                       [("Dates", "dates"), ("Pay", "pay"), ("Eligibility", "eligibility"), ("Deadline note", "deadline_note")] if o.get(k))
+        search_text = " ".join(str(o.get(k, "")) for k in ("title", "org", "location", "summary", "eligibility")) + " " + " ".join(o.get("tags", []))
+        cards.append(f"""<article class="opp" data-type="{e('type')}" data-status="{e('status')}" data-deadline="{e('deadline')}" data-verified="{e('verified')}" data-org="{e('org')}" data-text="{html.escape(search_text.lower())}">
+  <div class="opp-top"><span class="chip">{e('type')}</span><span class="opp-status {e('status')}">{OPP_STATUS.get(o.get('status'), '')}</span>{dl}</div>
+  <h3><a href="{e('url')}" target="_blank" rel="noopener">{e('title')}</a></h3>
+  <div class="opp-org">{e('org')} &middot; {e('location')}</div>
+  <p class="opp-sum">{e('summary')}</p>
+  <details><summary>Details</summary><dl>{rows}</dl></details>
+  <div class="opp-foot"><span class="opp-tags">{tags}</span><span class="muted">Verified {fmt(o.get('verified', ''))}</span></div>
+</article>""")
+    pills = '<button class="pill active" data-f="all">All</button>' + "".join(
+        f'<button class="pill" data-f="{html.escape(t)}">{html.escape(t)}s</button>' if not t.endswith("s") else
+        f'<button class="pill" data-f="{html.escape(t)}">{html.escape(t)}</button>' for t in types)
+    n_open = sum(o.get("status") == "open" for o in opps)
+    body = f"""
+<section class="wrap page-head">
+  <p class="overline">Student resources</p>
+  <h1>Research opportunities</h1>
+  <p class="lead">Paid summer research programs, internships, and workshops for undergraduates interested in biostatistics, statistics, data science, and public health. I check every listing against the program's own page and update the list every week. Please confirm dates and requirements on the original posting.</p>
+  <p class="opp-stats"><strong>{len(opps)}</strong> listings &middot; <strong>{n_open}</strong> accepting applications &middot; <strong id="soon">0</strong> deadlines in the next 30 days &middot; last checked {fmt(latest)}</p>
+</section>
+<section class="wrap">
+  <div class="filters opp-filters">{pills}
+    <label class="opp-check"><input type="checkbox" id="openonly"> Accepting applications</label>
+    <select id="sort" class="search opp-sort" aria-label="Sort"><option value="deadline">Deadline (soonest)</option><option value="verified">Recently verified</option><option value="org">Organization (A to Z)</option></select>
+    <input id="q" class="search" type="search" placeholder="Search programs" aria-label="Search programs">
+  </div>
+  <p class="muted opp-count"><span id="shown">{len(opps)}</span> shown</p>
+  <div class="opps" id="opps">{''.join(cards)}</div>
+  <p class="empty" id="none" hidden>No listings match.</p>
+  <p class="note">Most summer programs open between November and January and close between January and March. Programs marked "Funding uncertain" ran in 2026, but their 2027 funding has not been announced. Know of a program that belongs here? Email me at <a class="mail" data-u="{EMAIL_USER}" data-d="{EMAIL_DOMAIN}" href="#">{EMAIL_USER} [at] {EMAIL_DOMAIN}</a>.</p>
+</section>
+<script>
+(function(){{
+  var box=document.getElementById('opps'), cards=[].slice.call(box.children), f='all';
+  var today=new Date(); today.setHours(0,0,0,0); var soon=0;
+  cards.forEach(function(c){{
+    var d=c.dataset.deadline; if(!d) return;
+    var days=Math.round((new Date(d+'T00:00:00')-today)/864e5), el=c.querySelector('.opp-deadline');
+    if(days<0){{ el.textContent='Deadline passed'; el.classList.add('muted'); c.dataset.past='1'; }}
+    else {{ el.textContent+=' · '+days+' day'+(days===1?'':'s')+' left'; if(days<=30){{ el.classList.add('soon'); soon++; }} }}
+  }});
+  document.getElementById('soon').textContent=soon;
+  function apply(){{
+    var q=document.getElementById('q').value.toLowerCase(), op=document.getElementById('openonly').checked, k=document.getElementById('sort').value, n=0;
+    cards.sort(function(a,b){{
+      if(k==='verified') return (b.dataset.verified||'').localeCompare(a.dataset.verified||'');
+      if(k==='org') return a.dataset.org.localeCompare(b.dataset.org);
+      var x=(a.dataset.past?'z':'')+(a.dataset.deadline||'9999'), y=(b.dataset.past?'z':'')+(b.dataset.deadline||'9999'); return x.localeCompare(y);
+    }}).forEach(function(c){{
+      var show=(f==='all'||c.dataset.type===f)&&(!op||c.dataset.status==='open')&&(!q||c.dataset.text.indexOf(q)>-1);
+      c.hidden=!show; if(show) n++; box.appendChild(c);
+    }});
+    document.getElementById('shown').textContent=n; document.getElementById('none').hidden=n>0;
+  }}
+  [].forEach.call(document.querySelectorAll('.opp-filters .pill'),function(b){{ b.addEventListener('click',function(){{
+    [].forEach.call(document.querySelectorAll('.opp-filters .pill'),function(x){{x.classList.remove('active');}}); b.classList.add('active'); f=b.dataset.f; apply(); }}); }});
+  ['q','openonly','sort'].forEach(function(id){{ document.getElementById(id).addEventListener('input',apply); document.getElementById(id).addEventListener('change',apply); }});
+  apply();
+}})();
+</script>
+"""
+    write("work-with-me/opportunities/index.html", shell("Research opportunities", "/work-with-me/", body,
+          "Paid research opportunities for undergraduates in biostatistics, statistics, data science, and public health, checked weekly."))
+
+
 def main():
     abstracts = json.loads(ABSTRACTS.read_text(encoding="utf-8")) if ABSTRACTS.exists() else {}
     papers = parse_papers()
@@ -1071,6 +1160,7 @@ def main():
     page_presentations()
     page_work()
     page_undergrads()
+    page_opportunities()
     page_cv(sections)
     print(f"{len(papers)} papers, {len(sections)} CV sections written to {OUT}")
     if _unknown:
