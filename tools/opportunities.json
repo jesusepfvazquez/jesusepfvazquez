@@ -17,7 +17,9 @@
     "status": "upcoming",
     "url": "https://sites.google.com/view/enar-febw",
     "verified": "2026-10-19",
-    "summary": "One-day workshop held just before the ENAR Spring Meeting that introduces students to biostatistics careers. It ends with a graduate school and opportunities expo."
+    "summary": "One-day workshop held just before the ENAR Spring Meeting that introduces students to biostatistics careers. It ends with a graduate school and opportunities expo.",
+    "citizenship": "notstated",
+    "citizenship_note": "No citizenship requirement is posted for this free workshop. Travel award rules may differ."
   },
   {
     "id": "weill-cornell-biostatistics-summer-internship",
@@ -39,7 +41,9 @@
     "status": "upcoming",
     "url": "https://phs.weill.cornell.edu/research-collaboration/divisions-institutes/biostatistics/biostatistics-summer-internship",
     "verified": "2026-10-19",
-    "summary": "Seven-week paid internship in biostatistics and data science at Weill Cornell Medicine in Manhattan. Interns receive training and do mentored research projects."
+    "summary": "Seven-week paid internship in biostatistics and data science at Weill Cornell Medicine in Manhattan. Interns receive training and do mentored research projects.",
+    "citizenship": "notstated",
+    "citizenship_note": "The page says \"US students, citizens, and permanent residents.\" Ask the program whether DACA students qualify."
   },
   {
     "id": "harvard-summer-program-biostatistics-computational-biology",
@@ -61,7 +65,9 @@
     "status": "upcoming",
     "url": "https://hsph.harvard.edu/fellowship-special-program/biostatistics-computational-biology-summer-program/",
     "verified": "2026-10-19",
-    "summary": "Six-week program at the Harvard Chan School that introduces undergraduates to biostatistics and computational biology. It returns in 2027 after a pause in 2026."
+    "summary": "Six-week program at the Harvard Chan School that introduces undergraduates to biostatistics and computational biology. It returns in 2027 after a pause in 2026.",
+    "citizenship": "citizens",
+    "citizenship_note": "Limited to US citizens and permanent residents (some also accept US nationals)."
   },
   {
     "id": "bu-sibs",
@@ -82,7 +88,9 @@
     "status": "uncertain",
     "url": "https://www.bu.edu/sph/about/departments/biostatistics/summer-institute-for-training-in-biostatistics",
     "verified": "2026-10-19",
-    "summary": "NHLBI-funded SIBS site that combines a five-week residential course in Boston with a remote group research project. Participants earn college credit."
+    "summary": "NHLBI-funded SIBS site that combines a five-week residential course in Boston with a remote group research project. Participants earn college credit.",
+    "citizenship": "citizens",
+    "citizenship_note": "Limited to US citizens and permanent residents (some also accept US nationals)."
   },
   {
     "id": "columbia-sibds",
@@ -103,7 +111,9 @@
     "status": "uncertain",
     "url": "https://www.publichealth.columbia.edu/research/summer-institute-training-biostatistics-and-data-science-columbia",
     "verified": "2026-10-19",
-    "summary": "NIH-funded summer institute at Columbia Mailman with coursework and research in biostatistics and data science. Housing and travel are covered and participants earn college credit."
+    "summary": "NIH-funded summer institute at Columbia Mailman with coursework and research in biostatistics and data science. Housing and travel are covered and participants earn college credit.",
+    "citizenship": "citizens",
+    "citizenship_note": "Limited to US citizens and permanent residents (some also accept US nationals)."
   },
   {
     "id": "fau-sibds",
@@ -124,7 +134,9 @@
     "status": "uncertain",
     "url": "https://www.fau.edu/research/cores/biostatistics-core/fl-summer-institute-biostatistics-data-science-program-2026/",
     "verified": "2026-10-19",
-    "summary": "Six-week NIH SIBS site on FAU's Boca Raton campus covering biostatistics and data science training. Students then complete a research project."
+    "summary": "Six-week NIH SIBS site on FAU's Boca Raton campus covering biostatistics and data science training. Students then complete a research project.",
+    "citizenship": "notstated",
+    "citizenship_note": "Citizenship rules are not stated on the program page. Ask the program."
   },
   {
     "id": "uci-isi-buds",
@@ -145,7 +157,9 @@
     "status": "uncertain",
     "url": "https://isi-buds.ics.uci.edu/",
     "verified": "2026-10-19",
-    "summary": "Six-week NIH-funded institute at UC Irvine that trains undergraduates in biostatistics and data science through coursework and research. Housing and meals are free."
+    "summary": "Six-week NIH-funded institute at UC Irvine that trains undergraduates in biostatistics and data science through coursework and research. Housing and meals are free.",
+    "citizenship": "notstated",
+    "citizenship_note": "Citizenship rules are not stated on the program page. Ask the program."
   },
   {
     "id": "colorado-cosibs",
@@ -166,7 +180,9 @@
     "status": "uncertain",
     "url": "https://coloradosph.cuanschutz.edu/education/departments/biostatistics-informatics/cosibs",
     "verified": "2026-10-19",
-    "summary": "NHLBI-funded residential summer institute in biostatistics and data science at CU Denver. Tuition, travel, and housing are covered."
+    "summary": "NHLBI-funded residential summer institute in biostatistics and data science at CU Denver. Tuition, travel, and housing are covered.",
+    "citizenship": "citizens",
+    "citizenship_note": "Limited to US citizens and permanent residents (some also accept US nationals)."
   },
   {
     "id": "iowa-isib",
@@ -186,7 +202,9 @@
     "status": "uncertain",
     "url": "https://www.public-health.uiowa.edu/about-isib",
     "verified": "2026-10-19",
-    "summary": "Seven-week NIH/NHLBI-funded biostatistics institute at the University of Iowa. Lodging, travel, and meals are covered."
+    "summary": "Seven-week NIH/NHLBI-funded biostatistics institute at the University of Iowa. Lodging, travel, and meals are covered.",
+    "citizenship": "notstated",
+    "citizenship_note": "Citizenship rules are not stated on the program page. Ask the program."
   },
   {
     "id": "usc-las-best",
@@ -207,7 +225,9 @@
     "status": "uncertain",
     "url": "https://lasbest.usc.edu/",
     "verified": "2026-10-19",
-    "summary": "Six-week NHLBI-funded biostatistics and data science program at USC with formal training and work on real data sets. About 14 to 16 trainees each summer."
+    "summary": "Six-week NHLBI-funded biostatistics and data science program at USC with formal training and work on real data sets. About 14 to 16 trainees each summer.",
+    "citizenship": "citizens",
+    "citizenship_note": "Limited to US citizens and permanent residents (some also accept US nationals)."
   },
   {
     "id": "utmb-sibds",
@@ -228,7 +248,9 @@
     "status": "uncertain",
     "url": "https://www.utmb.edu/spph/department/of-biostatistics-data-science/programs-training",
     "verified": "2026-10-19",
-    "summary": "Seven-week NHLBI-funded institute in Galveston with case-based instruction, computer labs, and mentored research. About 20 students per summer."
+    "summary": "Seven-week NHLBI-funded institute in Galveston with case-based instruction, computer labs, and mentored research. About 20 students per summer.",
+    "citizenship": "citizens",
+    "citizenship_note": "Limited to US citizens and permanent residents (some also accept US nationals)."
   },
   {
     "id": "yale-bdsy",
@@ -249,7 +271,9 @@
     "status": "uncertain",
     "url": "https://ysph.yale.edu/school-of-public-health/special-programs/big-data-summer-immersion-at-yale/",
     "verified": "2026-10-19",
-    "summary": "Six-week summer immersion in big data and biostatistics at the Yale School of Public Health, launched in 2025. Participants live in Yale's residential colleges."
+    "summary": "Six-week summer immersion in big data and biostatistics at the Yale School of Public Health, launched in 2025. Participants live in Yale's residential colleges.",
+    "citizenship": "some",
+    "citizenship_note": "Some spots are open to non-citizens. DACA eligibility is not stated; ask the program."
   },
   {
     "id": "michigan-bdsi",
@@ -270,7 +294,9 @@
     "status": "upcoming",
     "url": "https://sph.umich.edu/bdsi",
     "verified": "2026-10-19",
-    "summary": "In-person summer institute in Ann Arbor that introduces undergraduates to big data methods and health research through lectures and team projects."
+    "summary": "In-person summer institute in Ann Arbor that introduces undergraduates to big data methods and health research through lectures and team projects.",
+    "citizenship": "some",
+    "citizenship_note": "Some spots are open to non-citizens. DACA eligibility is not stated; ask the program."
   },
   {
     "id": "umn-lssurp",
@@ -290,7 +316,9 @@
     "status": "upcoming",
     "url": "https://www.med.umn.edu/education-training/graduate-programs/life-sciences-summer-undergraduate-research-program-lssurp",
     "verified": "2026-10-19",
-    "summary": "Ten-week research program at the University of Minnesota across several life science areas, including heart, lung, and blood, and cancer. It prepares students for graduate study."
+    "summary": "Ten-week research program at the University of Minnesota across several life science areas, including heart, lung, and blood, and cancer. It prepares students for graduate study.",
+    "citizenship": "citizens",
+    "citizenship_note": "Limited to US citizens and permanent residents (some also accept US nationals)."
   },
   {
     "id": "msu-acres-reu",
@@ -311,7 +339,9 @@
     "status": "upcoming",
     "url": "https://icer-acres.msu.edu",
     "verified": "2026-10-19",
-    "summary": "NSF REU in computational and data science at MSU. Projects span computational biology, chemistry, mathematics, physics, and environmental data analytics."
+    "summary": "NSF REU in computational and data science at MSU. Projects span computational biology, chemistry, mathematics, physics, and environmental data analytics.",
+    "citizenship": "citizens",
+    "citizenship_note": "Limited to US citizens and permanent residents (some also accept US nationals)."
   },
   {
     "id": "btaa-srop",
@@ -332,7 +362,9 @@
     "status": "upcoming",
     "url": "https://www.btaa.org/srop",
     "verified": "2026-10-19",
-    "summary": "Mentored summer research at Big Ten universities through a single application. It prepares undergraduates for PhD study."
+    "summary": "Mentored summer research at Big Ten universities through a single application. It prepares undergraduates for PhD study.",
+    "citizenship": "citizens",
+    "citizenship_note": "Limited to US citizens and permanent residents (some also accept US nationals)."
   },
   {
     "id": "leadership-alliance-sr-eip",
@@ -353,7 +385,9 @@
     "status": "upcoming",
     "url": "https://theleadershipalliance.org/summer-research-early-identification-program",
     "verified": "2026-10-19",
-    "summary": "Paid summer research at member institutions such as Brown, Columbia, Harvard, Yale, and Penn. Students apply once to multiple sites."
+    "summary": "Paid summer research at member institutions such as Brown, Columbia, Harvard, Yale, and Penn. Students apply once to multiple sites.",
+    "citizenship": "citizens",
+    "citizenship_note": "Limited to US citizens and permanent residents (some also accept US nationals)."
   },
   {
     "id": "nih-sip",
@@ -376,7 +410,9 @@
     "status": "open",
     "url": "https://www.training.nih.gov/research-training/pb/sip/",
     "verified": "2026-10-19",
-    "summary": "Full-time summer research in NIH intramural labs, including biostatistics, epidemiology, and computational groups. Applicants are selected directly by principal investigators."
+    "summary": "Full-time summer research in NIH intramural labs, including biostatistics, epidemiology, and computational groups. Applicants are selected directly by principal investigators.",
+    "citizenship": "citizens",
+    "citizenship_note": "Limited to US citizens and permanent residents (some also accept US nationals)."
   },
   {
     "id": "jhu-dsip",
@@ -397,7 +433,9 @@
     "status": "upcoming",
     "url": "https://publichealth.jhu.edu/dsip",
     "verified": "2026-10-19",
-    "summary": "Eight-week public health research internship at the Bloomberg School with faculty mentors. Housing is provided on or near the Homewood campus."
+    "summary": "Eight-week public health research internship at the Bloomberg School with faculty mentors. Housing is provided on or near the Homewood campus.",
+    "citizenship": "citizens",
+    "citizenship_note": "Limited to US citizens and permanent residents (some also accept US nationals)."
   },
   {
     "id": "penn-ldi-sumr",
@@ -418,7 +456,9 @@
     "status": "open",
     "url": "https://ldi.upenn.edu/sumr/about",
     "verified": "2026-10-19",
-    "summary": "Twelve-week paid research program at Penn in health services research, population health, and clinical epidemiology. It focuses on health equity."
+    "summary": "Twelve-week paid research program at Penn in health services research, population health, and clinical epidemiology. It focuses on health equity.",
+    "citizenship": "notstated",
+    "citizenship_note": "Citizenship rules are not stated on the program page. Ask the program."
   },
   {
     "id": "cdc-lewis-cups",
@@ -437,7 +477,9 @@
     "status": "upcoming",
     "url": "https://www.cdc.gov/minority-health/student-programs/internships-fellowships.html",
     "verified": "2026-10-19",
-    "summary": "CDC-funded public health training delivered through seven partner institutions, each with its own application. The CDC page gives no stipend details."
+    "summary": "CDC-funded public health training delivered through seven partner institutions, each with its own application. The CDC page gives no stipend details.",
+    "citizenship": "notstated",
+    "citizenship_note": "Citizenship rules are not stated on the program page. Ask the program."
   },
   {
     "id": "st-jude-poe",
@@ -458,7 +500,9 @@
     "status": "upcoming",
     "url": "https://www.stjude.org/education-training/predoctoral-training/internships/pediatric-oncology-education-poe-program.html",
     "verified": "2026-10-19",
-    "summary": "Paid summer research at St. Jude in which Biostatistics and Computational Biology are listed participating departments. Group housing is free for students from outside Memphis."
+    "summary": "Paid summer research at St. Jude in which Biostatistics and Computational Biology are listed participating departments. Group housing is free for students from outside Memphis.",
+    "citizenship": "citizens",
+    "citizenship_note": "Limited to US citizens and permanent residents (some also accept US nationals)."
   },
   {
     "id": "md-anderson-spcr",
@@ -479,7 +523,9 @@
     "status": "upcoming",
     "url": "https://www.mdanderson.org/education-training/research-training/early-career-pathway-programs/summer-research-programs/programs/summer-program-in-cancer-research.html",
     "verified": "2026-10-19",
-    "summary": "NCI-sponsored 10-week cancer research program at MD Anderson. Computational and systems biology is cited as a faculty research strength."
+    "summary": "NCI-sponsored 10-week cancer research program at MD Anderson. Computational and systems biology is cited as a faculty research strength.",
+    "citizenship": "notstated",
+    "citizenship_note": "Citizenship rules are not stated on the program page. Ask the program."
   },
   {
     "id": "md-anderson-cprit-cure",
@@ -500,7 +546,9 @@
     "status": "upcoming",
     "url": "https://www.mdanderson.org/education-training/research-training/early-career-pathway-programs/summer-research-programs/programs/cprit-cure.html",
     "verified": "2026-10-19",
-    "summary": "Paid 10-week cancer research program at MD Anderson open to undergraduates of all majors, with a stated interest in quantitative backgrounds. International students with a valid visa are eligible."
+    "summary": "Paid 10-week cancer research program at MD Anderson open to undergraduates of all majors, with a stated interest in quantitative backgrounds. International students with a valid visa are eligible.",
+    "citizenship": "some",
+    "citizenship_note": "Some spots are open to non-citizens. DACA eligibility is not stated; ask the program."
   },
   {
     "id": "fred-hutch-surp",
@@ -522,7 +570,9 @@
     "status": "upcoming",
     "url": "https://fredhutch.org/en/education-training/undergraduate-students/summer-undergraduate-research-program.html",
     "verified": "2026-10-19",
-    "summary": "Nine-week paid research program at Fred Hutch. Placements include statistical and epidemiological work in Public Health Sciences and computational research in other divisions."
+    "summary": "Nine-week paid research program at Fred Hutch. Placements include statistical and epidemiological work in Public Health Sciences and computational research in other divisions.",
+    "citizenship": "citizens",
+    "citizenship_note": "Limited to US citizens and permanent residents (some also accept US nationals)."
   },
   {
     "id": "amgen-scholars-us",
@@ -543,7 +593,9 @@
     "status": "upcoming",
     "url": "https://amgenscholars.com/us-program",
     "verified": "2026-10-19",
-    "summary": "Summer research at 14 US host sites including Johns Hopkins, UNC Chapel Hill, Duke, Columbia, Harvard, and Yale. A national symposium is included."
+    "summary": "Summer research at 14 US host sites including Johns Hopkins, UNC Chapel Hill, Duke, Columbia, Harvard, and Yale. A national symposium is included.",
+    "citizenship": "citizens",
+    "citizenship_note": "Limited to US citizens and permanent residents (some also accept US nationals)."
   },
   {
     "id": "uncg-computational-statistics-reu",
@@ -563,7 +615,9 @@
     "status": "uncertain",
     "url": "https://mathstats.uncg.edu/statistics-reu/reu-2026/",
     "verified": "2026-10-19",
-    "summary": "Ten-week NSF REU in computational statistics and machine learning for complex data. Funding for the next cycle is pending at NSF."
+    "summary": "Ten-week NSF REU in computational statistics and machine learning for complex data. Funding for the next cycle is pending at NSF.",
+    "citizenship": "citizens",
+    "citizenship_note": "Limited to US citizens and permanent residents (some also accept US nationals)."
   },
   {
     "id": "vanderbilt-biostatistics-summer-internships",
@@ -584,7 +638,9 @@
     "status": "upcoming",
     "url": "https://www.vanderbilt.edu/biostatistics-graduate/internships2026",
     "verified": "2026-10-19",
-    "summary": "Six-week biostatistics internship run by Vanderbilt's Department of Biostatistics, now in its fifth year. Housing is not included."
+    "summary": "Six-week biostatistics internship run by Vanderbilt's Department of Biostatistics, now in its fifth year. Housing is not included.",
+    "citizenship": "citizens",
+    "citizenship_note": "Limited to US citizens and permanent residents (some also accept US nationals)."
   },
   {
     "id": "duke-ctsi-sure",
@@ -604,7 +660,9 @@
     "status": "upcoming",
     "url": "https://ctsi.duke.edu/duke-supporting-undergraduate-research-experiences-sure-program-2026",
     "verified": "2026-10-19",
-    "summary": "Ten-week mentored research program at Duke focused on cardiovascular research and medicine. It ends with a symposium."
+    "summary": "Ten-week mentored research program at Duke focused on cardiovascular research and medicine. It ends with a symposium.",
+    "citizenship": "some",
+    "citizenship_note": "Some spots are open to non-citizens. DACA eligibility is not stated; ask the program."
   },
   {
     "id": "broad-bsrp",
@@ -625,7 +683,9 @@
     "status": "upcoming",
     "url": "https://www.broadinstitute.org/bsrp",
     "verified": "2026-10-19",
-    "summary": "Nine-week research program at the Broad Institute with computational or experimental projects. Areas include population genetics, data sciences, and machine learning."
+    "summary": "Nine-week research program at the Broad Institute with computational or experimental projects. Areas include population genetics, data sciences, and machine learning.",
+    "citizenship": "some",
+    "citizenship_note": "Requires US work authorization and does not sponsor visas. DACA recipients with a work permit may qualify; ask the program to confirm."
   },
   {
     "id": "jax-summer-student-program",
@@ -645,7 +705,9 @@
     "status": "upcoming",
     "url": "https://www.jax.org/ssp",
     "verified": "2026-10-19",
-    "summary": "Ten-week independent research program in genetics and genomics at JAX. Bar Harbor is residential and Farmington is not."
+    "summary": "Ten-week independent research program in genetics and genomics at JAX. Bar Harbor is residential and Farmington is not.",
+    "citizenship": "notstated",
+    "citizenship_note": "Citizenship rules are not stated on the program page. Ask the program."
   },
   {
     "id": "cshl-urp",
@@ -666,7 +728,9 @@
     "status": "open",
     "url": "https://cshl.edu/education/undergraduate-research-program",
     "verified": "2026-10-19",
-    "summary": "Summer research at CSHL with a Bioinformatics and Computational Neuroscience track. Computational mentors work in genomics and machine learning."
+    "summary": "Summer research at CSHL with a Bioinformatics and Computational Neuroscience track. Computational mentors work in genomics and machine learning.",
+    "citizenship": "some",
+    "citizenship_note": "Some spots are open to non-citizens. DACA eligibility is not stated; ask the program."
   },
   {
     "id": "mayo-surf",
@@ -686,7 +750,9 @@
     "status": "upcoming",
     "url": "https://college.mayo.edu/academics/biomedical-research-training/summer-undergraduate-research-fellowship-surf/admissions/",
     "verified": "2026-10-19",
-    "summary": "Ten-week paid biomedical research fellowship at three Mayo Clinic campuses. Fellows choose a research area and are matched with a mentor."
+    "summary": "Ten-week paid biomedical research fellowship at three Mayo Clinic campuses. Fellows choose a research area and are matched with a mentor.",
+    "citizenship": "some",
+    "citizenship_note": "Some spots are open to non-citizens. DACA eligibility is not stated; ask the program."
   },
   {
     "id": "unm-el-puente-research-fellowship",
@@ -706,7 +772,9 @@
     "status": "upcoming",
     "url": "https://elcentro.unm.edu/programs/el-puente-research-fellowship/",
     "verified": "2026-10-19",
-    "summary": "Year-long research fellowship at UNM that pairs students with faculty and graduate mentors to prepare for graduate school. It includes graduate school visits during spring break. Prior research experience is not required."
+    "summary": "Year-long research fellowship at UNM that pairs students with faculty and graduate mentors to prepare for graduate school. It includes graduate school visits during spring break. Prior research experience is not required.",
+    "citizenship": "all",
+    "citizenship_note": "Open regardless of immigration status, including DACA and undocumented students."
   },
   {
     "id": "mcnair-scholars",
@@ -727,6 +795,8 @@
     "status": "varies",
     "url": "https://www.ed.gov/grants-and-programs/grants-higher-education/federal-trio-programs/ronald-e-mcnair-postbaccalaureate-achievement-program-84217a",
     "verified": "2026-10-19",
-    "summary": "Federal program that prepares students for doctoral study through mentored research, summer internships, and help with graduate applications. If your college has a McNair program, apply early in your undergraduate years."
+    "summary": "Federal program that prepares students for doctoral study through mentored research, summer internships, and help with graduate applications. If your college has a McNair program, apply early in your undergraduate years.",
+    "citizenship": "notstated",
+    "citizenship_note": "Eligibility rules for federal TRIO programs can exclude students without citizenship or permanent residency. Ask your campus McNair office."
   }
 ]
