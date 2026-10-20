@@ -524,7 +524,7 @@ def paper_li(p, abstracts=None, with_type=False):
 # ================================================================== page shell
 def shell(title, path, body, description):
     nav = [("Home", "/"), ("Research", "/research/"), ("Publications", "/publications/"),
-           ("Talks", "/talks/"), ("Mentoring", "/mentoring/"), ("Opportunities", "/opportunities/"), ("CV", "/cv/")]
+           ("Talks", "/talks/"), ("Mentoring", "/mentoring/"), ("Other Opportunities", "/opportunities/"), ("CV", "/cv/")]
     cur = ' class="active" aria-current="page"'
     links = "".join(f'<a href="{u}"{cur if u == path else ""}>{t}</a>' for t, u in nav)
     today = datetime.date.today().strftime("%B %d, %Y").replace(" 0", " ")
