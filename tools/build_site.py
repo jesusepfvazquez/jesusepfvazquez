@@ -524,7 +524,7 @@ def paper_li(p, abstracts=None, with_type=False):
 # ================================================================== page shell
 def shell(title, path, body, description):
     nav = [("Home", "/"), ("Research", "/research/"), ("Publications", "/publications/"),
-           ("Presentations", "/presentations/"), ("Work with me", "/work-with-me/"), ("Opportunities", "/opportunities/"), ("CV", "/cv/")]
+           ("Talks", "/talks/"), ("Mentoring", "/mentoring/"), ("Opportunities", "/opportunities/"), ("CV", "/cv/")]
     cur = ' class="active" aria-current="page"'
     links = "".join(f'<a href="{u}"{cur if u == path else ""}>{t}</a>' for t, u in nav)
     today = datetime.date.today().strftime("%B %d, %Y").replace(" 0", " ")
@@ -645,8 +645,8 @@ def page_home(papers, abstracts):
     <h2>Get in touch</h2>
     <div class="callout">
       <h3>Open to new collaborations</h3>
-      <p>I enjoy working with students and collaborators on incomplete data, causal questions, and public health problems. Projects often grow into papers, and I like to write them together. Researchers from other fields are welcome too. Students can start on the Work with me page; everyone else can send an email.</p>
-      <p class="cta"><a class="btn" href="/work-with-me/">Work with me</a> <a class="btn ghost mail" data-u="{EMAIL_USER}" data-d="{EMAIL_DOMAIN}" href="#">Email me</a></p>
+      <p>I enjoy working with students and collaborators on incomplete data, causal questions, and public health problems. Projects often grow into papers, and I like to write them together. Researchers from other fields are welcome too. Students can start on the Mentoring page; everyone else can send an email.</p>
+      <p class="cta"><a class="btn" href="/mentoring/">Work with me</a> <a class="btn ghost mail" data-u="{EMAIL_USER}" data-d="{EMAIL_DOMAIN}" href="#">Email me</a></p>
     </div>
   </div>
 </section>
@@ -835,7 +835,7 @@ def page_work():
 <section class="wrap section resources-link">
   <h2>Student resources</h2>
   <p>Workshops, paid summer research programs, and graduate school and fellowship advice, including NSF GRFP guides, for undergraduates and graduate students.</p>
-  <p><a class="more" href="/work-with-me/resources/">Browse student resources &rarr;</a> &nbsp; <a class="more" href="/opportunities/">See research opportunities, updated weekly &rarr;</a></p>
+  <p><a class="more" href="/mentoring/resources/">Browse student resources &rarr;</a> &nbsp; <a class="more" href="/opportunities/">See research opportunities, updated weekly &rarr;</a></p>
 </section>
 <section class="wrap section">
   <div class="callout">
@@ -845,7 +845,7 @@ def page_work():
   </div>
 </section>
 """
-    write("work-with-me/index.html", shell("Work with me", "/work-with-me/", body,
+    write("mentoring/index.html", shell("Mentoring", "/mentoring/", body,
           "Work with Jesus E. Vazquez: mentoring values and an interest form for students and collaborators."))
 
 
@@ -955,27 +955,27 @@ def page_undergrads():
   </div>
 </section>
 """
-    write("work-with-me/resources/index.html", shell("Student resources", "/work-with-me/", body,
+    write("mentoring/resources/index.html", shell("Student resources", "/mentoring/", body,
           "Resources for students interested in biostatistics: workshops, summer programs, graduate school and fellowship advice."))
 
 
 def page_presentations():
-    (OUT / "presentations").mkdir(parents=True, exist_ok=True)
+    (OUT / "talks").mkdir(parents=True, exist_ok=True)
     cards = ""
     for d in PRESENTATIONS:
         for f in filter(None, (d["pdf"], d["preview"], d["slides"])):
-            shutil.copy(PRES_SRC / f, OUT / "presentations" / f)
+            shutil.copy(PRES_SRC / f, OUT / "talks" / f)
         ext = ' target="_blank" rel="noopener"' if (d["paper"] or "").startswith("http") else ""
-        open_btn = (f'<a class="btn" href="/presentations/{d["pdf"]}" target="_blank" rel="noopener">Open PDF</a>\n    ' if d["pdf"] else "")
+        open_btn = (f'<a class="btn" href="/talks/{d["pdf"]}" target="_blank" rel="noopener">Open PDF</a>\n    ' if d["pdf"] else "")
         paper_btn = f'<a class="btn ghost" href="{d["paper"]}"{ext}>{d.get("paper_label","Related paper")}</a>' if d["paper"] else ""
         cta = f'<p class="cta">{open_btn}{paper_btn}</p>' if (open_btn or paper_btn) else ""
         cards += f'''
 <article class="deck" id="{d["id"]}">
   <div class="deck-side">
-    <a class="deck-thumb" href="/presentations/{d["pdf"] or d["slides"]}" target="_blank" rel="noopener">
-      <img src="/presentations/{d["preview"]}" alt="Preview of the presentation: {html.escape(d["title"])}" loading="lazy">
+    <a class="deck-thumb" href="/talks/{d["pdf"] or d["slides"]}" target="_blank" rel="noopener">
+      <img src="/talks/{d["preview"]}" alt="Preview of the presentation: {html.escape(d["title"])}" loading="lazy">
     </a>
-    <p class="deck-slides"><a href="/presentations/{d["slides"]}" target="_blank" rel="noopener">PDF with slides</a></p>
+    <p class="deck-slides"><a href="/talks/{d["slides"]}" target="_blank" rel="noopener">PDF with slides</a></p>
   </div>
   <div class="deck-text">
     <p class="overline">{html.escape(d["kind"])}</p>
@@ -986,14 +986,14 @@ def page_presentations():
 </article>'''
     body = f"""
 <section class="wrap page-head">
-  <p class="overline">Presentations</p>
-  <h1>Slides and posters</h1>
+  <p class="overline">Talks</p>
+  <h1>Talks and slides</h1>
   <p class="lead">Presentations with files to view or download; most are tied to my papers. Conference talks are listed on the <a href="/cv/#presentations">CV</a>.</p>
 </section>
 <div class="wrap decks">{cards}</div>
 """
-    write("presentations/index.html", shell("Presentations", "/presentations/", body,
-          "Presentations by Jesus E. Vazquez: slides and posters linked to papers on incomplete data and causal inference."))
+    write("talks/index.html", shell("Talks", "/talks/", body,
+          "Talks by Jesus E. Vazquez: slides linked to papers on incomplete data and causal inference."))
 
 
 def page_publications(papers, abstracts):

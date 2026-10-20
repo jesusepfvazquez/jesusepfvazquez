@@ -6,7 +6,11 @@
 /authors/* / 301
 /tag/* / 301
 /category/* / 301
-/work-with-me/undergraduates/* /work-with-me/resources/ 301!
-/work-with-me/undergraduates /work-with-me/resources/ 301!
+/work-with-me/undergraduates/* /mentoring/resources/ 301!
+/work-with-me/undergraduates /mentoring/resources/ 301!
 /work-with-me/opportunities/* /opportunities/ 301!
 /work-with-me/opportunities /opportunities/ 301!
+/work-with-me/* /mentoring/:splat 301!
+/work-with-me /mentoring/ 301!
+/presentations/* /talks/:splat 301!
+/presentations /talks/ 301!
