@@ -822,5 +822,28 @@
     "url": "https://www.med.upenn.edu/research-trainee-affairs/suip/",
     "verified": "2026-10-19",
     "summary": "Ten-week paid research internship at Penn Medicine across the biomedical sciences. Epidemiology and biostatistics is one of the research areas, and applicants interested in biostatistics can say so on the application."
+  },
+  {
+    "id": "cientifico-latino-gsmi",
+    "title": "Graduate School Mentorship Initiative (GSMI)",
+    "org": "Científico Latino",
+    "type": "Mentoring",
+    "location": "Virtual",
+    "deadline": null,
+    "deadline_note": "GSMI 2026 applications are closed. Científico Latino expects to open GSMI 2027 applications in February 2027; join their mailing list for the exact date.",
+    "dates": "Through the graduate application cycle",
+    "pay": "Free; includes application fee waivers and a scholarship fund",
+    "eligibility": "College seniors, post-baccalaureate students, and people in post-bachelor roles (such as research assistants or technicians) applying to STEM master's or PhD programs. Not for MD, MD/PhD, PA, PharmD, or non-STEM PhD applicants",
+    "citizenship": "notstated",
+    "citizenship_note": "The page welcomes applications from all students and does not list citizenship requirements; ask the program.",
+    "tags": [
+      "Any STEM",
+      "Biostatistics",
+      "Public health"
+    ],
+    "status": "upcoming",
+    "url": "https://www.cientificolatino.com/gsmi",
+    "verified": "2026-10-19",
+    "summary": "Free one-on-one mentoring for students applying to STEM graduate programs, with feedback on application materials, mock interviews, and webinars. I mentor students through this program."
   }
 ]
