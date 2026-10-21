@@ -191,9 +191,9 @@
     "type": "Summer program",
     "location": "Iowa City, IA",
     "deadline": null,
-    "deadline_note": "Rolling offers until filled; the application page says summer 2026 applications are closed. Stipend and dates on the About page are from 2024 (June 3 to July 19, 2024). 2027 dates not posted; NHLBI funding for 2027 unconfirmed.",
-    "dates": "2024: June 3 to July 19, 2024 (seven weeks); 2027 not posted",
-    "pay": "Stipend after successful completion (amount not stated) + on-campus lodging, round-trip travel, and meal allowance; no fees",
+    "deadline_note": "The page lists tentative 2027 dates but no application deadline. 2027 projects are pending. NHLBI funding for 2027 is unconfirmed.",
+    "dates": "June 1 to July 16, 2027 (tentative; seven weeks)",
+    "pay": "No fees. Lodging, round-trip travel, a meal allowance, and tuition for one 3-credit course are provided. Participants who finish the 2027 program can receive a stipend after it ends (amount not stated).",
     "eligibility": "Undergraduates; full criteria on the ISIB admissions criteria page",
     "tags": [
       "Biostatistics",
@@ -201,7 +201,7 @@
     ],
     "status": "uncertain",
     "url": "https://www.public-health.uiowa.edu/about-isib",
-    "verified": "2026-10-19",
+    "verified": "2026-10-21",
     "summary": "Seven-week NIH/NHLBI-funded biostatistics institute at the University of Iowa. Lodging, travel, and meals are covered.",
     "citizenship": "notstated",
     "citizenship_note": "Citizenship rules are not stated on the program page. Ask the program."
@@ -338,7 +338,7 @@
     ],
     "status": "upcoming",
     "url": "https://icer-acres.msu.edu",
-    "verified": "2026-10-19",
+    "verified": "2026-10-21",
     "summary": "NSF REU in computational and data science at MSU. Projects span computational biology, chemistry, mathematics, physics, and environmental data analytics.",
     "citizenship": "citizens",
     "citizenship_note": "Limited to US citizens and permanent residents (some also accept US nationals)."
@@ -409,7 +409,7 @@
     ],
     "status": "open",
     "url": "https://www.training.nih.gov/research-training/pb/sip/",
-    "verified": "2026-10-19",
+    "verified": "2026-10-21",
     "summary": "Full-time summer research in NIH intramural labs, including biostatistics, epidemiology, and computational groups. Applicants are selected directly by principal investigators.",
     "citizenship": "citizens",
     "citizenship_note": "Limited to US citizens and permanent residents (some also accept US nationals)."
@@ -432,7 +432,7 @@
     ],
     "status": "upcoming",
     "url": "https://publichealth.jhu.edu/about/inclusion-diversity-anti-racism-and-equity-idare/diversity-summer-internship-program-for-undergraduates",
-    "verified": "2026-10-19",
+    "verified": "2026-10-21",
     "summary": "Eight-week public health research internship at the Bloomberg School with faculty mentors. Housing is provided on or near the Homewood campus.",
     "citizenship": "citizens",
     "citizenship_note": "Limited to US citizens and permanent residents; international students cannot apply."
@@ -727,7 +727,7 @@
     ],
     "status": "open",
     "url": "https://cshl.edu/education/undergraduate-research-program",
-    "verified": "2026-10-19",
+    "verified": "2026-10-21",
     "summary": "Summer research at CSHL with a Bioinformatics and Computational Neuroscience track. Computational mentors work in genomics and machine learning.",
     "citizenship": "some",
     "citizenship_note": "Some spots are open to non-citizens. DACA eligibility is not stated; ask the program."
@@ -820,7 +820,7 @@
     ],
     "status": "open",
     "url": "https://www.med.upenn.edu/research-trainee-affairs/suip/",
-    "verified": "2026-10-19",
+    "verified": "2026-10-21",
     "summary": "Ten-week paid research internship at Penn Medicine across the biomedical sciences. Epidemiology and biostatistics is one of the research areas, and applicants interested in biostatistics can say so on the application."
   },
   {
