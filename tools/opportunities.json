@@ -845,5 +845,28 @@
     "url": "https://www.cientificolatino.com/gsmi",
     "verified": "2026-10-19",
     "summary": "Free one-on-one mentoring for students applying to STEM graduate programs, with feedback on application materials, mock interviews, and webinars. I mentor students through this program."
+  },
+  {
+    "id": "mcw-spur",
+    "title": "Summer Program for Undergraduate Research (SPUR)",
+    "org": "Medical College of Wisconsin",
+    "type": "Summer program",
+    "location": "Milwaukee, WI",
+    "deadline": null,
+    "deadline_note": "SPUR 2027 details are not posted yet. The 2026 application opened November 1, 2025 and closed February 1, 2026, with notifications in mid-April.",
+    "dates": "2026: May 27 to July 31, 2026 (full time, 40 hours per week)",
+    "pay": "$4,500 stipend (2025 amount) + free housing for students from outside Milwaukee; no travel reimbursement or meal plan",
+    "eligibility": "Students enrolled at an accredited college or university who plan to pursue scientific graduate study; prior lab experience preferred but not required",
+    "citizenship": "some",
+    "citizenship_note": "International students on an F-1 visa are eligible. DACA is not mentioned; ask the program.",
+    "tags": [
+      "Life sciences",
+      "Public health",
+      "Any STEM"
+    ],
+    "status": "upcoming",
+    "url": "https://www.mcw.edu/education/graduate-school/prospective-students/summer-program-for-undergraduate-research",
+    "verified": "2026-10-21",
+    "summary": "Ten-week research program at the Medical College of Wisconsin with about 35 students each summer. Participating units include Epidemiology and the Center for Patient Care and Outcomes Research."
   }
 ]
