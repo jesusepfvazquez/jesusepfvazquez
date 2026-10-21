@@ -1063,7 +1063,7 @@ def page_cv(sections):
 
 # ---- Research opportunities board (data: tools/opportunities.json; updated weekly)
 OPPS = ROOT / "tools" / "opportunities.json"
-OPP_STATUS = {"open": "Accepting applications", "upcoming": "Opens soon", "uncertain": "Funding uncertain", "varies": "Varies by campus", "closed": "Closed"}
+OPP_STATUS = {"open": "Accepting applications now", "upcoming": "Opens soon", "uncertain": "Funding uncertain", "varies": "Varies by campus", "closed": "Closed"}
 CIT = {"all": ("\u2713", "Open to all, including DACA"), "some": ("<i class=\"half\"></i>", "Some non-citizens eligible"), "notstated": ("?", "Citizenship not stated"), "citizens": ("\u25cf", "US citizens and permanent residents only")}
 SUGGEST_URL = "https://github.com/jesusepfvazquez/jesusepfvazquez/issues/new?template=suggest-opportunity.yml"
 
@@ -1132,11 +1132,11 @@ def page_opportunities():
   <h1>Research opportunities</h1>
   <p class="lead">Paid summer research programs, internships, and workshops for undergraduates interested in biostatistics, statistics, data science, and public health.</p>
   <p class="opp-warn"><strong>Please double-check before you apply.</strong> Listings are verified with AI and can contain mistakes. Always confirm deadlines, pay, and eligibility on the program's official page.</p>
-  <p class="opp-stats"><strong>{len(opps)}</strong> listings &middot; <strong>{n_open}</strong> accepting applications &middot; <strong id="soon">0</strong> deadlines in the next 30 days &middot; last checked {fmt(latest)}</p>
+  <p class="opp-stats"><strong>{len(opps)}</strong> listings &middot; <strong>{n_open}</strong> accepting applications now &middot; <strong id="soon">0</strong> deadlines in the next 30 days &middot; last checked {fmt(latest)}</p>
 </section>
 <section class="wrap">
   <div class="filters opp-filters">{pills}
-    <label class="opp-check"><input type="checkbox" id="openonly"> Accepting applications</label>
+    <label class="opp-check"><input type="checkbox" id="openonly"> Accepting applications now</label>
     <select id="loc" class="search opp-sort" aria-label="Location">{loc_opts}</select>
     <select id="cit" class="search opp-sort" aria-label="Who can apply"><option value="any">Who can apply: everyone listed</option><option value="noncit">Open to non-citizens or not stated</option><option value="all">Open to all, including DACA</option></select>
     <select id="sort" class="search opp-sort" aria-label="Sort"><option value="deadline">Deadline (soonest)</option><option value="verified">Recently verified</option><option value="org">Organization (A to Z)</option></select>
