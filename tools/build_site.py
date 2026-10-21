@@ -1077,6 +1077,15 @@ def opp_states(loc):
     return [st for st in re.findall(r"\b([A-Z]{2})\b", loc or "") if st in STATE_NAMES]
 
 
+def opp_group(o):
+    t = o.get("type", "")
+    if t in ("Workshop", "Mentoring"):
+        return "events"
+    if t == "Campus program" or "semester" in (o.get("dates") or "").lower():
+        return "school"
+    return "summer"
+
+
 def page_opportunities():
     opps = json.loads(OPPS.read_text(encoding="utf-8")) if OPPS.exists() else []
     opps = [o for o in opps if o.get("status") != "closed"]
@@ -1097,7 +1106,7 @@ def page_opportunities():
         rows = "".join(f'<div><dt>{lab}</dt><dd>{e(k)}</dd></div>' for lab, k in
                        [("Dates", "dates"), ("Pay", "pay"), ("Eligibility", "eligibility"), ("Who can apply", "citizenship_note"), ("Deadline note", "deadline_note")] if o.get(k))
         search_text = " ".join(str(o.get(k, "")) for k in ("title", "org", "location", "summary", "eligibility")) + " " + " ".join(o.get("tags", []))
-        cards.append(f"""<article class="opp" data-states="{' '.join(opp_states(o.get('location')))}" data-cit="{e('citizenship')}" data-type="{e('type')}" data-status="{e('status')}" data-deadline="{e('deadline')}" data-verified="{e('verified')}" data-org="{e('org')}" data-text="{html.escape(search_text.lower())}">
+        cards.append(f"""<article class="opp" data-group="{opp_group(o)}" data-states="{' '.join(opp_states(o.get('location')))}" data-cit="{e('citizenship')}" data-type="{e('type')}" data-status="{e('status')}" data-deadline="{e('deadline')}" data-verified="{e('verified')}" data-org="{e('org')}" data-text="{html.escape(search_text.lower())}">
   <div class="opp-top"><span class="chip">{e('type')}</span><span class="opp-cit {e('citizenship')}" title="{e('citizenship_note')}"><span aria-hidden="true">{CIT.get(o.get('citizenship','notstated'),CIT['notstated'])[0]}</span> {CIT.get(o.get('citizenship','notstated'),CIT['notstated'])[1]}</span><span class="opp-status {e('status')}">{OPP_STATUS.get(o.get('status'), '')}</span>{dl}</div>
   <h3><a href="{e('url')}" target="_blank" rel="noopener">{e('title')}</a></h3>
   <div class="opp-org">{e('org')} &middot; {e('location')}</div>
@@ -1105,9 +1114,10 @@ def page_opportunities():
   <details><summary>Details</summary><dl>{rows}</dl></details>
   <div class="opp-foot"><span class="opp-tags">{tags}</span><span class="muted">Verified {fmt(o.get('verified', ''))}</span></div>
 </article>""")
-    plural = {"Mentoring": "Mentoring"}
+    groups = [("summer", "Summer research"), ("school", "School-year programs"), ("events", "Workshops and mentoring")]
+    present_groups = {opp_group(o) for o in opps}
     pills = '<button class="pill active" data-f="all">All</button>' + "".join(
-        f'<button class="pill" data-f="{html.escape(t)}">{html.escape(plural.get(t, t if t.endswith("s") else t + "s"))}</button>' for t in types)
+        f'<button class="pill" data-f="{g}">{lab}</button>' for g, lab in groups if g in present_groups)
     n_open = sum(o.get("status") == "open" for o in opps)
     present = sorted({st for o in opps for st in opp_states(o.get("location"))}, key=lambda c: STATE_NAMES[c])
     reg_opts = "".join(f'<option value="r:{r}">{r}</option>' for r, sts in REGIONS.items() if any(st in sts.split() for st in present))
@@ -1161,7 +1171,7 @@ def page_opportunities():
       if(k==='org') return a.dataset.org.localeCompare(b.dataset.org);
       var x=(a.dataset.past?'z':'')+(a.dataset.deadline||'9999'), y=(b.dataset.past?'z':'')+(b.dataset.deadline||'9999'); return x.localeCompare(y);
     }}).forEach(function(c){{
-      var lv=document.getElementById('loc').value, cs=(c.dataset.states||'').split(' ').filter(Boolean); var lok=lv==='any'||cs.length===0||(lv.indexOf('s:')===0&&cs.indexOf(lv.slice(2))>-1)||(lv.indexOf('r:')===0&&cs.some(function(x){{return REG[lv.slice(2)].indexOf(x)>-1;}})); if(lv==='multi') lok=cs.length===0; var cv=document.getElementById('cit').value, cc=c.dataset.cit; var show=lok&&(cv==='any'||(cv==='all'&&cc==='all')||(cv==='noncit'&&cc!=='citizens'))&&(f==='all'||c.dataset.type===f)&&(!op||c.dataset.status==='open')&&(!q||c.dataset.text.indexOf(q)>-1);
+      var lv=document.getElementById('loc').value, cs=(c.dataset.states||'').split(' ').filter(Boolean); var lok=lv==='any'||cs.length===0||(lv.indexOf('s:')===0&&cs.indexOf(lv.slice(2))>-1)||(lv.indexOf('r:')===0&&cs.some(function(x){{return REG[lv.slice(2)].indexOf(x)>-1;}})); if(lv==='multi') lok=cs.length===0; var cv=document.getElementById('cit').value, cc=c.dataset.cit; var show=lok&&(cv==='any'||(cv==='all'&&cc==='all')||(cv==='noncit'&&cc!=='citizens'))&&(f==='all'||c.dataset.group===f)&&(!op||c.dataset.status==='open')&&(!q||c.dataset.text.indexOf(q)>-1);
       c.hidden=!show; if(show) n++; box.appendChild(c);
     }});
     document.getElementById('shown').textContent=n; document.getElementById('none').hidden=n>0;
