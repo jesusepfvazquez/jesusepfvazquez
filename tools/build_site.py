@@ -1068,6 +1068,15 @@ CIT = {"all": ("\u2713", "Open to all, including DACA"), "some": ("<i class=\"ha
 SUGGEST_URL = "https://github.com/jesusepfvazquez/jesusepfvazquez/issues/new?template=suggest-opportunity.yml"
 
 
+STATE_NAMES = {"AL":"Alabama","AK":"Alaska","AZ":"Arizona","AR":"Arkansas","CA":"California","CO":"Colorado","CT":"Connecticut","DE":"Delaware","DC":"District of Columbia","FL":"Florida","GA":"Georgia","HI":"Hawaii","ID":"Idaho","IL":"Illinois","IN":"Indiana","IA":"Iowa","KS":"Kansas","KY":"Kentucky","LA":"Louisiana","ME":"Maine","MD":"Maryland","MA":"Massachusetts","MI":"Michigan","MN":"Minnesota","MS":"Mississippi","MO":"Missouri","MT":"Montana","NE":"Nebraska","NV":"Nevada","NH":"New Hampshire","NJ":"New Jersey","NM":"New Mexico","NY":"New York","NC":"North Carolina","ND":"North Dakota","OH":"Ohio","OK":"Oklahoma","OR":"Oregon","PA":"Pennsylvania","PR":"Puerto Rico","RI":"Rhode Island","SC":"South Carolina","SD":"South Dakota","TN":"Tennessee","TX":"Texas","UT":"Utah","VT":"Vermont","VA":"Virginia","WA":"Washington","WV":"West Virginia","WI":"Wisconsin","WY":"Wyoming"}
+REGIONS = {"Northeast": "CT ME MA NH RI VT NJ NY PA", "Midwest": "IL IN MI OH WI IA KS MN MO NE ND SD",
+           "South": "DE DC FL GA MD NC SC VA WV AL KY MS TN AR LA OK TX PR", "West": "AZ CO ID MT NV NM UT WY AK CA HI OR WA"}
+
+
+def opp_states(loc):
+    return [st for st in re.findall(r"\b([A-Z]{2})\b", loc or "") if st in STATE_NAMES]
+
+
 def page_opportunities():
     opps = json.loads(OPPS.read_text(encoding="utf-8")) if OPPS.exists() else []
     opps = [o for o in opps if o.get("status") != "closed"]
@@ -1088,7 +1097,7 @@ def page_opportunities():
         rows = "".join(f'<div><dt>{lab}</dt><dd>{e(k)}</dd></div>' for lab, k in
                        [("Dates", "dates"), ("Pay", "pay"), ("Eligibility", "eligibility"), ("Who can apply", "citizenship_note"), ("Deadline note", "deadline_note")] if o.get(k))
         search_text = " ".join(str(o.get(k, "")) for k in ("title", "org", "location", "summary", "eligibility")) + " " + " ".join(o.get("tags", []))
-        cards.append(f"""<article class="opp" data-cit="{e('citizenship')}" data-type="{e('type')}" data-status="{e('status')}" data-deadline="{e('deadline')}" data-verified="{e('verified')}" data-org="{e('org')}" data-text="{html.escape(search_text.lower())}">
+        cards.append(f"""<article class="opp" data-states="{' '.join(opp_states(o.get('location')))}" data-cit="{e('citizenship')}" data-type="{e('type')}" data-status="{e('status')}" data-deadline="{e('deadline')}" data-verified="{e('verified')}" data-org="{e('org')}" data-text="{html.escape(search_text.lower())}">
   <div class="opp-top"><span class="chip">{e('type')}</span><span class="opp-cit {e('citizenship')}" title="{e('citizenship_note')}"><span aria-hidden="true">{CIT.get(o.get('citizenship','notstated'),CIT['notstated'])[0]}</span> {CIT.get(o.get('citizenship','notstated'),CIT['notstated'])[1]}</span><span class="opp-status {e('status')}">{OPP_STATUS.get(o.get('status'), '')}</span>{dl}</div>
   <h3><a href="{e('url')}" target="_blank" rel="noopener">{e('title')}</a></h3>
   <div class="opp-org">{e('org')} &middot; {e('location')}</div>
@@ -1100,6 +1109,13 @@ def page_opportunities():
     pills = '<button class="pill active" data-f="all">All</button>' + "".join(
         f'<button class="pill" data-f="{html.escape(t)}">{html.escape(plural.get(t, t if t.endswith("s") else t + "s"))}</button>' for t in types)
     n_open = sum(o.get("status") == "open" for o in opps)
+    present = sorted({st for o in opps for st in opp_states(o.get("location"))}, key=lambda c: STATE_NAMES[c])
+    reg_opts = "".join(f'<option value="r:{r}">{r}</option>' for r, sts in REGIONS.items() if any(st in sts.split() for st in present))
+    st_opts = "".join(f'<option value="s:{c}">{STATE_NAMES[c]}</option>' for c in present)
+    loc_opts = ('<option value="any">Location: anywhere</option>'
+                f'<optgroup label="Region">{reg_opts}</optgroup><optgroup label="State">{st_opts}</optgroup>'
+                '<option value="multi">Multiple sites, virtual, or any campus</option>')
+    regions_js = json.dumps({r: sts.split() for r, sts in REGIONS.items()})
     body = f"""
 <section class="wrap page-head">
   <p class="overline">Student resources</p>
@@ -1111,11 +1127,13 @@ def page_opportunities():
 <section class="wrap">
   <div class="filters opp-filters">{pills}
     <label class="opp-check"><input type="checkbox" id="openonly"> Accepting applications</label>
+    <select id="loc" class="search opp-sort" aria-label="Location">{loc_opts}</select>
     <select id="cit" class="search opp-sort" aria-label="Who can apply"><option value="any">Who can apply: everyone listed</option><option value="noncit">Open to non-citizens or not stated</option><option value="all">Open to all, including DACA</option></select>
     <select id="sort" class="search opp-sort" aria-label="Sort"><option value="deadline">Deadline (soonest)</option><option value="verified">Recently verified</option><option value="org">Organization (A to Z)</option></select>
     <input id="q" class="search" type="search" placeholder="Search programs" aria-label="Search programs">
   </div>
   <p class="opp-legend"><span class="opp-cit all">\u2713 Open to all, including DACA</span><span class="opp-cit some"><i class="half"></i> Some non-citizens eligible</span><span class="opp-cit notstated">? Not stated</span><span class="opp-cit citizens">\u25cf US citizens and permanent residents only</span></p>
+  <p class="note">Filtering by location also shows programs with multiple sites, virtual programs, and campus programs such as McNair.</p>
   <p class="note opp-daca">If you have DACA or are undocumented, programs marked "Some non-citizens eligible" or "Not stated" may still accept you, so email the program to ask. Programs paid for by federal training grants, such as many NIH programs, often require US citizenship or permanent residency. Eligibility rules can change, so please check each program's official rules before you apply.</p>
   <p class="muted opp-count"><span id="shown">{len(opps)}</span> shown</p>
   <div class="opps" id="opps">{''.join(cards)}</div>
@@ -1126,6 +1144,7 @@ def page_opportunities():
 </section>
 <script>
 (function(){{
+  var REG={regions_js};
   var box=document.getElementById('opps'), cards=[].slice.call(box.children), f='all';
   var today=new Date(); today.setHours(0,0,0,0); var soon=0;
   cards.forEach(function(c){{
@@ -1142,14 +1161,14 @@ def page_opportunities():
       if(k==='org') return a.dataset.org.localeCompare(b.dataset.org);
       var x=(a.dataset.past?'z':'')+(a.dataset.deadline||'9999'), y=(b.dataset.past?'z':'')+(b.dataset.deadline||'9999'); return x.localeCompare(y);
     }}).forEach(function(c){{
-      var cv=document.getElementById('cit').value, cc=c.dataset.cit; var show=(cv==='any'||(cv==='all'&&cc==='all')||(cv==='noncit'&&cc!=='citizens'))&&(f==='all'||c.dataset.type===f)&&(!op||c.dataset.status==='open')&&(!q||c.dataset.text.indexOf(q)>-1);
+      var lv=document.getElementById('loc').value, cs=(c.dataset.states||'').split(' ').filter(Boolean); var lok=lv==='any'||cs.length===0||(lv.indexOf('s:')===0&&cs.indexOf(lv.slice(2))>-1)||(lv.indexOf('r:')===0&&cs.some(function(x){{return REG[lv.slice(2)].indexOf(x)>-1;}})); if(lv==='multi') lok=cs.length===0; var cv=document.getElementById('cit').value, cc=c.dataset.cit; var show=lok&&(cv==='any'||(cv==='all'&&cc==='all')||(cv==='noncit'&&cc!=='citizens'))&&(f==='all'||c.dataset.type===f)&&(!op||c.dataset.status==='open')&&(!q||c.dataset.text.indexOf(q)>-1);
       c.hidden=!show; if(show) n++; box.appendChild(c);
     }});
     document.getElementById('shown').textContent=n; document.getElementById('none').hidden=n>0;
   }}
   [].forEach.call(document.querySelectorAll('.opp-filters .pill'),function(b){{ b.addEventListener('click',function(){{
     [].forEach.call(document.querySelectorAll('.opp-filters .pill'),function(x){{x.classList.remove('active');}}); b.classList.add('active'); f=b.dataset.f; apply(); }}); }});
-  ['q','openonly','sort','cit'].forEach(function(id){{ document.getElementById(id).addEventListener('input',apply); document.getElementById(id).addEventListener('change',apply); }});
+  ['q','openonly','sort','cit','loc'].forEach(function(id){{ document.getElementById(id).addEventListener('input',apply); document.getElementById(id).addEventListener('change',apply); }});
   apply();
 }})();
 </script>
