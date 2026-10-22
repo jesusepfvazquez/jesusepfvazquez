@@ -936,5 +936,28 @@
     "summary": "Ten-week paid program in data science, statistical modeling, and machine learning at the University of Minnesota. Students also learn to communicate their results.",
     "citizenship": "citizens",
     "citizenship_note": "Limited to US citizens, nationals, and permanent residents. DACA is not mentioned; ask the program."
+  },
+  {
+    "id": "stanford-dbds-data-science-mentoring",
+    "title": "Data Science Mentoring",
+    "org": "Stanford University, Department of Biomedical Data Science (with Carnegie Math Pathways)",
+    "type": "Mentoring",
+    "location": "Virtual",
+    "deadline": null,
+    "deadline_note": "The page links a student application form but does not list a deadline. Mentoring runs January to March 2027, so apply early.",
+    "dates": "Weekly one-hour Zoom meetings, January to March 2027",
+    "pay": "Cost not stated; ask the program",
+    "eligibility": "Undergraduates at any level at colleges in the Carnegie Math Pathways network or at other colleges that are not R1 research universities; some introductory statistics and an interest in data science",
+    "citizenship": "notstated",
+    "citizenship_note": "The page does not list citizenship requirements; ask the program.",
+    "tags": [
+      "Data science",
+      "Statistics",
+      "Biostatistics"
+    ],
+    "status": "upcoming",
+    "url": "https://dbds.stanford.edu/data-science-mentoring/",
+    "verified": "2026-10-22",
+    "summary": "Online one-on-one mentoring with a Stanford graduate student in biomedical data science. Meetings cover course planning, internship and application advice, data science tutoring, and a small research project."
   }
 ]
