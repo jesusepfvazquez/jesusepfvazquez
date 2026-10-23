@@ -959,5 +959,29 @@
     "url": "https://dbds.stanford.edu/data-science-mentoring/",
     "verified": "2026-10-22",
     "summary": "Online one-on-one mentoring with a Stanford graduate student in biomedical data science. Meetings cover course planning, internship and application advice, data science tutoring, and a small research project."
+  },
+  {
+    "id": "mit-msrp",
+    "title": "MIT Summer Research Program (MSRP)",
+    "org": "Massachusetts Institute of Technology, Office of Graduate Education",
+    "type": "Summer program",
+    "location": "Cambridge, MA",
+    "deadline": "2027-01-19",
+    "deadline_note": "Applications close January 19, 2027 at 11:59 PM ET. The application was expected to open September 29, 2026.",
+    "dates": "June 7 to August 7, 2027 (about nine weeks)",
+    "pay": "Weekly stipend (amount not stated) + university housing, round-trip travel, and a food subsidy",
+    "eligibility": "Sophomores, juniors, and non-graduating seniors at a US college with at least two years of coursework completed by the start; students graduating before December 2026 are not eligible; admitted students typically have a 3.5 GPA or higher, but lower GPAs are considered",
+    "citizenship": "some",
+    "citizenship_note": "International students enrolled full time at a US institution can apply. DACA and undocumented status are not addressed; ask the program.",
+    "tags": [
+      "Any STEM",
+      "Data science",
+      "Statistics",
+      "Life sciences"
+    ],
+    "status": "open",
+    "url": "https://oge.mit.edu/msrp/",
+    "verified": "2026-10-23",
+    "summary": "Nine-week research internship with MIT faculty across all five schools and the Schwarzman College of Computing. Interns attend weekly professional development seminars, write a research paper and a graduate school statement, and present a poster."
   }
 ]
