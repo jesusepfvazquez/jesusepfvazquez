@@ -983,5 +983,97 @@
     "url": "https://oge.mit.edu/msrp/",
     "verified": "2026-10-26",
     "summary": "Nine-week research internship with MIT faculty across all five schools and the Schwarzman College of Computing. Interns attend weekly professional development seminars, write a research paper and a graduate school statement, and present a poster."
+  },
+  {
+    "id": "msk-cbsp",
+    "title": "Computational Biology Summer Program (CBSP)",
+    "org": "Memorial Sloan Kettering Cancer Center, with Weill Cornell Medicine and Rockefeller University",
+    "type": "Summer program",
+    "location": "New York, NY",
+    "deadline": "2027-02-01",
+    "deadline_note": "Portal opens Nov 2, 2026. Applications close Feb 1, 2027 at 8:00 AM Eastern. Offers go out by Mar 15, 2027.",
+    "dates": "June 1 to August 6, 2027 (10 weeks)",
+    "pay": "$6,500 stipend; housing is available but its cost is not stated",
+    "eligibility": "Undergraduates in computer science, applied math, or related majors; GPA 3.0+; coursework in a language such as Python, R, or C/C++; biology or genetics preferred, not required. The page lists freshmen to juniors in one place and mentions rising seniors in another. About 15 students.",
+    "tags": [
+      "Computational biology",
+      "Data science",
+      "Life sciences"
+    ],
+    "status": "upcoming",
+    "url": "https://www.mskcc.org/education-training/high-school-college/computational-biology-summer-program-cbsp",
+    "verified": "2026-10-26",
+    "summary": "Ten-week NCI-funded research program for computer science and applied math undergraduates interested in biomedicine. Students work with faculty at MSK, Weill Cornell, or Rockefeller. They attend seminars and present a poster at the end.",
+    "citizenship": "notstated",
+    "citizenship_note": "The page says \"domestic\" undergraduates but does not define it or address visa status or DACA, so ask the program."
+  },
+  {
+    "id": "slmath-msri-up-2027",
+    "title": "MSRI-UP 2027: Applied Statistics: Health, Education, and Labor Market",
+    "org": "Simons Laufer Mathematical Sciences Institute (SLMath)",
+    "type": "REU",
+    "location": "Berkeley, CA",
+    "deadline": "2027-02-15",
+    "deadline_note": "Applications open mid-November 2026 through the NSF REU Common Application. Full consideration by Feb 15, 2027. A second round runs Feb 15 to Mar 1, 2027. Offers start late February or early March.",
+    "dates": "June 12 to July 25, 2027",
+    "pay": "$4,200 stipend + lodging, meals, and round-trip travel to Berkeley",
+    "eligibility": "Students who have finished two years of university-level math, including the calculus sequence. Prior statistics and R or similar programming are desired, not required.",
+    "tags": [
+      "Statistics",
+      "Data science",
+      "Public health"
+    ],
+    "status": "upcoming",
+    "url": "https://legacy.slmath.org/msri_ups/1211",
+    "verified": "2026-10-26",
+    "summary": "Summer research program in statistical models applied to real data using R. Projects cover epidemiological statistics, education statistics, and labor economics.",
+    "citizenship": "notstated",
+    "citizenship_note": "The page does not address citizenship or DACA, so ask the program."
+  },
+  {
+    "id": "uw-hiprc-insight",
+    "title": "INSIGHT Summer Research Program",
+    "org": "Harborview Injury Prevention and Research Center (HIPRC), University of Washington",
+    "type": "Summer program",
+    "location": "Seattle, WA",
+    "deadline": null,
+    "deadline_note": "The page covers 2026 only (applications ran Dec 8, 2025 to Jan 19, 2026). It says applications generally open mid-November to early January. No 2027 deadline is posted yet.",
+    "dates": "2026: June 15 to August 7, 2026 (eight weeks), virtual, with an in-person symposium in Seattle Aug 6 to 7. 2027 dates not posted.",
+    "pay": "$4,000 stipend (2026); travel and lodging for the symposium are the student's own cost",
+    "eligibility": "Current undergraduates (post-baccalaureate and spring graduates may also apply); GPA 3.0+; must be able to work in the US. Some projects need a statistical background.",
+    "tags": [
+      "Public health",
+      "Life sciences"
+    ],
+    "status": "upcoming",
+    "url": "https://hiprc.org/training/undergrad-grad/insight/",
+    "verified": "2026-10-26",
+    "summary": "Eight-week paid research program on injury and violence prevention, supported by NICHD. Students are matched with a University of Washington health sciences mentor.",
+    "citizenship": "all",
+    "citizenship_note": "The page says non-citizens may apply if they are on a student visa or have DACA status and can work in the US; undocumented students without work authorization are not addressed, so ask the program."
+  },
+  {
+    "id": "wake-forest-calibir",
+    "title": "CALIBIR Summer Research Internship",
+    "org": "Wake Forest University School of Medicine, Center for Artificial Intelligence Research",
+    "type": "Internship",
+    "location": "Winston-Salem, NC",
+    "deadline": "2027-01-29",
+    "deadline_note": "Page says applications open in October 2026 but does not say whether they are open yet. Offers begin mid-February 2027.",
+    "dates": "May 25 to July 30, 2027 (10 weeks)",
+    "pay": "Hourly pay (rate not stated) + shared on-campus housing for non-local students; travel not covered",
+    "eligibility": "Age 18+ by May 25, 2027; at least two semesters completed; GPA 3.0+; enrolled at a US institution; students graduating before May 25, 2027 are not eligible.",
+    "tags": [
+      "Data science",
+      "Computational biology",
+      "Public health",
+      "Life sciences"
+    ],
+    "status": "upcoming",
+    "url": "https://school.wakehealth.edu/research/institutes-and-centers/center-for-artificial-intelligence-research/calibir-summer-research-internship",
+    "verified": "2026-10-26",
+    "summary": "Ten-week paid internship in biomedical AI and data science at Wake Forest School of Medicine. Focus areas include machine learning, biomedical informatics, and public health.",
+    "citizenship": "some",
+    "citizenship_note": "The page says US citizens, nationals, and permanent residents may apply, and J-1 and F-1 students may apply for limited spots. DACA is not mentioned, so ask the program."
   }
 ]
