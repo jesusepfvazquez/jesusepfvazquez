@@ -841,7 +841,7 @@ def page_work():
   <p class="overline">Students and collaborators</p>
   <h1>Work with me</h1>
   <p class="lead">I welcome high school students, undergraduates, master's students, PhD students, postdocs, and collaborators who want to work on statistical methods for incomplete data and health applications. The <a href="/research/">Research</a> page lists current projects.</p>
-  <p class="lead">On the personal side, my favorite board game is Catan, and pineapple goes on pizza. The values below describe how the team works.</p>
+  <p class="lead">The values below describe how the team works.</p>
 </section>
 <div class="wrap values">{secs}</div>
 {team}
