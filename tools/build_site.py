@@ -743,6 +743,19 @@ PRESENTATIONS = [
         "paper_label": "Paper on arXiv",
     },
     {
+        "title": "How to find a postdoc",
+        "id": "postdoc",
+        "kind": "CIDI T32 Meeting, Johns Hopkins, November 18, 2025",
+        "pdf": None,
+        "preview": "postdoc-preview.jpg",
+        "slides": "postdoc-2025-slides.pdf",
+        "text": ("Joint talk with Diana Alvarez Bartolo for the CIDI T32 trainees. The slides cover whether a postdoc "
+                 "fits a career plan, what to look for in a position (research alignment, mentorship, funding, "
+                 "location), where to search, what to send and how to prepare for interviews, and how to compare "
+                 "and decline offers."),
+        "paper": None,
+    },
+    {
         "title": "How we work together: lab values",
         "id": "lab-values",
         "kind": "Stuart Lab Meeting, Johns Hopkins Biostatistics, November 4, 2025",
