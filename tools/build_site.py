@@ -708,7 +708,7 @@ PRESENTATIONS = [
         "title": "Causal inference with a right-censored marker of disease progression",
         "id": "retreat",
         "kind": "JHU Biostatistics Retreat Presentation, October 2, 2026",
-        "pdf": "retreat-vazquez.pdf",
+        "pdf": "retreat-vazquez-slides.pdf",
         "preview": "retreat-vazquez-preview.jpg",
         "slides": "retreat-vazquez-slides.pdf",
         "text": ("How to adjust for disease severity when it is not measured. A proxy built from the age at "
