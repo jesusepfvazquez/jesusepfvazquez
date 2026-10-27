@@ -690,6 +690,21 @@ def page_research(papers, abstracts):
 PRES_SRC = ROOT / "content" / "presentations"
 PRESENTATIONS = [
     {
+        "title": "The Binomial Distribution",
+        "id": "umd-binomial",
+        "kind": "Teaching Demonstration, University of Maryland School of Public Health, October 28, 2026",
+        "pdf": None,
+        "preview": "umd-binomial-preview.jpg",
+        "slides": "umd-binomial-2026-slides.pdf",
+        "text": ("Teaching demonstration given at the University of Maryland School of Public Health. The slides define the binomial "
+                 "setting, the probability formula, the mean and variance, and the cumulative distribution, using a clinic "
+                 "flu-testing example. The second half uses the binomial distribution to estimate the size of a population "
+                 "that is hard to count, with a pebble-jar activity and R simulations."),
+        "paper": None,
+        "extra": "binomial-simulations.html",
+        "extra_label": "R simulations",
+    },
+    {
         "title": "Causal inference with a right-censored marker of disease progression",
         "id": "retreat",
         "kind": "JHU Biostatistics Retreat Presentation, October 2, 2026",
@@ -976,12 +991,13 @@ def page_presentations():
     (OUT / "talks").mkdir(parents=True, exist_ok=True)
     cards = ""
     for d in PRESENTATIONS:
-        for f in filter(None, (d["pdf"], d["preview"], d["slides"])):
+        for f in filter(None, (d["pdf"], d["preview"], d["slides"], d.get("extra"))):
             shutil.copy(PRES_SRC / f, OUT / "talks" / f)
         ext = ' target="_blank" rel="noopener"' if (d["paper"] or "").startswith("http") else ""
         open_btn = (f'<a class="btn" href="/talks/{d["pdf"]}" target="_blank" rel="noopener">Open PDF</a>\n    ' if d["pdf"] else "")
+        extra_btn = (f'<a class="btn" href="/talks/{d["extra"]}" target="_blank" rel="noopener">{d["extra_label"]}</a>' if d.get("extra") else "")
         paper_btn = f'<a class="btn ghost" href="{d["paper"]}"{ext}>{d.get("paper_label","Related paper")}</a>' if d["paper"] else ""
-        cta = f'<p class="cta">{open_btn}{paper_btn}</p>' if (open_btn or paper_btn) else ""
+        cta = f'<p class="cta">{open_btn}{extra_btn}{paper_btn}</p>' if (open_btn or extra_btn or paper_btn) else ""
         cards += f'''
 <article class="deck" id="{d["id"]}">
   <div class="deck-side">
