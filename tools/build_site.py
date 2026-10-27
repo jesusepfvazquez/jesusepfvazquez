@@ -693,7 +693,7 @@ PRESENTATIONS = [
         "title": "The Binomial Distribution",
         "id": "umd-binomial",
         "kind": "Teaching Demonstration, University of Maryland School of Public Health, October 28, 2026",
-        "pdf": None,
+        "pdf": "umd-binomial-2026-slides.pdf",
         "preview": "umd-binomial-preview.jpg",
         "slides": "umd-binomial-2026-slides.pdf",
         "text": ("Teaching demonstration given at the University of Maryland School of Public Health. The slides define the binomial "
@@ -995,7 +995,7 @@ def page_presentations():
             shutil.copy(PRES_SRC / f, OUT / "talks" / f)
         ext = ' target="_blank" rel="noopener"' if (d["paper"] or "").startswith("http") else ""
         open_btn = (f'<a class="btn" href="/talks/{d["pdf"]}" target="_blank" rel="noopener">Open PDF</a>\n    ' if d["pdf"] else "")
-        extra_btn = (f'<a class="btn" href="/talks/{d["extra"]}" target="_blank" rel="noopener">{d["extra_label"]}</a>' if d.get("extra") else "")
+        extra_btn = (f'<a class="btn ghost" href="/talks/{d["extra"]}" target="_blank" rel="noopener">{d["extra_label"]}</a>' if d.get("extra") else "")
         paper_btn = f'<a class="btn ghost" href="{d["paper"]}"{ext}>{d.get("paper_label","Related paper")}</a>' if d["paper"] else ""
         cta = f'<p class="cta">{open_btn}{extra_btn}{paper_btn}</p>' if (open_btn or extra_btn or paper_btn) else ""
         cards += f'''
