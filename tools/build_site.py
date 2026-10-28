@@ -703,6 +703,7 @@ PRESENTATIONS = [
         "paper": None,
         "extra": "binomial-simulations.html",
         "extra_label": "R simulations",
+        "video": "https://youtu.be/LEBHiUieLOI",
     },
     {
         "title": "Causal inference with a right-censored marker of disease progression",
@@ -996,8 +997,9 @@ def page_presentations():
         ext = ' target="_blank" rel="noopener"' if (d["paper"] or "").startswith("http") else ""
         open_btn = (f'<a class="btn" href="/talks/{d["pdf"]}" target="_blank" rel="noopener">Open PDF</a>\n    ' if d["pdf"] else "")
         extra_btn = (f'<a class="btn ghost" href="/talks/{d["extra"]}" target="_blank" rel="noopener">{d["extra_label"]}</a>' if d.get("extra") else "")
+        video_btn = (f'<a class="btn ghost" href="{d["video"]}" target="_blank" rel="noopener">Watch video</a>' if d.get("video") else "")
         paper_btn = f'<a class="btn ghost" href="{d["paper"]}"{ext}>{d.get("paper_label","Related paper")}</a>' if d["paper"] else ""
-        cta = f'<p class="cta">{open_btn}{extra_btn}{paper_btn}</p>' if (open_btn or extra_btn or paper_btn) else ""
+        cta = f'<p class="cta">{open_btn}{extra_btn}{video_btn}{paper_btn}</p>' if (open_btn or extra_btn or video_btn or paper_btn) else ""
         cards += f'''
 <article class="deck" id="{d["id"]}">
   <div class="deck-side">
