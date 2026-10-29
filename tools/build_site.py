@@ -691,12 +691,12 @@ PRES_SRC = ROOT / "content" / "presentations"
 PRESENTATIONS = [
     {
         "title": "The Binomial Distribution",
-        "id": "umd-binomial",
-        "kind": "Teaching Demonstration, University of Maryland School of Public Health, October 28, 2026",
-        "pdf": "umd-binomial-2026-slides.pdf",
-        "preview": "umd-binomial-preview.jpg",
-        "slides": "umd-binomial-2026-slides.pdf",
-        "text": ("Teaching demonstration given at the University of Maryland School of Public Health. The slides define the binomial "
+        "id": "binomial",
+        "kind": "Teaching Demonstration, Introduction to Biostatistics, October 2026",
+        "pdf": "binomial-distribution-slides.pdf",
+        "preview": "binomial-preview.jpg",
+        "slides": "binomial-distribution-slides.pdf",
+        "text": ("Teaching demonstration for an introductory biostatistics class. The slides define the binomial "
                  "setting, the probability formula, the mean and variance, and the cumulative distribution, using a clinic "
                  "flu-testing example. The second half uses the binomial distribution to estimate the size of a population "
                  "that is hard to count, with a pebble-jar activity and R simulations."),
