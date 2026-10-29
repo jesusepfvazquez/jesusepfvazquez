@@ -378,3 +378,14 @@ ul, ol { margin: 0; padding: 0; }
 .opp-legend { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 4px; }
 .opp-daca { max-width: 48em; margin-top: 8px; }
 .opp-cit .half { display: inline-block; width: 9px; height: 9px; border-radius: 50%; border: 1.5px solid currentColor; background: linear-gradient(90deg, currentColor 50%, transparent 50%); }
+
+/* talks: grouped, two per row */
+.talk-group { padding-bottom: 24px; }
+.talk-group > h2 { font-size: 1.7rem; padding-bottom: 10px; border-bottom: 2px solid var(--sky-line); margin: 28px 0 4px; }
+.group-sub { margin: 0 0 20px; color: var(--muted); }
+.decks-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
+.decks-grid .deck { grid-template-columns: 1fr; gap: 14px; padding: 0; border-top: 0; }
+.decks-grid .deck-thumb img { aspect-ratio: 16 / 9; object-fit: cover; object-position: top; }
+.decks-grid .deck-text h2 { font-size: 1.25rem; margin-bottom: 8px; }
+.decks-grid .deck-text p { font-size: 0.95rem; }
+@media (max-width: 820px) { .decks-grid { grid-template-columns: 1fr; } }

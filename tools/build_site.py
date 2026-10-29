@@ -988,9 +988,15 @@ def page_undergrads():
           "Resources for students interested in biostatistics: workshops, summer programs, graduate school and fellowship advice."))
 
 
+TALK_GROUPS = [
+    ("research", "Research talks", "Methods for incomplete data and causal inference.", ["retreat", "compstat", "ibc", "t32"]),
+    ("teaching", "Teaching and mentoring", "Class demonstrations and career talks for trainees.", ["binomial", "postdoc", "lab-values"]),
+]
+
+
 def page_presentations():
     (OUT / "talks").mkdir(parents=True, exist_ok=True)
-    cards = ""
+    cards_by_id = {}
     for d in PRESENTATIONS:
         for f in filter(None, (d["pdf"], d["preview"], d["slides"], d.get("extra"))):
             shutil.copy(PRES_SRC / f, OUT / "talks" / f)
@@ -1000,13 +1006,12 @@ def page_presentations():
         video_btn = (f'<a class="btn ghost" href="{d["video"]}" target="_blank" rel="noopener">Watch video</a>' if d.get("video") else "")
         paper_btn = f'<a class="btn ghost" href="{d["paper"]}"{ext}>{d.get("paper_label","Related paper")}</a>' if d["paper"] else ""
         cta = f'<p class="cta">{open_btn}{extra_btn}{video_btn}{paper_btn}</p>' if (open_btn or extra_btn or video_btn or paper_btn) else ""
-        cards += f'''
+        cards_by_id[d["id"]] = f'''
 <article class="deck" id="{d["id"]}">
   <div class="deck-side">
     <a class="deck-thumb" href="/talks/{d["pdf"] or d["slides"]}" target="_blank" rel="noopener">
       <img src="/talks/{d["preview"]}" alt="Preview of the presentation: {html.escape(d["title"])}" loading="lazy">
     </a>
-    <p class="deck-slides"><a href="/talks/{d["slides"]}" target="_blank" rel="noopener">PDF with slides</a></p>
   </div>
   <div class="deck-text">
     <p class="overline">{html.escape(d["kind"])}</p>
@@ -1015,13 +1020,22 @@ def page_presentations():
     {cta}
   </div>
 </article>'''
+    assert set(cards_by_id) == {i for g in TALK_GROUPS for i in g[3]}, "every talk needs a group"
+    nav = "".join(f'<a href="#{gid}">{title}</a>' for gid, title, _, _ in TALK_GROUPS)
+    sections = "".join(
+        f'''
+<section class="wrap talk-group" id="{gid}">
+  <h2>{title}</h2>
+  <p class="group-sub">{sub}</p>
+  <div class="decks-grid">{"".join(cards_by_id[i] for i in ids)}</div>
+</section>''' for gid, title, sub, ids in TALK_GROUPS)
     body = f"""
 <section class="wrap page-head">
   <p class="overline">Talks</p>
   <h1>Talks and slides</h1>
   <p class="lead">Presentations with files to view or download; most are tied to my papers. Conference talks are listed on the <a href="/cv/#presentations">CV</a>.</p>
-</section>
-<div class="wrap decks">{cards}</div>
+  <nav class="jump" aria-label="Talk sections">{nav}</nav>
+</section>{sections}
 """
     write("talks/index.html", shell("Talks", "/talks/", body,
           "Talks by Jesus E. Vazquez: slides linked to papers on incomplete data and causal inference."))

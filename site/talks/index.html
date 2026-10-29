@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Talks · Jesus E. Vazquez</title>
 <meta name="description" content="Talks by Jesus E. Vazquez: slides linked to papers on incomplete data and causal inference.">
-<link rel="icon" type="image/png" href="/assets/blank.png?v=20261029142235">
-<link rel="stylesheet" href="/assets/style.css?v=20261029142235">
+<link rel="icon" type="image/png" href="/assets/blank.png?v=20261029142639">
+<link rel="stylesheet" href="/assets/style.css?v=20261029142639">
 </head>
 <body>
 <header class="site-header"><div class="wrap bar">
@@ -19,29 +19,17 @@
   <p class="overline">Talks</p>
   <h1>Talks and slides</h1>
   <p class="lead">Presentations with files to view or download; most are tied to my papers. Conference talks are listed on the <a href="/cv/#presentations">CV</a>.</p>
+  <nav class="jump" aria-label="Talk sections"><a href="#research">Research talks</a><a href="#teaching">Teaching and mentoring</a></nav>
 </section>
-<div class="wrap decks">
-<article class="deck" id="binomial">
-  <div class="deck-side">
-    <a class="deck-thumb" href="/talks/binomial-distribution-slides.pdf" target="_blank" rel="noopener">
-      <img src="/talks/binomial-preview.jpg" alt="Preview of the presentation: The Binomial Distribution" loading="lazy">
-    </a>
-    <p class="deck-slides"><a href="/talks/binomial-distribution-slides.pdf" target="_blank" rel="noopener">PDF with slides</a></p>
-  </div>
-  <div class="deck-text">
-    <p class="overline">Teaching Demonstration, Introduction to Biostatistics, October 2026</p>
-    <h2>The Binomial Distribution</h2>
-    <p>Teaching demonstration for an introductory biostatistics class. The slides define the binomial setting, the probability formula, the mean and variance, and the cumulative distribution, using a clinic flu-testing example. The second half uses the binomial distribution to estimate the size of a population that is hard to count, with a pebble-jar activity and R simulations.</p>
-    <p class="cta"><a class="btn" href="/talks/binomial-distribution-slides.pdf" target="_blank" rel="noopener">Open PDF</a>
-    <a class="btn ghost" href="/talks/binomial-simulations.html" target="_blank" rel="noopener">R simulations</a><a class="btn ghost" href="https://youtu.be/LEBHiUieLOI" target="_blank" rel="noopener">Watch video</a></p>
-  </div>
-</article>
+<section class="wrap talk-group" id="research">
+  <h2>Research talks</h2>
+  <p class="group-sub">Methods for incomplete data and causal inference.</p>
+  <div class="decks-grid">
 <article class="deck" id="retreat">
   <div class="deck-side">
     <a class="deck-thumb" href="/talks/retreat-vazquez-slides.pdf" target="_blank" rel="noopener">
       <img src="/talks/retreat-vazquez-preview.jpg" alt="Preview of the presentation: Causal inference with a right-censored marker of disease progression" loading="lazy">
     </a>
-    <p class="deck-slides"><a href="/talks/retreat-vazquez-slides.pdf" target="_blank" rel="noopener">PDF with slides</a></p>
   </div>
   <div class="deck-text">
     <p class="overline">JHU Biostatistics Retreat Presentation, October 2, 2026</p>
@@ -56,7 +44,6 @@
     <a class="deck-thumb" href="/talks/compstat-2026-slides.pdf" target="_blank" rel="noopener">
       <img src="/talks/compstat-preview.jpg" alt="Preview of the presentation: Matching estimators to censoring rate improves inference with outcome-dependent right-censored covariates" loading="lazy">
     </a>
-    <p class="deck-slides"><a href="/talks/compstat-2026-slides.pdf" target="_blank" rel="noopener">PDF with slides</a></p>
   </div>
   <div class="deck-text">
     <p class="overline">COMPSTAT 2026, Athens, Greece, August 27, 2026</p>
@@ -70,7 +57,6 @@
     <a class="deck-thumb" href="/talks/ibc-2026-slides.pdf" target="_blank" rel="noopener">
       <img src="/talks/ibc-preview.jpg" alt="Preview of the presentation: Federated learning with incomplete data: when to use complete cases and when to weight" loading="lazy">
     </a>
-    <p class="deck-slides"><a href="/talks/ibc-2026-slides.pdf" target="_blank" rel="noopener">PDF with slides</a></p>
   </div>
   <div class="deck-text">
     <p class="overline">International Biometric Conference, Seoul, South Korea, July 14, 2026</p>
@@ -84,7 +70,6 @@
     <a class="deck-thumb" href="/talks/t32-2026-slides.pdf" target="_blank" rel="noopener">
       <img src="/talks/t32-preview.jpg" alt="Preview of the presentation: Federated learning with incomplete data: a weighted approach with variance correction" loading="lazy">
     </a>
-    <p class="deck-slides"><a href="/talks/t32-2026-slides.pdf" target="_blank" rel="noopener">PDF with slides</a></p>
   </div>
   <div class="deck-text">
     <p class="overline">CIDI T32 Meeting, Johns Hopkins, March 10, 2026</p>
@@ -92,13 +77,31 @@
     <p>A lecture for the CIDI T32 trainees on federated learning when sites have missing data. The slides introduce distributed research networks and the COLA-GLM estimator, which assumes complete data, and then develop a weighted version for missing covariates, with simulation results on bias, coverage, and the variance correction. The example comes from pleural infection data at two sources.</p>
     <p class="cta"><a class="btn ghost" href="https://arxiv.org/abs/2605.20125" target="_blank" rel="noopener">Paper on arXiv</a></p>
   </div>
+</article></div>
+</section>
+<section class="wrap talk-group" id="teaching">
+  <h2>Teaching and mentoring</h2>
+  <p class="group-sub">Class demonstrations and career talks for trainees.</p>
+  <div class="decks-grid">
+<article class="deck" id="binomial">
+  <div class="deck-side">
+    <a class="deck-thumb" href="/talks/binomial-distribution-slides.pdf" target="_blank" rel="noopener">
+      <img src="/talks/binomial-preview.jpg" alt="Preview of the presentation: The Binomial Distribution" loading="lazy">
+    </a>
+  </div>
+  <div class="deck-text">
+    <p class="overline">Teaching Demonstration, Introduction to Biostatistics, October 2026</p>
+    <h2>The Binomial Distribution</h2>
+    <p>Teaching demonstration for an introductory biostatistics class. The slides define the binomial setting, the probability formula, the mean and variance, and the cumulative distribution, using a clinic flu-testing example. The second half uses the binomial distribution to estimate the size of a population that is hard to count, with a pebble-jar activity and R simulations.</p>
+    <p class="cta"><a class="btn" href="/talks/binomial-distribution-slides.pdf" target="_blank" rel="noopener">Open PDF</a>
+    <a class="btn ghost" href="/talks/binomial-simulations.html" target="_blank" rel="noopener">R simulations</a><a class="btn ghost" href="https://youtu.be/LEBHiUieLOI" target="_blank" rel="noopener">Watch video</a></p>
+  </div>
 </article>
 <article class="deck" id="postdoc">
   <div class="deck-side">
     <a class="deck-thumb" href="/talks/postdoc-2025-slides.pdf" target="_blank" rel="noopener">
       <img src="/talks/postdoc-preview.jpg" alt="Preview of the presentation: How to find a postdoc" loading="lazy">
     </a>
-    <p class="deck-slides"><a href="/talks/postdoc-2025-slides.pdf" target="_blank" rel="noopener">PDF with slides</a></p>
   </div>
   <div class="deck-text">
     <p class="overline">CIDI T32 Meeting, Johns Hopkins, November 18, 2025</p>
@@ -112,7 +115,6 @@
     <a class="deck-thumb" href="/talks/lab-values-2025-slides.pdf" target="_blank" rel="noopener">
       <img src="/talks/lab-values-preview.jpg" alt="Preview of the presentation: How we work together: lab values" loading="lazy">
     </a>
-    <p class="deck-slides"><a href="/talks/lab-values-2025-slides.pdf" target="_blank" rel="noopener">PDF with slides</a></p>
   </div>
   <div class="deck-text">
     <p class="overline">Stuart Lab Meeting, Johns Hopkins Biostatistics, November 4, 2025</p>
@@ -121,6 +123,7 @@
     
   </div>
 </article></div>
+</section>
 
 </main>
 <footer class="site-footer"><div class="wrap foot">
@@ -134,6 +137,6 @@
     <div class="muted">Updated October 29, 2026</div>
   </div>
 </div></footer>
-<script src="/assets/site.js?v=20261029142235"></script>
+<script src="/assets/site.js?v=20261029142639"></script>
 </body>
 </html>
