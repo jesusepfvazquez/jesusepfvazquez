@@ -857,7 +857,7 @@ def page_work():
   <p class="overline">Research group</p>
   <h1>The PANO Lab</h1>
   <p class="lead">Todos cuentan. Statistical methods for incomplete and distributed data.</p>
-  <p class="lead">PANO stands for Partially observed data, Analysis under Non-random Observation. The name also comes from the Nahuatl word <i>pan&#333;</i>, "to cross over": the methods cross from the observed to the unobserved, and the mentoring helps students cross into graduate school.</p>
+  <p class="lead">PANO stands for <b>P</b>artially observed data, <b>A</b>nalysis under <b>N</b>on-random <b>O</b>bservation.</p>
   <p class="lead">I welcome high school students, undergraduates, master's students, PhD students, postdocs, and collaborators who want to work on statistical methods for incomplete data and health applications. The <a href="/research/">Research</a> page lists current projects.</p>
   <p class="lead">The values below describe how the team works.</p>
 </section>
