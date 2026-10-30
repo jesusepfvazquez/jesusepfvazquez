@@ -524,7 +524,7 @@ def paper_li(p, abstracts=None, with_type=False):
 # ================================================================== page shell
 def shell(title, path, body, description):
     nav = [("Home", "/"), ("Research", "/research/"), ("Publications", "/publications/"),
-           ("Talks", "/talks/"), ("Mentoring", "/mentoring/"), ("Other Opportunities", "/opportunities/"), ("CV", "/cv/")]
+           ("Talks", "/talks/"), ("PANO Lab", "/mentoring/"), ("Other Opportunities", "/opportunities/"), ("CV", "/cv/")]
     cur = ' class="active" aria-current="page"'
     links = "".join(f'<a href="{u}"{cur if u == path else ""}>{t}</a>' for t, u in nav)
     today = datetime.date.today().strftime("%B %d, %Y").replace(" 0", " ")
@@ -645,8 +645,8 @@ def page_home(papers, abstracts):
     <h2>Get in touch</h2>
     <div class="callout">
       <h3>Open to new collaborations</h3>
-      <p>I enjoy working with students and collaborators on incomplete data, causal questions, and public health problems. Projects often grow into papers, and I like to write them together. Researchers from other fields are welcome too. Students can start on the Mentoring page; everyone else can send an email.</p>
-      <p class="cta"><a class="btn" href="/mentoring/">Work with me</a> <a class="btn ghost mail" data-u="{EMAIL_USER}" data-d="{EMAIL_DOMAIN}" href="#">Email me</a></p>
+      <p>I enjoy working with students and collaborators on incomplete data, causal questions, and public health problems. Projects often grow into papers, and I like to write them together. Researchers from other fields are welcome too. Students can start on the PANO Lab page; everyone else can send an email.</p>
+      <p class="cta"><a class="btn" href="/mentoring/">Explore the PANO Lab</a> <a class="btn ghost mail" data-u="{EMAIL_USER}" data-d="{EMAIL_DOMAIN}" href="#">Email me</a></p>
     </div>
   </div>
 </section>
@@ -854,8 +854,10 @@ def page_work():
                   'with your CV/resume and a short note about your interests.</p>')
     body = f"""
 <section class="wrap page-head">
-  <p class="overline">Students and collaborators</p>
-  <h1>Work with me</h1>
+  <p class="overline">Research group</p>
+  <h1>The PANO Lab</h1>
+  <p class="lead">Todos cuentan. Statistical methods for incomplete and distributed data.</p>
+  <p class="lead">PANO stands for Partially observed data, Analysis under Non-random Observation. The name also comes from the Nahuatl word <i>pan&#333;</i>, "to cross over": the methods cross from the observed to the unobserved, and the mentoring helps students cross into graduate school.</p>
   <p class="lead">I welcome high school students, undergraduates, master's students, PhD students, postdocs, and collaborators who want to work on statistical methods for incomplete data and health applications. The <a href="/research/">Research</a> page lists current projects.</p>
   <p class="lead">The values below describe how the team works.</p>
 </section>
@@ -874,8 +876,8 @@ def page_work():
   </div>
 </section>
 """
-    write("mentoring/index.html", shell("Mentoring", "/mentoring/", body,
-          "Work with Jesus E. Vazquez: mentoring values and an interest form for students and collaborators."))
+    write("mentoring/index.html", shell("PANO Lab, Biostatistics at Johns Hopkins", "/mentoring/", body,
+          "The PANO Lab (Partially observed data, Analysis under Non-random Observation): statistical methods for incomplete and distributed data. Values, students, and how to get involved."))
 
 
 # ---- Resources for undergraduates (check every fall: dates, deadlines, SIBS status)
