@@ -856,8 +856,7 @@ def page_work():
 <section class="wrap page-head">
   <p class="overline">Research group</p>
   <h1>The PANO Lab</h1>
-  <p class="lead">Todos cuentan. Statistical methods for incomplete and distributed data.</p>
-  <p class="lead">PANO stands for <b>P</b>artially observed data, <b>A</b>nalysis under <b>N</b>on-random <b>O</b>bservation.</p>
+  <p class="lead">The PANO Lab (<b>P</b>artially observed data, <b>A</b>nalysis under <b>N</b>on-random <b>O</b>bservation) develops statistical methods for incomplete and distributed data.</p>
   <p class="lead">I welcome high school students, undergraduates, master's students, PhD students, postdocs, and collaborators who want to work on statistical methods for incomplete data and health applications. The <a href="/research/">Research</a> page lists current projects.</p>
   <p class="lead">The values below describe how the team works.</p>
 </section>
