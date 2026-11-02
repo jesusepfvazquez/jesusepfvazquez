@@ -851,7 +851,7 @@ def page_work():
     else:
         action = ('<p>Please email me at '
                   '<a class="mail" data-u="jvazqu18" data-d="jh.edu" href="#">jvazqu18 [at] jh.edu</a> '
-                  'with your CV/resume and a short note about your interests.</p>')
+                  'with your CV/resume, a short note on your background, and the project or paper from the Research page that interests you most.</p>')
     body = f"""
 <section class="wrap page-head">
   <p class="overline">Research group</p>
@@ -870,7 +870,7 @@ def page_work():
 <section class="wrap section">
   <div class="callout">
     <h3>Interested in working together?</h3>
-    <p>I do not currently have funding for student positions, so projects are unpaid and built around learning and, when contributions warrant, co-authorship. Please tell me about your background, your interests, and what you hope to learn.</p>
+    <p>I do not currently have funding for student positions, so projects are unpaid and built around learning and, when contributions warrant, co-authorship. Please read the <a href="/research/">Research</a> page first, then tell me which project or paper interests you and why. Messages that name a specific project are the ones I can answer best.</p>
     {action}
   </div>
 </section>
