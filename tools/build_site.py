@@ -560,6 +560,7 @@ def shell(title, path, body, description):
   </div>
 </div></footer>
 <script src="/assets/site.js?v={BUILD_ID}"></script>
+<script data-goatcounter="https://jesusepfvazquez.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>
 """
@@ -952,7 +953,8 @@ UG_TIPS = [
 
 def page_undergrads():
     def res_li(name, url, text):
-        return (f'<li><a class="res-name" href="{html.escape(url)}" target="_blank" rel="noopener">{html.escape(name)}</a>'
+        gc = ' data-goatcounter-click="download-application-tracker" data-goatcounter-title="Downloaded application tracker"' if url.endswith(".xlsx") else ""
+        return (f'<li><a class="res-name" href="{html.escape(url)}" target="_blank" rel="noopener"{gc}>{html.escape(name)}</a>'
                 f'<span class="res-text">{html.escape(text)}</span></li>')
     blocks = []
     for i, (title, intro, items) in enumerate(UG_SECTIONS, 1):
@@ -1154,7 +1156,7 @@ def page_opportunities():
         search_text = " ".join(str(o.get(k, "")) for k in ("title", "org", "location", "summary", "eligibility")) + " " + " ".join(o.get("tags", []))
         cards.append(f"""<article class="opp" data-group="{opp_group(o)}" data-states="{' '.join(opp_states(o.get('location')))}" data-cit="{e('citizenship')}" data-type="{e('type')}" data-status="{e('status')}" data-deadline="{e('deadline')}" data-verified="{e('verified')}" data-org="{e('org')}" data-text="{html.escape(search_text.lower())}">
   <div class="opp-top"><span class="chip">{e('type')}</span><span class="opp-cit {e('citizenship')}" title="{e('citizenship_note')}"><span aria-hidden="true">{CIT.get(o.get('citizenship','notstated'),CIT['notstated'])[0]}</span> {CIT.get(o.get('citizenship','notstated'),CIT['notstated'])[1]}</span><span class="opp-status {e('status')}">{OPP_STATUS.get(o.get('status'), '')}</span>{dl}</div>
-  <h3><a href="{e('url')}" target="_blank" rel="noopener">{e('title')}</a></h3>
+  <h3><a href="{e('url')}" target="_blank" rel="noopener" data-goatcounter-click="program-{e('id')}" data-goatcounter-title="Opened program: {e('title')}">{e('title')}</a></h3>
   <div class="opp-org">{e('org')} &middot; {e('location')}</div>
   <p class="opp-sum">{e('summary')}</p>
   <details><summary>Details</summary><dl>{rows}</dl></details>
@@ -1196,7 +1198,7 @@ def page_opportunities():
   <p class="empty" id="none" hidden>No listings match.</p>
   <p class="note">Most summer programs open between November and January and close between January and March. Programs marked "Funding uncertain" ran in 2026, but their 2027 funding has not been announced. </p>
   <p class="note">More places to look: the <a href="https://www.amstat.org/education/statistics-students/internships-and-fellowships" target="_blank" rel="noopener">American Statistical Association's internships and fellowships page</a>, the <a href="https://www.nsf.gov/funding/initiatives/reu/students" target="_blank" rel="noopener">NSF REU site list</a>, <a href="https://www.pathwaystoscience.org/" target="_blank" rel="noopener">Pathways to Science</a>, and <a href="https://www.cientificolatino.com/" target="_blank" rel="noopener">Científico Latino's summer research and fellowship databases</a>.</p>
-  <div class="callout opp-suggest"><h3>Know a program that belongs here?</h3><p>Suggest it through a short form on GitHub. Each week new suggestions are added to the website.</p><p><a class="btn" href="{SUGGEST_URL}" target="_blank" rel="noopener">Suggest a program</a></p><p class="note">No GitHub account? Email me the program's link at <a class="mail" data-u="{EMAIL_USER}" data-d="{EMAIL_DOMAIN}" href="#">{EMAIL_USER} [at] {EMAIL_DOMAIN}</a>.</p></div>
+  <div class="callout opp-suggest"><h3>Know a program that belongs here?</h3><p>Suggest it through a short form on GitHub. Each week new suggestions are added to the website.</p><p><a class="btn" href="{SUGGEST_URL}" target="_blank" rel="noopener" data-goatcounter-click="suggest-program-form" data-goatcounter-title="Opened suggestion form">Suggest a program</a></p><p class="note">No GitHub account? Email me the program's link at <a class="mail" data-u="{EMAIL_USER}" data-d="{EMAIL_DOMAIN}" href="#">{EMAIL_USER} [at] {EMAIL_DOMAIN}</a>.</p></div>
 </section>
 <script>
 (function(){{
