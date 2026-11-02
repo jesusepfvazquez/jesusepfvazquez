@@ -1,0 +1,4 @@
+.book .book-body .page-wrapper .page-inner section.normal { font-size: 1.05em; }
+.book .book-body .page-wrapper .page-inner section.normal table { font-size: 0.9em; }
+img { max-width: 100%; }
+.callout { border-left: 4px solid #1f4e79; background: #f3f6fa; padding: 0.6em 1em; margin: 1em 0; }

@@ -1,0 +1,16 @@
+# The idea {#idea}
+
+A hand-made simulation lets students generate data from a process they can watch. The jar activity teaches the binomial distribution through capture-recapture: mark some objects, mix, sample again, and use the share of marked objects in the sample to estimate the total.
+
+Students first see the estimator work with pebbles. Next, students see the same formula applied to people, using two clinic lists for Huntington disease (HD). Finally, students see the formula fail when the binomial conditions fail. The physical jar shows a failure the computer does not: cubes and pebbles do not land in the circle with the same probability.
+
+## Learning goals
+
+1. Recognize when a count follows a binomial distribution.
+2. Compute binomial probabilities, the cumulative distribution function, and the mean $np$.
+3. Set the expected count $np$ equal to the observed count $k$ and solve for the population size $N$.
+4. Predict the direction of the error when an assumption fails.
+
+## The structure of every chapter
+
+Each activity in the book follows the same five steps: a physical activity, the model the activity should follow, the real data, the computer version, and the gap between the real data and the computer. The gap is where students learn what an assumption does.

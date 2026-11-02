@@ -1,0 +1,34 @@
+# Notes for instructors {#teaching}
+
+## Timing for a 30-minute class
+
+| Minutes | Content |
+|---|---|
+| 0 to 11 | The binomial on the clinic example (Chapter \@ref(binomial)) |
+| 11 to 20 | The jar: activity, binomial mapping, estimator, simulation |
+| 20 to 30 | HD, two clinic lists, when the estimate goes wrong, summary |
+
+If the class runs behind, skip the home-versus-computer comparison and say the ethics points in one sentence.
+
+## What happened in the classroom
+
+The activity was taught at the University of Maryland on October 28, 2026. The audience responded most to the jar; engagement dipped during the opening binomial basics. Questions at the end asked about the sampling probability across clinics, alternative approaches, and what it means to "assume $N$".
+
+<div class="callout">
+**Lesson.** Open with the jar and teach the binomial on the jar, rather than teaching the formula first and the jar second.
+</div>
+
+## Backup plan
+
+If the live second toss goes badly, for example with no cube in the circle, say so and use the median of the home runs. The point is the method, not one draw.
+
+## Likely questions
+
+1. *Why binomial and not hypergeometric?* The jar is drawn without replacement, so the hypergeometric is exact. With $N$ large relative to $n$, the binomial is close.
+2. *Is it a problem that the first list was not random?* Yes; capture-recapture needs either independent lists or equal capture probabilities. The scenario table gives the direction of the error for each failure.
+3. *How would you get a confidence interval?* The Chapman variance formula, a profile likelihood, or a bootstrap over the two-by-two table.
+4. *How does the activity connect to missing data?* Capture-recapture is a missing-data problem: the cell for people on neither list is missing.
+
+## Ideas for future chapters
+
+Each chapter keeps the same five-step structure. Candidates: sampling distributions (drawing from a bag), regression to the mean, confidence-interval coverage, permutation tests (shuffling cards), and missing data (hiding some cards by a rule).

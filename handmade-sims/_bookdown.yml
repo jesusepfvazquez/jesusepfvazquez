@@ -1,0 +1,6 @@
+book_filename: "handmade-simulations"
+delete_merged_file: true
+language:
+  ui:
+    chapter_name: "Chapter "
+rmd_files: ["index.Rmd", "01-idea.Rmd", "02-binomial.Rmd", "03-jar.Rmd", "04-simulating.Rmd", "05-home.Rmd", "06-clinics.Rmd", "07-teaching.Rmd", "08-appendix.Rmd"]

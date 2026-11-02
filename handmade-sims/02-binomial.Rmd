@@ -1,0 +1,40 @@
+# The binomial distribution {#binomial}
+
+Let $X$ be the number of successes in $n$ tries. $X$ follows a binomial distribution when four conditions hold:
+
+1. The number of tries $n$ is fixed before the experiment starts.
+2. Each try has two outcomes, called success and failure.
+3. The chance of success $p$ is the same on every try.
+4. The tries are independent: one try carries no information about the next.
+
+**Running example.** A clinic tests 4 patients for flu. Each patient tests positive with probability 0.25, independently of the other patients. $X$ is the number of positive tests.
+
+## The formula
+
+The probability of exactly $k$ successes is
+$$
+P(X = k) = \binom{n}{k} p^k (1 - p)^{n - k}, \qquad \binom{n}{k} = \frac{n!}{k!\,(n - k)!}.
+$$
+The term $\binom{n}{k}$ counts the ways to choose which $k$ tries are successes; the remaining term is the probability of one such arrangement. The mean is $E(X) = np$ and the variance is $\text{Var}(X) = np(1 - p)$. One try has mean $p$ and variance $p(1 - p)$, and the binomial adds $n$ independent tries.
+
+For the clinic, $E(X) = 4 \times 0.25 = 1$ and $\text{Var}(X) = 0.75$. Exactly one positive test can happen in $\binom{4}{1} = 4$ ways, so $P(X = 1) = 4 \times 0.25 \times 0.75^3 \approx 0.42$.
+
+## Adding up: the cumulative distribution
+
+The cumulative distribution function adds the probabilities from 0 to $x$: $P(X \le 1) = 0.316 + 0.422 = 0.738$. For a count, "less than 2" and "at most 1" are the same event, and $P(X \ge 2) = 1 - P(X \le 1) = 0.262$.
+
+```{r binom-basics, eval = FALSE}
+n <- 4
+p <- 0.25
+dbinom(0:n, size = n, prob = p)   # P(X = k) for k = 0, ..., 4
+choose(4, 1)                      # ways to get exactly one positive
+pbinom(1, size = n, prob = p)     # P(X <= 1)
+1 - pbinom(1, size = n, prob = p) # P(X >= 2)
+c(mean = n * p, variance = n * p * (1 - p))
+```
+
+**Check your understanding.** The clinic now tests 5 patients, and each tests positive with probability 0.2. The mean is 1, the variance is 0.8, $P(X = 0) = 0.8^5 \approx 0.33$, and $P(X \le 1) \approx 0.74$.
+
+## Flipping the question
+
+So far, $n$ and $p$ were known and the question was about $X$. Public health often runs the other way: a count is observed, and the question is how large the whole population is. The rest of the chapter asks whether the binomial can count a population that nobody can count directly.

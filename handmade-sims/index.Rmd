@@ -1,0 +1,18 @@
+---
+title: "Hand-Made Simulations"
+subtitle: "Teaching statistical concepts with jars, tables, and a computer"
+author: "Jesus E. Vazquez"
+date: "Draft, November 2026"
+site: bookdown::bookdown_site
+documentclass: book
+---
+
+# Preface {-}
+
+Students often learn a probability model as a formula first and as an idea second. The book reverses the order. Each chapter starts with a physical activity that students can see and touch, records real data from the activity, and then compares the real data with what a probability model predicts. A computer simulation of the same activity shows what the model would produce if every assumption held.
+
+The comparison is the lesson. When the real data and the simulation agree, students see why the model works. When the two disagree, students see which assumption failed and in which direction the estimate moves.
+
+The first chapter uses a jar of pebbles to teach the binomial distribution and capture-recapture estimation. The activity was first taught at the University of Maryland in October 2026. All the code runs in base R, and the data from 28 home runs of the activity are included so that readers can reproduce every number.
+
+**How to read the book.** Chapters \@ref(idea) to \@ref(clinics) follow the order of a class: the idea, the model, the activity, the simulation, the real data, and the application to public health. Chapter \@ref(teaching) collects notes for instructors. The appendix contains the data from the 28 home runs.
