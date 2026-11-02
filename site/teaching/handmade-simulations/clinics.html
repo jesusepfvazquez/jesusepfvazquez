@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 6 From pebbles to people | Hand-Made Simulations</title>
+  <meta name="description" content="Chapter 6 From pebbles to people | Hand-Made Simulations" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 6 From pebbles to people | Hand-Made Simulations" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 6 From pebbles to people | Hand-Made Simulations" />
+  
+  
+  
+
+<meta name="author" content="Jesus E. Vazquez" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="home.html"/>
+<link rel="next" href="teaching.html"/>
+<script src="libs/jquery-3.6.1/jquery-3.6.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Hand-Made Simulations</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="idea.html"><a href="idea.html"><i class="fa fa-check"></i><b>1</b> The idea</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="idea.html"><a href="idea.html#learning-goals"><i class="fa fa-check"></i><b>1.1</b> Learning goals</a></li>
+<li class="chapter" data-level="1.2" data-path="idea.html"><a href="idea.html#the-structure-of-every-chapter"><i class="fa fa-check"></i><b>1.2</b> The structure of every chapter</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="binomial.html"><a href="binomial.html"><i class="fa fa-check"></i><b>2</b> The binomial distribution</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="binomial.html"><a href="binomial.html#the-formula"><i class="fa fa-check"></i><b>2.1</b> The formula</a></li>
+<li class="chapter" data-level="2.2" data-path="binomial.html"><a href="binomial.html#adding-up-the-cumulative-distribution"><i class="fa fa-check"></i><b>2.2</b> Adding up: the cumulative distribution</a></li>
+<li class="chapter" data-level="2.3" data-path="binomial.html"><a href="binomial.html#flipping-the-question"><i class="fa fa-check"></i><b>2.3</b> Flipping the question</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="jar.html"><a href="jar.html"><i class="fa fa-check"></i><b>3</b> The jar activity</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="jar.html"><a href="jar.html#materials"><i class="fa fa-check"></i><b>3.1</b> Materials</a></li>
+<li class="chapter" data-level="3.2" data-path="jar.html"><a href="jar.html#protocol"><i class="fa fa-check"></i><b>3.2</b> Protocol</a></li>
+<li class="chapter" data-level="3.3" data-path="jar.html"><a href="jar.html#the-jar-is-a-binomial-experiment"><i class="fa fa-check"></i><b>3.3</b> The jar is a binomial experiment</a></li>
+<li class="chapter" data-level="3.4" data-path="jar.html"><a href="jar.html#estimator"><i class="fa fa-check"></i><b>3.4</b> The estimator</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="simulating.html"><a href="simulating.html"><i class="fa fa-check"></i><b>4</b> Simulating the jar</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="simulating.html"><a href="simulating.html#what-does-a-bigger-second-toss-buy"><i class="fa fa-check"></i><b>4.1</b> What does a bigger second toss buy?</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="home.html"><a href="home.html"><i class="fa fa-check"></i><b>5</b> My jar at home</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="home.html"><a href="home.html#what-the-real-jar-showed"><i class="fa fa-check"></i><b>5.1</b> What the real jar showed</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="clinics.html"><a href="clinics.html"><i class="fa fa-check"></i><b>6</b> From pebbles to people</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="clinics.html"><a href="clinics.html#two-clinics-two-lists"><i class="fa fa-check"></i><b>6.1</b> Two clinics, two lists</a></li>
+<li class="chapter" data-level="6.2" data-path="clinics.html"><a href="clinics.html#when-the-estimate-goes-wrong"><i class="fa fa-check"></i><b>6.2</b> When the estimate goes wrong</a></li>
+<li class="chapter" data-level="6.3" data-path="clinics.html"><a href="clinics.html#who-is-hard-to-reach-hd-in-mexico"><i class="fa fa-check"></i><b>6.3</b> Who is hard to reach? HD in Mexico</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="teaching.html"><a href="teaching.html"><i class="fa fa-check"></i><b>7</b> Notes for instructors</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="teaching.html"><a href="teaching.html#timing-for-a-30-minute-class"><i class="fa fa-check"></i><b>7.1</b> Timing for a 30-minute class</a></li>
+<li class="chapter" data-level="7.2" data-path="teaching.html"><a href="teaching.html#what-happened-in-the-classroom"><i class="fa fa-check"></i><b>7.2</b> What happened in the classroom</a></li>
+<li class="chapter" data-level="7.3" data-path="teaching.html"><a href="teaching.html#backup-plan"><i class="fa fa-check"></i><b>7.3</b> Backup plan</a></li>
+<li class="chapter" data-level="7.4" data-path="teaching.html"><a href="teaching.html#likely-questions"><i class="fa fa-check"></i><b>7.4</b> Likely questions</a></li>
+<li class="chapter" data-level="7.5" data-path="teaching.html"><a href="teaching.html#ideas-for-future-chapters"><i class="fa fa-check"></i><b>7.5</b> Ideas for future chapters</a></li>
+</ul></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="data.html"><a href="data.html"><i class="fa fa-check"></i><b>A</b> Home data</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Hand-Made Simulations</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="clinics" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">Chapter 6</span> From pebbles to people<a href="clinics.html#clinics" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>HD is a rare inherited brain disorder; a child of a parent with HD has a 50% chance of inheriting the gene. The largest known HD family lives along Lake Maracaibo in Venezuela, and blood samples from those families helped locate the HD gene in 1983 and identify the gene in 1993. Across Latin America, many people with HD are never diagnosed or never see a specialist, and many countries have no complete registry. A health ministry needs the count to plan neurologists, genetic counselors, and long-term care.</p>
+<div id="two-clinics-two-lists" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Two clinics, two lists<a href="clinics.html#two-clinics-two-lists" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Consider two clinics in one region (illustrative numbers). Clinic A has diagnosed 60 people with HD, clinic B has diagnosed 45, and 15 people appear on both lists. The two lists play the roles of the jar:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Jar</th>
+<th>Clinics</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Cubes swapped in, <span class="math inline">\(M\)</span></td>
+<td>Clinic A’s list, 60</td>
+</tr>
+<tr class="even">
+<td>Objects in the circle, <span class="math inline">\(n\)</span></td>
+<td>Clinic B’s list, 45</td>
+</tr>
+<tr class="odd">
+<td>Cubes in the circle, <span class="math inline">\(k\)</span></td>
+<td>People on both lists, 15</td>
+</tr>
+</tbody>
+</table>
+<p>The same formula gives <span class="math inline">\(\hat N = 60 \times 45 / 15 = 180\)</span>. The Chapman estimator gives about 174.</p>
+</div>
+<div id="when-the-estimate-goes-wrong" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> When the estimate goes wrong<a href="clinics.html#when-the-estimate-goes-wrong" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The estimate is only as good as the binomial conditions. The simulation below creates a region with exactly 180 people with HD, 1,000 times, under four scenarios.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="clinics.html#cb5-1" tabindex="-1"></a>sim_clinics <span class="ot">&lt;-</span> <span class="cf">function</span>(scenario, <span class="at">N =</span> <span class="dv">180</span>, <span class="at">R =</span> <span class="dv">1000</span>) {</span>
+<span id="cb5-2"><a href="clinics.html#cb5-2" tabindex="-1"></a>  est <span class="ot">&lt;-</span> <span class="fu">numeric</span>(R)</span>
+<span id="cb5-3"><a href="clinics.html#cb5-3" tabindex="-1"></a>  <span class="cf">for</span> (r <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>R) {</span>
+<span id="cb5-4"><a href="clinics.html#cb5-4" tabindex="-1"></a>    <span class="cf">if</span> (scenario <span class="sc">==</span> <span class="st">&quot;Independent lists&quot;</span>) {</span>
+<span id="cb5-5"><a href="clinics.html#cb5-5" tabindex="-1"></a>      a <span class="ot">&lt;-</span> <span class="fu">runif</span>(N) <span class="sc">&lt;</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">3</span></span>
+<span id="cb5-6"><a href="clinics.html#cb5-6" tabindex="-1"></a>      b <span class="ot">&lt;-</span> <span class="fu">runif</span>(N) <span class="sc">&lt;</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">4</span></span>
+<span id="cb5-7"><a href="clinics.html#cb5-7" tabindex="-1"></a>    } <span class="cf">else</span> <span class="cf">if</span> (scenario <span class="sc">==</span> <span class="st">&quot;Referral&quot;</span>) {</span>
+<span id="cb5-8"><a href="clinics.html#cb5-8" tabindex="-1"></a>      a <span class="ot">&lt;-</span> <span class="fu">runif</span>(N) <span class="sc">&lt;</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">3</span></span>
+<span id="cb5-9"><a href="clinics.html#cb5-9" tabindex="-1"></a>      b <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(a, <span class="fu">runif</span>(N) <span class="sc">&lt;</span> <span class="fl">0.5</span>, <span class="fu">runif</span>(N) <span class="sc">&lt;</span> <span class="fl">0.167</span>)</span>
+<span id="cb5-10"><a href="clinics.html#cb5-10" tabindex="-1"></a>    } <span class="cf">else</span> <span class="cf">if</span> (scenario <span class="sc">==</span> <span class="st">&quot;Hard-to-reach group&quot;</span>) {</span>
+<span id="cb5-11"><a href="clinics.html#cb5-11" tabindex="-1"></a>      hard <span class="ot">&lt;-</span> <span class="fu">seq_len</span>(N) <span class="sc">&lt;=</span> <span class="dv">60</span></span>
+<span id="cb5-12"><a href="clinics.html#cb5-12" tabindex="-1"></a>      a <span class="ot">&lt;-</span> <span class="fu">runif</span>(N) <span class="sc">&lt;</span> <span class="fu">ifelse</span>(hard, <span class="fl">0.10</span>, <span class="fl">0.43</span>)</span>
+<span id="cb5-13"><a href="clinics.html#cb5-13" tabindex="-1"></a>      b <span class="ot">&lt;-</span> <span class="fu">runif</span>(N) <span class="sc">&lt;</span> <span class="fu">ifelse</span>(hard, <span class="fl">0.10</span>, <span class="fl">0.33</span>)</span>
+<span id="cb5-14"><a href="clinics.html#cb5-14" tabindex="-1"></a>    } <span class="cf">else</span> <span class="cf">if</span> (scenario <span class="sc">==</span> <span class="st">&quot;Separate catchments&quot;</span>) {</span>
+<span id="cb5-15"><a href="clinics.html#cb5-15" tabindex="-1"></a>      near_b <span class="ot">&lt;-</span> <span class="fu">seq_len</span>(N) <span class="sc">&lt;=</span> N <span class="sc">/</span> <span class="dv">2</span></span>
+<span id="cb5-16"><a href="clinics.html#cb5-16" tabindex="-1"></a>      a <span class="ot">&lt;-</span> <span class="fu">runif</span>(N) <span class="sc">&lt;</span> <span class="fu">ifelse</span>(near_b, <span class="fl">0.10</span>, <span class="fl">0.55</span>)</span>
+<span id="cb5-17"><a href="clinics.html#cb5-17" tabindex="-1"></a>      b <span class="ot">&lt;-</span> <span class="fu">runif</span>(N) <span class="sc">&lt;</span> <span class="fu">ifelse</span>(near_b, <span class="fl">0.50</span>, <span class="fl">0.10</span>)</span>
+<span id="cb5-18"><a href="clinics.html#cb5-18" tabindex="-1"></a>    }</span>
+<span id="cb5-19"><a href="clinics.html#cb5-19" tabindex="-1"></a>    k <span class="ot">&lt;-</span> <span class="fu">sum</span>(a <span class="sc">&amp;</span> b)</span>
+<span id="cb5-20"><a href="clinics.html#cb5-20" tabindex="-1"></a>    est[r] <span class="ot">&lt;-</span> <span class="cf">if</span> (k <span class="sc">&gt;</span> <span class="dv">0</span>) <span class="fu">sum</span>(a) <span class="sc">*</span> <span class="fu">sum</span>(b) <span class="sc">/</span> k <span class="cf">else</span> <span class="cn">NA</span></span>
+<span id="cb5-21"><a href="clinics.html#cb5-21" tabindex="-1"></a>  }</span>
+<span id="cb5-22"><a href="clinics.html#cb5-22" tabindex="-1"></a>  est</span>
+<span id="cb5-23"><a href="clinics.html#cb5-23" tabindex="-1"></a>}</span>
+<span id="cb5-24"><a href="clinics.html#cb5-24" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2026</span>)</span>
+<span id="cb5-25"><a href="clinics.html#cb5-25" tabindex="-1"></a>scenarios <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Independent lists&quot;</span>, <span class="st">&quot;Referral&quot;</span>, <span class="st">&quot;Hard-to-reach group&quot;</span>, <span class="st">&quot;Separate catchments&quot;</span>)</span>
+<span id="cb5-26"><a href="clinics.html#cb5-26" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">lapply</span>(scenarios, sim_clinics); <span class="fu">names</span>(res) <span class="ot">&lt;-</span> scenarios</span>
+<span id="cb5-27"><a href="clinics.html#cb5-27" tabindex="-1"></a><span class="fu">sapply</span>(res, median, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<table>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Scenario</th>
+<th>Setup</th>
+<th>Median <span class="math inline">\(\hat N\)</span></th>
+<th>Direction</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Independent lists</td>
+<td><span class="math inline">\(P(A) = 1/3\)</span>, <span class="math inline">\(P(B) = 1/4\)</span></td>
+<td>181</td>
+<td>Centered on the truth</td>
+</tr>
+<tr class="even">
+<td>Referral</td>
+<td><span class="math inline">\(P(A) = 1/3\)</span>; <span class="math inline">\(P(B \mid A) = 0.5\)</span>, <span class="math inline">\(P(B \mid \text{not } A) = 0.167\)</span></td>
+<td>100</td>
+<td>Too small every time</td>
+</tr>
+<tr class="odd">
+<td>Hard-to-reach group</td>
+<td>60 people with a 10% chance at each clinic; 120 with 43% (A) and 33% (B)</td>
+<td>150</td>
+<td>Too small in 86% of runs</td>
+</tr>
+<tr class="even">
+<td>Separate catchments</td>
+<td>90 near B (<span class="math inline">\(P(A) = 0.10\)</span>, <span class="math inline">\(P(B) = 0.50\)</span>); 90 near A (<span class="math inline">\(P(A) = 0.55\)</span>, <span class="math inline">\(P(B) = 0.10\)</span>)</td>
+<td>340</td>
+<td>Too large every time</td>
+</tr>
+</tbody>
+</table>
+<div class="figure"><span style="display:block;" id="fig:clinic-figs"></span>
+<img src="images/sim_referral.png" alt="Referral, hard-to-reach group, and separate catchments (blue) against independent lists (gray). The dashed line marks the true 180." width="32%" /><img src="images/sim_hard.png" alt="Referral, hard-to-reach group, and separate catchments (blue) against independent lists (gray). The dashed line marks the true 180." width="32%" /><img src="images/sim_catch.png" alt="Referral, hard-to-reach group, and separate catchments (blue) against independent lists (gray). The dashed line marks the true 180." width="32%" />
+<p class="caption">
+Figure 6.1: Referral, hard-to-reach group, and separate catchments (blue) against independent lists (gray). The dashed line marks the true 180.
+</p>
+</div>
+<p>Referral and a hard-to-reach group make the lists overlap too much, so <span class="math inline">\(k\)</span> is too large and <span class="math inline">\(\hat N\)</span> falls short. A hard-to-reach group is the pebble that never lands in the circle. Separate catchments make the lists overlap too little, so <span class="math inline">\(\hat N\)</span> overshoots. Ask students to predict the direction of each error before showing the histogram.</p>
+</div>
+<div id="who-is-hard-to-reach-hd-in-mexico" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> Who is hard to reach? HD in Mexico<a href="clinics.html#who-is-hard-to-reach-hd-in-mexico" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A toy example shows how to read a flow figure. The table lists 200 invented people in five regions. Each row is a region of origin, each column is a region of residence, and the diagonal counts people who still live where they started.</p>
+<table style="width:100%;">
+<colgroup>
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Origin / Residence</th>
+<th>Sur</th>
+<th>Occidente/Bajío</th>
+<th>Noreste</th>
+<th>Centro</th>
+<th>CDMX</th>
+<th>Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Sur</td>
+<td>25</td>
+<td>0</td>
+<td>0</td>
+<td>5</td>
+<td>20</td>
+<td>50</td>
+</tr>
+<tr class="even">
+<td>Occidente/Bajío</td>
+<td>0</td>
+<td>20</td>
+<td>0</td>
+<td>5</td>
+<td>15</td>
+<td>40</td>
+</tr>
+<tr class="odd">
+<td>Noreste</td>
+<td>0</td>
+<td>0</td>
+<td>12</td>
+<td>3</td>
+<td>10</td>
+<td>25</td>
+</tr>
+<tr class="even">
+<td>Centro</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+<td>18</td>
+<td>15</td>
+<td>35</td>
+</tr>
+<tr class="odd">
+<td>CDMX</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>5</td>
+<td>45</td>
+<td>50</td>
+</tr>
+<tr class="even">
+<td>Total</td>
+<td>25</td>
+<td>22</td>
+<td>12</td>
+<td>36</td>
+<td>105</td>
+<td>200</td>
+</tr>
+</tbody>
+</table>
+<p>The code below draws the table as a flow figure in base R. Each bar is a region: the left bars are sized by origin and the right bars by residence. Each band joins one origin to one residence, and the width of the band is the number of people.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="clinics.html#cb6-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="fl">0.5</span>, <span class="fl">0.5</span>, <span class="fl">0.5</span>))</span>
+<span id="cb6-2"><a href="clinics.html#cb6-2" tabindex="-1"></a>regions <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Sur&quot;</span>, <span class="st">&quot;Occidente/Bajío&quot;</span>, <span class="st">&quot;Noreste&quot;</span>, <span class="st">&quot;Centro&quot;</span>, <span class="st">&quot;CDMX&quot;</span>)</span>
+<span id="cb6-3"><a href="clinics.html#cb6-3" tabindex="-1"></a>flow <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">25</span>,  <span class="dv">0</span>,  <span class="dv">0</span>,  <span class="dv">5</span>, <span class="dv">20</span>,</span>
+<span id="cb6-4"><a href="clinics.html#cb6-4" tabindex="-1"></a>                  <span class="dv">0</span>, <span class="dv">20</span>,  <span class="dv">0</span>,  <span class="dv">5</span>, <span class="dv">15</span>,</span>
+<span id="cb6-5"><a href="clinics.html#cb6-5" tabindex="-1"></a>                  <span class="dv">0</span>,  <span class="dv">0</span>, <span class="dv">12</span>,  <span class="dv">3</span>, <span class="dv">10</span>,</span>
+<span id="cb6-6"><a href="clinics.html#cb6-6" tabindex="-1"></a>                  <span class="dv">0</span>,  <span class="dv">2</span>,  <span class="dv">0</span>, <span class="dv">18</span>, <span class="dv">15</span>,</span>
+<span id="cb6-7"><a href="clinics.html#cb6-7" tabindex="-1"></a>                  <span class="dv">0</span>,  <span class="dv">0</span>,  <span class="dv">0</span>,  <span class="dv">5</span>, <span class="dv">45</span>),</span>
+<span id="cb6-8"><a href="clinics.html#cb6-8" tabindex="-1"></a>               <span class="at">nrow =</span> <span class="dv">5</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb6-9"><a href="clinics.html#cb6-9" tabindex="-1"></a>               <span class="at">dimnames =</span> <span class="fu">list</span>(<span class="at">origin =</span> regions, <span class="at">residence =</span> regions))</span>
+<span id="cb6-10"><a href="clinics.html#cb6-10" tabindex="-1"></a>cols <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;#4C78A8&quot;</span>, <span class="st">&quot;#F2A541&quot;</span>, <span class="st">&quot;#54A24B&quot;</span>, <span class="st">&quot;#B279A2&quot;</span>, <span class="st">&quot;#E45756&quot;</span>)</span>
+<span id="cb6-11"><a href="clinics.html#cb6-11" tabindex="-1"></a></span>
+<span id="cb6-12"><a href="clinics.html#cb6-12" tabindex="-1"></a>gap <span class="ot">&lt;-</span> <span class="dv">8</span></span>
+<span id="cb6-13"><a href="clinics.html#cb6-13" tabindex="-1"></a>bar_pos <span class="ot">&lt;-</span> <span class="cf">function</span>(tot) {</span>
+<span id="cb6-14"><a href="clinics.html#cb6-14" tabindex="-1"></a>  top <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fu">head</span>(<span class="fu">cumsum</span>(tot <span class="sc">+</span> gap), <span class="sc">-</span><span class="dv">1</span>))</span>
+<span id="cb6-15"><a href="clinics.html#cb6-15" tabindex="-1"></a>  <span class="fu">cbind</span>(<span class="at">top =</span> top, <span class="at">bottom =</span> top <span class="sc">+</span> tot)</span>
+<span id="cb6-16"><a href="clinics.html#cb6-16" tabindex="-1"></a>}</span>
+<span id="cb6-17"><a href="clinics.html#cb6-17" tabindex="-1"></a>L <span class="ot">&lt;-</span> <span class="fu">bar_pos</span>(<span class="fu">rowSums</span>(flow))</span>
+<span id="cb6-18"><a href="clinics.html#cb6-18" tabindex="-1"></a>R <span class="ot">&lt;-</span> <span class="fu">bar_pos</span>(<span class="fu">colSums</span>(flow))</span>
+<span id="cb6-19"><a href="clinics.html#cb6-19" tabindex="-1"></a>ymax <span class="ot">&lt;-</span> <span class="fu">max</span>(L[<span class="dv">5</span>, <span class="st">&quot;bottom&quot;</span>], R[<span class="dv">5</span>, <span class="st">&quot;bottom&quot;</span>])</span>
+<span id="cb6-20"><a href="clinics.html#cb6-20" tabindex="-1"></a></span>
+<span id="cb6-21"><a href="clinics.html#cb6-21" tabindex="-1"></a><span class="fu">plot</span>(<span class="cn">NA</span>, <span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.32</span>, <span class="fl">1.32</span>), <span class="at">ylim =</span> <span class="fu">c</span>(ymax, <span class="dv">0</span>), <span class="at">axes =</span> <span class="cn">FALSE</span>, <span class="at">xlab =</span> <span class="st">&quot;&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;&quot;</span>)</span>
+<span id="cb6-22"><a href="clinics.html#cb6-22" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fl">0.04</span>, <span class="fl">0.96</span>, <span class="at">length.out =</span> <span class="dv">60</span>)</span>
+<span id="cb6-23"><a href="clinics.html#cb6-23" tabindex="-1"></a>s <span class="ot">&lt;-</span> <span class="dv">3</span> <span class="sc">*</span> ((x <span class="sc">-</span> <span class="fl">0.04</span>) <span class="sc">/</span> <span class="fl">0.92</span>)<span class="sc">^</span><span class="dv">2</span> <span class="sc">-</span> <span class="dv">2</span> <span class="sc">*</span> ((x <span class="sc">-</span> <span class="fl">0.04</span>) <span class="sc">/</span> <span class="fl">0.92</span>)<span class="sc">^</span><span class="dv">3</span>   <span class="co"># smooth S-curve</span></span>
+<span id="cb6-24"><a href="clinics.html#cb6-24" tabindex="-1"></a>left_used <span class="ot">&lt;-</span> L[, <span class="st">&quot;top&quot;</span>]</span>
+<span id="cb6-25"><a href="clinics.html#cb6-25" tabindex="-1"></a>right_used <span class="ot">&lt;-</span> R[, <span class="st">&quot;top&quot;</span>]</span>
+<span id="cb6-26"><a href="clinics.html#cb6-26" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>) <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>) <span class="cf">if</span> (flow[i, j] <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb6-27"><a href="clinics.html#cb6-27" tabindex="-1"></a>  l0 <span class="ot">&lt;-</span> left_used[i];  left_used[i]  <span class="ot">&lt;-</span> l0 <span class="sc">+</span> flow[i, j]</span>
+<span id="cb6-28"><a href="clinics.html#cb6-28" tabindex="-1"></a>  r0 <span class="ot">&lt;-</span> right_used[j]; right_used[j] <span class="ot">&lt;-</span> r0 <span class="sc">+</span> flow[i, j]</span>
+<span id="cb6-29"><a href="clinics.html#cb6-29" tabindex="-1"></a>  top <span class="ot">&lt;-</span> l0 <span class="sc">+</span> (r0 <span class="sc">-</span> l0) <span class="sc">*</span> s</span>
+<span id="cb6-30"><a href="clinics.html#cb6-30" tabindex="-1"></a>  bot <span class="ot">&lt;-</span> (l0 <span class="sc">+</span> flow[i, j]) <span class="sc">+</span> (r0 <span class="sc">-</span> l0) <span class="sc">*</span> s</span>
+<span id="cb6-31"><a href="clinics.html#cb6-31" tabindex="-1"></a>  <span class="fu">polygon</span>(<span class="fu">c</span>(x, <span class="fu">rev</span>(x)), <span class="fu">c</span>(top, <span class="fu">rev</span>(bot)), <span class="at">col =</span> <span class="fu">adjustcolor</span>(cols[i], <span class="fl">0.55</span>), <span class="at">border =</span> <span class="cn">NA</span>)</span>
+<span id="cb6-32"><a href="clinics.html#cb6-32" tabindex="-1"></a>}</span>
+<span id="cb6-33"><a href="clinics.html#cb6-33" tabindex="-1"></a><span class="fu">rect</span>(<span class="dv">0</span>, L[, <span class="st">&quot;top&quot;</span>], <span class="fl">0.04</span>, L[, <span class="st">&quot;bottom&quot;</span>], <span class="at">col =</span> cols, <span class="at">border =</span> <span class="cn">NA</span>)</span>
+<span id="cb6-34"><a href="clinics.html#cb6-34" tabindex="-1"></a><span class="fu">rect</span>(<span class="fl">0.96</span>, R[, <span class="st">&quot;top&quot;</span>], <span class="dv">1</span>, R[, <span class="st">&quot;bottom&quot;</span>], <span class="at">col =</span> cols, <span class="at">border =</span> <span class="cn">NA</span>)</span>
+<span id="cb6-35"><a href="clinics.html#cb6-35" tabindex="-1"></a><span class="fu">text</span>(<span class="sc">-</span><span class="fl">0.01</span>, <span class="fu">rowMeans</span>(L), <span class="fu">paste0</span>(regions, <span class="st">&quot; (&quot;</span>, <span class="fu">rowSums</span>(flow), <span class="st">&quot;)&quot;</span>), <span class="at">adj =</span> <span class="dv">1</span>, <span class="at">cex =</span> <span class="fl">0.9</span>)</span>
+<span id="cb6-36"><a href="clinics.html#cb6-36" tabindex="-1"></a><span class="fu">text</span>(<span class="fl">1.01</span>, <span class="fu">rowMeans</span>(R), <span class="fu">paste0</span>(regions, <span class="st">&quot; (&quot;</span>, <span class="fu">colSums</span>(flow), <span class="st">&quot;)&quot;</span>), <span class="at">adj =</span> <span class="dv">0</span>, <span class="at">cex =</span> <span class="fl">0.9</span>)</span>
+<span id="cb6-37"><a href="clinics.html#cb6-37" tabindex="-1"></a><span class="fu">text</span>(<span class="dv">0</span>, <span class="sc">-</span><span class="dv">6</span>, <span class="st">&quot;ORIGIN&quot;</span>, <span class="at">adj =</span> <span class="dv">1</span>, <span class="at">font =</span> <span class="dv">2</span>)</span>
+<span id="cb6-38"><a href="clinics.html#cb6-38" tabindex="-1"></a><span class="fu">text</span>(<span class="dv">1</span>, <span class="sc">-</span><span class="dv">6</span>, <span class="st">&quot;RESIDENCE&quot;</span>, <span class="at">adj =</span> <span class="dv">0</span>, <span class="at">font =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:toy-migration"></span>
+<img src="images/migration-toy.png" alt="Toy example with invented counts: where 200 people were born (left) and where they live now (right). Band width is the number of people." width="80%" />
+<p class="caption">
+Figure 6.2: Toy example with invented counts: where 200 people were born (left) and where they live now (right). Band width is the number of people.
+</p>
+</div>
+<p>In the toy data, CDMX holds 50 of the 200 people by origin and 105 by residence, while Sur, Occidente/Bajío, and Noreste each lose about half of their people. The real cohort at Mexico’s national referral center has the same shape with more regions.</p>
+<div class="figure"><span style="display:block;" id="fig:migration"></span>
+<img src="images/migration-chord.png" alt="Where people with HD in a 30-year cohort at Mexico's national referral center come from (left) and where they live now (right)." width="80%" />
+<p class="caption">
+Figure 6.3: Where people with HD in a 30-year cohort at Mexico’s national referral center come from (left) and where they live now (right).
+</p>
+</div>
+<p>Most of the bands bend toward Mexico City and Estado de México. Moving to Mexico City takes money; low-income families stay in their region, and some never reach any clinic. Those families form the hard-to-reach group, so a two-list estimate comes out too small. An undercount means fewer neurologists and counselors for the people already left out.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="home.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="teaching.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

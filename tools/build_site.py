@@ -524,7 +524,7 @@ def paper_li(p, abstracts=None, with_type=False):
 # ================================================================== page shell
 def shell(title, path, body, description):
     nav = [("Home", "/"), ("Research", "/research/"), ("Publications", "/publications/"),
-           ("Talks", "/talks/"), ("PANO Lab", "/mentoring/"), ("Other Opportunities", "/opportunities/"), ("CV", "/cv/")]
+           ("Talks", "/talks/"), ("Teaching", "/teaching/"), ("PANO Lab", "/mentoring/"), ("Other Opportunities", "/opportunities/"), ("CV", "/cv/")]
     cur = ' class="active" aria-current="page"'
     links = "".join(f'<a href="{u}"{cur if u == path else ""}>{t}</a>' for t, u in nav)
     today = datetime.date.today().strftime("%B %d, %Y").replace(" 0", " ")
@@ -1235,6 +1235,60 @@ def page_opportunities():
           "Paid research opportunities for undergraduates in biostatistics, statistics, data science, and public health, checked weekly."))
 
 
+# ================================================================== teaching
+# Each group is (id, heading, subheading, items). To add courses or talks later,
+# append another group tuple; page_teaching() renders every group in order.
+# The book itself is static HTML copied into site/teaching/handmade-simulations/
+# (bookdown::render_book output); build_site.py does not touch that folder.
+TEACHING_GROUPS = [
+    ("books", "Books", "Short online books with activities, code, and data.", [
+        {"id": "handmade-simulations", "kind": "Online book", "title": "Hand-Made Simulations",
+         "text": "Teaching statistical concepts with jars, tables, and a computer.",
+         "url": "/teaching/handmade-simulations/", "label": "Read the book",
+         "preview": "/teaching/handmade-simulations/images/jar.jpg",
+         "alt": "A jar of pebbles used in the capture-recapture activity"},
+    ]),
+]
+
+
+def page_teaching():
+    sections = ""
+    for gid, title, sub, items in TEACHING_GROUPS:
+        cards = "".join(f'''
+<article class="deck" id="{d["id"]}">
+  <div class="deck-side">
+    <a class="deck-thumb" href="{d["url"]}">
+      <img src="{d["preview"]}" alt="{html.escape(d["alt"], quote=True)}" style="object-position: center 45%" loading="lazy">
+    </a>
+  </div>
+  <div class="deck-text">
+    <p class="overline">{html.escape(d["kind"])}</p>
+    <h2>{html.escape(d["title"])}</h2>
+    <p>{html.escape(d["text"])}</p>
+    <p class="cta"><a class="btn" href="{d["url"]}">{html.escape(d["label"])}</a></p>
+  </div>
+</article>''' for d in items)
+        sections += f'''
+<section class="wrap talk-group" id="{gid}">
+  <h2>{title}</h2>
+  <p class="group-sub">{sub}</p>
+  <div class="decks-grid">{cards}</div>
+</section>'''
+    jump = ""
+    if len(TEACHING_GROUPS) > 1:
+        links = "".join(f'<a href="#{gid}">{title}</a>' for gid, title, _, _ in TEACHING_GROUPS)
+        jump = f'\n  <nav class="jump" aria-label="Teaching sections">{links}</nav>'
+    body = f"""
+<section class="wrap page-head">
+  <p class="overline">Teaching</p>
+  <h1>Teaching materials</h1>
+  <p class="lead">Materials for teaching statistics and biostatistics: activities, code, and data that instructors and students can reuse.</p>{jump}
+</section>{sections}
+"""
+    write("teaching/index.html", shell("Teaching", "/teaching/", body,
+          "Teaching materials by Jesus E. Vazquez, including the online book Hand-Made Simulations."))
+
+
 def main():
     abstracts = json.loads(ABSTRACTS.read_text(encoding="utf-8")) if ABSTRACTS.exists() else {}
     papers = parse_papers()
@@ -1243,6 +1297,7 @@ def main():
     page_research(papers, abstracts)
     page_publications(papers, abstracts)
     page_presentations()
+    page_teaching()
     page_work()
     page_undergrads()
     page_opportunities()
