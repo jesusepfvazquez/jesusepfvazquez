@@ -524,7 +524,7 @@ def paper_li(p, abstracts=None, with_type=False):
 # ================================================================== page shell
 def shell(title, path, body, description):
     nav = [("Home", "/"), ("Research", "/research/"), ("Publications", "/publications/"),
-           ("Talks", "/talks/"), ("Teaching", "/teaching/"), ("PANO Lab", "/mentoring/"), ("Other Opportunities", "/opportunities/"), ("CV", "/cv/")]
+           ("Talks and Teaching", "/talks/"), ("PANO Lab", "/mentoring/"), ("Other Opportunities", "/opportunities/"), ("CV", "/cv/")]
     cur = ' class="active" aria-current="page"'
     links = "".join(f'<a href="{u}"{cur if u == path else ""}>{t}</a>' for t, u in nav)
     today = datetime.date.today().strftime("%B %d, %Y").replace(" 0", " ")
@@ -1024,24 +1024,26 @@ def page_presentations():
   </div>
 </article>'''
     assert set(cards_by_id) == {i for g in TALK_GROUPS for i in g[3]}, "every talk needs a group"
-    nav = "".join(f'<a href="#{gid}">{title}</a>' for gid, title, _, _ in TALK_GROUPS)
+    teach = teaching_sections()
+    nav = ("".join(f'<a href="#{gid}">{title}</a>' for gid, title, _, _ in TALK_GROUPS)
+           + "".join(f'<a href="#{gid}">{title}</a>' for gid, title, _ in teach))
     sections = "".join(
         f'''
 <section class="wrap talk-group" id="{gid}">
   <h2>{title}</h2>
   <p class="group-sub">{sub}</p>
   <div class="decks-grid">{"".join(cards_by_id[i] for i in ids)}</div>
-</section>''' for gid, title, sub, ids in TALK_GROUPS)
+</section>''' for gid, title, sub, ids in TALK_GROUPS) + "".join(h for _, _, h in teach)
     body = f"""
 <section class="wrap page-head">
-  <p class="overline">Talks</p>
-  <h1>Talks and slides</h1>
-  <p class="lead">Presentations with files to view or download; most are tied to my papers. Conference talks are listed on the <a href="/cv/#presentations">CV</a>.</p>
+  <p class="overline">Talks and teaching</p>
+  <h1>Talks, slides, and teaching materials</h1>
+  <p class="lead">Presentations with files to view or download; most are tied to my papers. Teaching materials include an online book. Conference talks are listed on the <a href="/cv/#presentations">CV</a>.</p>
   <nav class="jump" aria-label="Talk sections">{nav}</nav>
 </section>{sections}
 """
-    write("talks/index.html", shell("Talks", "/talks/", body,
-          "Talks by Jesus E. Vazquez: slides linked to papers on incomplete data and causal inference."))
+    write("talks/index.html", shell("Talks and teaching", "/talks/", body,
+          "Talks and teaching materials by Jesus E. Vazquez: slides linked to papers on incomplete data and causal inference, and the online book Hand-Made Simulations."))
 
 
 def page_publications(papers, abstracts):
@@ -1236,8 +1238,8 @@ def page_opportunities():
 
 
 # ================================================================== teaching
-# Each group is (id, heading, subheading, items). To add courses or talks later,
-# append another group tuple; page_teaching() renders every group in order.
+# Teaching materials appear on the Talks and Teaching page (/talks/), after the talk groups.
+# Each group is (id, heading, subheading, items). To add courses later, append another group tuple.
 # The book itself is static HTML copied into site/teaching/handmade-simulations/
 # (bookdown::render_book output); build_site.py does not touch that folder.
 TEACHING_GROUPS = [
@@ -1251,8 +1253,9 @@ TEACHING_GROUPS = [
 ]
 
 
-def page_teaching():
-    sections = ""
+def teaching_sections():
+    """Return [(id, title, section_html)] for the teaching groups."""
+    out = []
     for gid, title, sub, items in TEACHING_GROUPS:
         cards = "".join(f'''
 <article class="deck" id="{d["id"]}">
@@ -1268,25 +1271,13 @@ def page_teaching():
     <p class="cta"><a class="btn" href="{d["url"]}">{html.escape(d["label"])}</a></p>
   </div>
 </article>''' for d in items)
-        sections += f'''
+        out.append((gid, title, f'''
 <section class="wrap talk-group" id="{gid}">
   <h2>{title}</h2>
   <p class="group-sub">{sub}</p>
   <div class="decks-grid">{cards}</div>
-</section>'''
-    jump = ""
-    if len(TEACHING_GROUPS) > 1:
-        links = "".join(f'<a href="#{gid}">{title}</a>' for gid, title, _, _ in TEACHING_GROUPS)
-        jump = f'\n  <nav class="jump" aria-label="Teaching sections">{links}</nav>'
-    body = f"""
-<section class="wrap page-head">
-  <p class="overline">Teaching</p>
-  <h1>Teaching materials</h1>
-  <p class="lead">Materials for teaching statistics and biostatistics: activities, code, and data that instructors and students can reuse.</p>{jump}
-</section>{sections}
-"""
-    write("teaching/index.html", shell("Teaching", "/teaching/", body,
-          "Teaching materials by Jesus E. Vazquez, including the online book Hand-Made Simulations."))
+</section>'''))
+    return out
 
 
 def main():
@@ -1297,7 +1288,6 @@ def main():
     page_research(papers, abstracts)
     page_publications(papers, abstracts)
     page_presentations()
-    page_teaching()
     page_work()
     page_undergrads()
     page_opportunities()

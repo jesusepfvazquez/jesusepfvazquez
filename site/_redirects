@@ -14,3 +14,4 @@
 /work-with-me /mentoring/ 301!
 /presentations/* /talks/:splat 301!
 /presentations /talks/ 301!
+/teaching /talks/ 301!
