@@ -1075,5 +1075,93 @@
     "summary": "Ten-week paid internship in biomedical AI and data science at Wake Forest School of Medicine. Focus areas include machine learning, biomedical informatics, and public health.",
     "citizenship": "some",
     "citizenship_note": "The page says US citizens, nationals, and permanent residents may apply, and J-1 and F-1 students may apply for limited spots. DACA is not mentioned, so ask the program."
+  },
+  {
+    "id": "harvard-bph-sip-2027",
+    "title": "Biological Sciences in Public Health Summer Internship Program (BPH-SIP)",
+    "org": "Harvard T.H. Chan School of Public Health",
+    "type": "Internship",
+    "location": "Boston, MA",
+    "deadline": "2027-02-05",
+    "deadline_note": "Apply by Friday, February 5, 2027 at 11:59 pm Eastern. The online application opens in early November 2026.",
+    "dates": "June 7 to July 30, 2027 (8 weeks)",
+    "pay": "Living stipend (amount not stated), travel support and free dorm housing at Emmanuel College",
+    "eligibility": "Full-time students at a U.S. college, age 18 or older, GPA 3.0 or higher, not finishing a BA/BS before June 2027. Aimed at science students interested in laboratory research on public health problems.",
+    "citizenship": "citizens",
+    "citizenship_note": "The page says applicants must be U.S. citizens or permanent residents.",
+    "tags": [
+      "Public health",
+      "Life sciences"
+    ],
+    "status": "upcoming",
+    "url": "https://hsph.harvard.edu/fellowship-special-program/biological-sciences-undergraduate-summer-internship/",
+    "verified": "2026-11-02",
+    "summary": "This is an eight-week summer internship in public health labs at the Harvard Chan School. Students do mentored research on public health problems. The program covers a stipend, travel and housing. Decisions are expected by early March 2027."
+  },
+  {
+    "id": "smu-reu-data-science-public-interest",
+    "title": "Advancing Data Science in the Public Interest REU",
+    "org": "Southern Methodist University",
+    "type": "REU",
+    "location": "Dallas, TX",
+    "deadline": null,
+    "deadline_note": "Summer 2027 applications are not open yet. The page says to check back soon. Last cycle's deadline was in mid-February.",
+    "dates": "Summer 2027 (exact dates not posted). Starts with a 2-week bootcamp, then team research.",
+    "pay": "$5,600 stipend plus on-campus room and board",
+    "eligibility": "Students who finished their second or third year of college with a strong record. Majors in math, statistics or computer science with interest in social science, or social science majors with interest in data science.",
+    "citizenship": "citizens",
+    "citizenship_note": "The page says applicants must be U.S. citizens or permanent residents.",
+    "tags": [
+      "Data science",
+      "Statistics"
+    ],
+    "status": "upcoming",
+    "url": "https://www.smu.edu/provost/saes/academic-enrichment/engaged-learning/research/research-experiences-undergraduates/data-science-reu",
+    "verified": "2026-11-02",
+    "summary": "This NSF-funded REU uses data science on public interest questions. Students start with a short Python bootcamp. Then they join small teams with SMU faculty mentors. Students from other schools can apply."
+  },
+  {
+    "id": "chop-injury-science-reu-2027",
+    "title": "Injury Science Research Experiences for Undergraduates (REU)",
+    "org": "Children's Hospital of Philadelphia, Center for Injury Research and Prevention",
+    "type": "REU",
+    "location": "Philadelphia, PA",
+    "deadline": "2027-01-13",
+    "deadline_note": "Applications open December 14, 2026 and close January 13, 2027. Notice of selection by March 2027.",
+    "dates": "June 7 to August 13, 2027 (10 weeks)",
+    "pay": "$7,000 stipend, up to $500 travel reimbursement, free housing for in-person projects",
+    "eligibility": "Finished at least one year of college by June 7, 2027, GPA 3.0 or higher, graduating after August 13, 2027, and interested in an advanced degree other than pre-med.",
+    "citizenship": "citizens",
+    "citizenship_note": "The page says applicants must be U.S. citizens or permanent residents.",
+    "tags": [
+      "Statistics",
+      "Public health",
+      "Any STEM"
+    ],
+    "status": "upcoming",
+    "url": "https://injury.research.chop.edu/training-opportunities/research-experiences-undergraduates",
+    "verified": "2026-11-02",
+    "summary": "This is a 10-week paid research program on injury prevention. Project areas include population science and statistics, along with engineering, behavioral science and education. Students work with CHOP mentors."
+  },
+  {
+    "id": "weill-cornell-epidemiology-summer-internship",
+    "title": "Epidemiology Summer Internship",
+    "org": "Weill Cornell Medicine, Population Health Sciences",
+    "type": "Internship",
+    "location": "New York, NY",
+    "deadline": null,
+    "deadline_note": "The page says the 2026 cycle is closed. No 2027 deadline is posted. Applicants not contacted can have their CV kept on file for the next cycle.",
+    "dates": "Dates not posted. Full-time at 35 hours per week.",
+    "pay": "$2,000 stipend",
+    "eligibility": "Students from U.S. institutions, including current undergraduates, graduate students, medical students and post-baccalaureate students.",
+    "citizenship": "notstated",
+    "citizenship_note": "The page does not say anything about citizenship or immigration status, so ask the program.",
+    "tags": [
+      "Public health"
+    ],
+    "status": "uncertain",
+    "url": "https://phs.weill.cornell.edu/research-collaboration/divisions-institutes/epidemiology/epidemiology-internship-program",
+    "verified": "2026-11-02",
+    "summary": "This is a summer internship in epidemiology and population health at Weill Cornell. Interns work full time with hands-on research experience. The 2026 round has closed. Check the page for the next round."
   }
 ]
