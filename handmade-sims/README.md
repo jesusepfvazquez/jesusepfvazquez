@@ -21,18 +21,21 @@ A bookdown book (gitbook style, like https://stefvanbuuren.name/fimd/) by Jesus 
 | `08-appendix.Rmd` | Home data (the 28 runs, same as `jar-runs.csv`). |
 | `_bookdown.yml` | Chapter order (`rmd_files`) and output file name. |
 | `_output.yml` | gitbook settings; uses `style.css`. |
-| `style.css` | Small style additions (`.callout` box). |
+| `style.css` | Small style additions (`.callout` box, responsive `.video` box). |
+| `publish.R` | Clean build, then copy `_book/` to `../site/teaching/handmade-simulations/`. |
+| `_module-template.Rmd` | Starting file for a new chapter; the build ignores the file. |
 | `images/` | All figures (PNG/JPG), pre-rendered. |
 | `jar-runs.csv` | Home data: 28 runs, n = pebbles + cubes in the circle. |
 
-## How to build
+## How to build and publish
 
 ```r
 install.packages("bookdown")
-bookdown::render_book("index.Rmd")   # output goes to _book/
+bookdown::render_book("index.Rmd")   # preview only; output goes to _book/
+source("publish.R")                  # clean build, then copy to ../site/teaching/handmade-simulations/
 ```
 
-Then copy `_book/` into the website folder (for example `talks/handmade-simulations/`) or point the site's build at this folder.
+After `publish.R`, commit the changed files under `site/teaching/handmade-simulations/`. The `_book/` folder is not committed. The script deletes `_book/` first, so pages from removed chapters do not linger.
 
 ## Conventions to keep
 
@@ -44,12 +47,24 @@ Then copy `_book/` into the website folder (for example `talks/handmade-simulati
 
 ## Adding a new module (activity)
 
-1. Create `NN-short-name.Rmd` starting with `# Title {#label}`.
-2. Follow the five steps: the physical activity (materials, protocol), the model, the real data, the computer simulation, the gap between real and simulated.
-3. Put images in `images/` and data next to the Rmd files.
-4. Add the file to `rmd_files` in `_bookdown.yml`, before `08-appendix.Rmd`.
+1. Copy `_module-template.Rmd` to `NN-short-name.Rmd`. The template holds the five steps: the physical activity (materials, protocol), the model, the real data, the computer simulation, and the gap between real and simulated, plus a short student task.
+2. Put images in `images/` and data next to the Rmd files.
+3. Add the file to `rmd_files` in `_bookdown.yml`, before `07-teaching.Rmd`. A chapter joins the book only when listed there, so unfinished files can sit in this folder without being published.
+4. Run `source("publish.R")` and look at the preview before committing.
 
-Candidate modules: sampling distributions (drawing from a bag), regression to the mean, confidence-interval coverage, permutation tests (shuffling cards), missing data (hiding cards by a rule).
+## Planned modules
+
+Starting points, to be edited as the chapters take shape.
+
+| Module | Possible hook | Builds on |
+|---|---|---|
+| Weighting | Cubes and pebbles have different chances of landing in the circle; estimate the ratio of the chances and weight each object by the inverse of its chance. | The home runs in Chapter 5: cubes were 14% of the circle and 17% of the jar. |
+| Hypergeometric | The jar is drawn without replacement; compare exact hypergeometric probabilities with the binomial as the second toss grows relative to the jar. | Question 1 in Chapter 7. |
+| Poisson | Count rare events per toss and compare Poisson and binomial probabilities. | The binomial chapters (2 and 3). |
+| Student redesign | Students change the protocol (mixing, toss height, circle size), predict the direction of the error, then test with data and simulation. | The scenario table in Chapter 6. |
+| Selection bias | Students pick which objects to mark or count by a rule, then watch the estimate move. | The hard-to-reach group in Chapter 6. |
+
+Other candidates: sampling distributions (drawing from a bag), regression to the mean, confidence-interval coverage, permutation tests (shuffling cards), and missing data (hiding cards by a rule).
 
 ## Preview
 

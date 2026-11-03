@@ -1,0 +1,49 @@
+# Module title {#module-label}
+
+<!--
+Copy this file to NN-short-name.Rmd, replace "Module title" and "module-label", and
+add the file name to rmd_files in _bookdown.yml, before 07-teaching.Rmd.
+Until the file is listed there, the build ignores it.
+
+Writing rules: plain, direct prose; no em-dashes; name the thing instead of writing
+"this" or "it"; refer to estimators as "the Lincoln-Petersen estimator"; use
+association language, not causal language.
+
+Numbers: compute every number in the text with set.seed(2026) and 1,000 repetitions,
+then paste the result. Keep every chunk eval = FALSE unless the printed numbers match
+the prose. Chunk labels must be unique across the whole book, so start each label with
+the module name.
+-->
+
+## The activity
+
+<!-- Materials, protocol, and what students record. Put photos in images/. -->
+
+## The model
+
+<!-- Which distribution describes the activity, and which conditions the model assumes. -->
+
+## The real data
+
+<!-- What the class or the instructor recorded. Save the data as a CSV next to the Rmd files. -->
+
+```{r module-data, eval = FALSE}
+# read and summarize the real data
+```
+
+## The computer simulation
+
+```{r module-sim, eval = FALSE}
+set.seed(2026)
+# simulate the activity under the model
+```
+
+## The gap between real and simulated
+
+<div class="callout">
+**The gap is the lesson.** State which assumption failed and in which direction the estimate moves.
+</div>
+
+## Try it yourself
+
+<!-- One or two student tasks: change a condition, predict the direction of the change, then test the prediction with data and simulation. -->

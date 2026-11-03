@@ -1243,7 +1243,7 @@ def page_opportunities():
 # The book itself is static HTML copied into site/teaching/handmade-simulations/
 # (bookdown::render_book output); build_site.py does not touch that folder.
 TEACHING_GROUPS = [
-    ("books", "Books", "Short online books with activities, code, and data.", [
+    ("materials", "Teaching materials", "Activities, code, and data for instructors and students.", [
         {"id": "handmade-simulations", "kind": "Online book", "title": "Hand-Made Simulations",
          "text": "Teaching statistical concepts with jars, tables, and a computer.",
          "url": "/teaching/handmade-simulations/", "label": "Read the book",
