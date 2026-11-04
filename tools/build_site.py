@@ -707,6 +707,19 @@ PRESENTATIONS = [
         "video": "https://youtu.be/LEBHiUieLOI",
     },
     {
+        "title": "When covariates are censored: methods motivated by Huntington disease",
+        "id": "censored-covariates",
+        "kind": "Research Seminar, Department of Biostatistics and Data Science, Wake Forest University School of Medicine, November 4, 2026",
+        "pdf": "censored-covariates-2026-slides.pdf",
+        "preview": "censored-covariates-preview.jpg",
+        "slides": "censored-covariates-2026-slides.pdf",
+        "text": ("Overview of my research on right-censored covariates, motivated by the age at diagnosis in Huntington "
+                 "disease. The talk compares the complete case, weighted, and augmented estimators, explains what each "
+                 "needs and what it buys in robustness and efficiency, and applies them to cognition before diagnosis in "
+                 "PREDICT-HD. It closes with extensions to causal inference, federated learning, and trial enrichment."),
+        "paper": "/research/#right-censored-covariates-and-confounders",
+    },
+    {
         "title": "Causal inference with a right-censored marker of disease progression",
         "id": "retreat",
         "kind": "JHU Biostatistics Retreat Presentation, October 2, 2026",
@@ -992,7 +1005,7 @@ def page_undergrads():
 
 
 TALK_GROUPS = [
-    ("research", "Research talks", "Methods for incomplete data and causal inference.", ["retreat", "compstat", "ibc", "t32"]),
+    ("research", "Research talks", "Methods for incomplete data and causal inference.", ["censored-covariates", "retreat", "compstat", "ibc", "t32"]),
     ("teaching", "Teaching and mentoring", "Class demonstrations and career talks for trainees.", ["binomial", "postdoc", "lab-values"]),
 ]
 
