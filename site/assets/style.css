@@ -389,3 +389,20 @@ ul, ol { margin: 0; padding: 0; }
 .decks-grid .deck-text h2 { font-size: 1.25rem; margin-bottom: 8px; }
 .decks-grid .deck-text p { font-size: 0.95rem; }
 @media (max-width: 820px) { .decks-grid { grid-template-columns: 1fr; } }
+
+/* PANO Lab: faint "dataset with missing values" motif behind the page header */
+.pano-bg { position: relative; isolation: isolate; }
+.pano-bg::before {
+  content: ""; position: absolute; z-index: -1; pointer-events: none;
+  top: 8px; right: -24px; width: min(560px, 62%); height: calc(100% - 8px);
+  background: url("/assets/pano-grid.svg") right top / auto 100% no-repeat;
+  -webkit-mask-image: linear-gradient(to left, #000 25%, transparent 100%);
+          mask-image: linear-gradient(to left, #000 25%, transparent 100%);
+}
+@media (max-width: 760px) { .pano-bg::before { opacity: .5; width: 100%; } }
+.pano-bg::after {
+  content: ""; position: absolute; z-index: -1; pointer-events: none; opacity: .10;
+  right: 0; bottom: 34px; width: min(360px, 44%); height: 100px;
+  background: url("/assets/pano-eq.svg") right bottom / contain no-repeat;
+}
+@media (max-width: 760px) { .pano-bg::after { display: none; } }

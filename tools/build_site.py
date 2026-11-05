@@ -869,7 +869,7 @@ def page_work():
                   '<a class="mail" data-u="jvazqu18" data-d="jh.edu" href="#">jvazqu18 [at] jh.edu</a> '
                   'with your CV/resume, a short note on your background, and the project or paper from the Research page that interests you most.</p>')
     body = f"""
-<section class="wrap page-head">
+<section class="wrap page-head pano-bg">
   <p class="overline">Research group</p>
   <h1>The PANO Lab</h1>
   <p class="lead">The PANO Lab (<b>P</b>artially observed data, <b>A</b>nalysis under <b>N</b>on-random <b>O</b>bservation) develops statistical methods for incomplete and distributed data.</p>
