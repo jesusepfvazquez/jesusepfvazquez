@@ -402,7 +402,7 @@ ul, ol { margin: 0; padding: 0; }
 @media (max-width: 760px) { .pano-bg::before { opacity: .5; width: 100%; } }
 .pano-bg::after {
   content: ""; position: absolute; z-index: -1; pointer-events: none; opacity: .10;
-  right: 0; bottom: 34px; width: min(360px, 44%); height: 100px;
-  background: url("/assets/pano-eq.svg") right bottom / contain no-repeat;
+  right: 0; top: 14px; width: min(360px, 44%); height: 100px;
+  background: url("/assets/pano-eq.svg") right top / contain no-repeat;
 }
 @media (max-width: 760px) { .pano-bg::after { display: none; } }
