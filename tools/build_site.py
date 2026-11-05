@@ -537,7 +537,9 @@ def shell(title, path, body, description):
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{html.escape(full_title)}</title>
 <meta name="description" content="{html.escape(description, quote=True)}">
-<link rel="icon" type="image/png" href="/assets/blank.png?v={BUILD_ID}">
+<link rel="icon" href="/favicon.ico?v={BUILD_ID}" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png?v={BUILD_ID}">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v={BUILD_ID}">
 <link rel="stylesheet" href="/assets/style.css?v={BUILD_ID}">
 </head>
 <body>
