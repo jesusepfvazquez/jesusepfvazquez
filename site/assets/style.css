@@ -394,12 +394,13 @@ ul, ol { margin: 0; padding: 0; }
 .pano-bg { position: relative; isolation: isolate; }
 .pano-bg::before {
   content: ""; position: absolute; z-index: -1; pointer-events: none;
-  top: 8px; right: -24px; width: min(560px, 62%); height: calc(100% - 8px);
-  background: url("/assets/pano-grid.svg") right top / auto 100% no-repeat;
-  -webkit-mask-image: linear-gradient(to left, #000 25%, transparent 100%);
-          mask-image: linear-gradient(to left, #000 25%, transparent 100%);
+  top: 8px; right: -24px; height: calc(100% - 8px); aspect-ratio: 1 / 1;
+  background: url("/assets/pano-grid.svg") center / 100% 100% no-repeat;
+  /* translucent on the left, stronger toward the right */
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,.30) 40%, #000 100%);
+          mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,.30) 40%, #000 100%);
 }
-@media (max-width: 760px) { .pano-bg::before { opacity: .5; width: 100%; } }
+@media (max-width: 760px) { .pano-bg::before { opacity: .5; right: -60px; } }
 .pano-bg::after {
   content: ""; position: absolute; z-index: -1; pointer-events: none; opacity: .10;
   right: 0; top: 14px; width: min(360px, 44%); height: 100px;
