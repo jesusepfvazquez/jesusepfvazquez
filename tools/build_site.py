@@ -648,7 +648,7 @@ def page_home(papers, abstracts):
     <h2>Get in touch</h2>
     <div class="callout">
       <h3>Open to new collaborations</h3>
-      <p>I enjoy working with students and collaborators on incomplete data, causal questions, and public health problems. Projects often grow into papers, and I like to write them together. Researchers from other fields are welcome too. Students can start on the PANO Lab page; everyone else can send an email.</p>
+      <p>I enjoy working with students and collaborators on incomplete data, causal questions, and public health problems. Projects often grow into papers, and I like to write them together. Researchers from other fields are welcome too. Johns Hopkins students can start on the PANO Lab page; I am currently mentoring only students based at Johns Hopkins. Researchers can send an email.</p>
       <p class="cta"><a class="btn" href="/mentoring/">Explore the PANO Lab</a> <a class="btn ghost mail" data-u="{EMAIL_USER}" data-d="{EMAIL_DOMAIN}" href="#">Email me</a></p>
     </div>
   </div>
@@ -873,7 +873,7 @@ def page_work():
   <p class="overline">Research group</p>
   <h1>The PANO Lab</h1>
   <p class="lead">The PANO Lab (<b>P</b>artially observed data, <b>A</b>nalysis under <b>N</b>on-random <b>O</b>bservation) develops statistical methods for incomplete and distributed data.</p>
-  <p class="lead">I welcome high school students, undergraduates, master's students, PhD students, postdocs, and collaborators who want to work on statistical methods for incomplete data and health applications. The <a href="/research/">Research</a> page lists current projects.</p>
+  <p class="lead">I welcome Johns Hopkins undergraduates, master's students, and PhD students who want to work on statistical methods for incomplete data and health applications. Because of the number of requests, I am currently mentoring only students based at Johns Hopkins. Researchers interested in collaborating are welcome to write. The <a href="/research/">Research</a> page lists current projects.</p>
   <p class="lead">The values below describe how the team works.</p>
 </section>
 <div class="wrap values">{secs}</div>
@@ -886,7 +886,7 @@ def page_work():
 <section class="wrap section">
   <div class="callout">
     <h3>Interested in working together?</h3>
-    <p>I do not currently have funding for student positions, so projects are unpaid and built around learning and, when contributions warrant, co-authorship. Please read the <a href="/research/">Research</a> page first, then tell me which project or paper interests you and why. Messages that name a specific project are the ones I can answer best.</p>
+    <p>I am currently mentoring only students based at Johns Hopkins, so I cannot respond to requests from students at other institutions. I do not currently have funding for student positions, so projects are unpaid and built around learning and, when contributions warrant, co-authorship. Please read the <a href="/research/">Research</a> page first, then tell me which project or paper interests you and why. Messages that name a specific project are the ones I can answer best.</p>
     {action}
   </div>
 </section>
