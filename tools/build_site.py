@@ -711,14 +711,15 @@ PRESENTATIONS = [
     {
         "title": "When covariates are censored: methods motivated by Huntington disease",
         "id": "censored-covariates",
-        "kind": "Research Seminar, Department of Biostatistics and Data Science, Wake Forest University School of Medicine, November 4, 2026",
+        "kind": "Research Seminar, Department of Biostatistics and Data Science, Wake Forest University School of Medicine, 2026",
         "pdf": "censored-covariates-2026-slides.pdf",
         "preview": "censored-covariates-preview.jpg",
         "slides": "censored-covariates-2026-slides.pdf",
         "text": ("Overview of my research on right-censored covariates, motivated by the age at diagnosis in Huntington "
-                 "disease. The talk compares the complete case, weighted, and augmented estimators, explains what each "
-                 "needs and what it buys in robustness and efficiency, and applies them to cognition before diagnosis in "
-                 "PREDICT-HD. It closes with extensions to causal inference, federated learning, and trial enrichment."),
+                 "disease. The talk presents estimators for a right-censored covariate and when each is robust or efficient, "
+                 "extends them to censoring that depends on the outcome, and applies them to cognition before diagnosis in "
+                 "PREDICT-HD. It closes with a research program that includes trainee-led work and extensions to "
+                 "multi-site research."),
         "paper": "/research/#right-censored-covariates-and-confounders",
     },
     {
